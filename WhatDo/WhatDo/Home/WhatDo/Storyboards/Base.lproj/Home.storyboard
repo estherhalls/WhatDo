@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gAi-s8-yOA">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="AwL-cz-ifG">
+            <objects>
+                <viewController id="gMK-T1-KHi" customClass="HomeViewController" customModule="WhatDo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vs0-2q-qTQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eGr-yY-6sV" customClass="HeaderLargeView" customModule="WhatDo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="180"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="224" id="254-rW-aZJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4jb-oH-pGs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eGr-yY-6sV" firstAttribute="leading" secondItem="4jb-oH-pGs" secondAttribute="leading" id="3Vu-g7-rH4"/>
+                            <constraint firstItem="eGr-yY-6sV" firstAttribute="trailing" secondItem="4jb-oH-pGs" secondAttribute="trailing" id="7xN-uX-FUe"/>
+                            <constraint firstItem="eGr-yY-6sV" firstAttribute="top" secondItem="vs0-2q-qTQ" secondAttribute="top" id="sZI-y6-vO0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="e3v-Vb-98l"/>
+                    <connections>
+                        <outlet property="homeHeaderView" destination="eGr-yY-6sV" id="0fA-U7-y2a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YNs-o1-d99" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-16.030534351145036" y="22.535211267605636"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="C5P-gY-8Ex">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gAi-s8-yOA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="brain.head.profile" catalog="system" id="ncE-Md-s3L"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DeZ-18-dNE">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gMK-T1-KHi" kind="relationship" relationship="rootViewController" id="pI7-R5-lxe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E3k-qk-S8m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-16.030534351145036" y="-773.23943661971839"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="brain.head.profile" catalog="system" width="120" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
