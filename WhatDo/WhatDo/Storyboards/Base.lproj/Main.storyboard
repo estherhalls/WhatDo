@@ -8,21 +8,38 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tab Search View Controller-->
         <scene sceneID="dDj-tu-4as">
             <objects>
-                <viewController id="qXq-cD-qiC" sceneMemberID="viewController">
+                <viewController id="qXq-cD-qiC" customClass="TabSearchViewController" customModule="WhatDo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yQG-iD-SmU">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fOQ-l3-6lW" customClass="HeaderLargeView" customModule="WhatDo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="125"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="2tr-YX-Kgq"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ZPU-US-fOm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fOQ-l3-6lW" firstAttribute="leading" secondItem="ZPU-US-fOm" secondAttribute="leading" id="BJK-d8-KNn"/>
+                            <constraint firstItem="ZPU-US-fOm" firstAttribute="trailing" secondItem="fOQ-l3-6lW" secondAttribute="trailing" id="TnC-3e-RoT"/>
+                            <constraint firstItem="fOQ-l3-6lW" firstAttribute="top" secondItem="yQG-iD-SmU" secondAttribute="top" id="qlM-K0-PXe"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bPt-rf-apQ"/>
+                    <connections>
+                        <outlet property="headerView" destination="fOQ-l3-6lW" id="acV-Gf-ylu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2yT-e3-JpL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="859" y="23"/>
+            <point key="canvasLocation" x="858.77862595419845" y="22.535211267605636"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="AwL-cz-ifG">
@@ -68,6 +85,11 @@
                         <tabBarAppearance key="standardAppearance">
                             <color key="selectionIndicatorTintColor" red="0.80000000000000004" green="0.16078431369999999" blue="0.047058823530000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </tabBarAppearance>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.80000000000000004" green="0.16078431369999999" blue="0.047058823530000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="gAi-s8-yOA" kind="relationship" relationship="viewControllers" id="DsH-Ts-O9Q"/>

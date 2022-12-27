@@ -14,11 +14,6 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let rect = CGRect(x: 0, y: 0, width: 300, height: 100)
-//        let navigationHeader = HeaderLargeView(frame: rect)
-//        // Add background color and dividing stripe to header swift file to change here?
-//        self.view.addSubview(navigationHeader)
-        
         let subtitleImage = UIImage(named: "subtitle")
         if let titleImage = UIImage(named: "whatDoLarge") {
             homeHeaderView.configureImageViews(withImages: titleImage, subtitle: subtitleImage)
