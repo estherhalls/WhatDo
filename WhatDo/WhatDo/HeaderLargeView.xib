@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeaderLargeView" customModule="WhatDo" customModuleProvider="target">
+            <connections>
+                <outlet property="headerLargeView" destination="iN0-l3-epB" id="LOO-X9-9WB"/>
+                <outlet property="sfSymbolImage" destination="iPr-ed-jbX" id="I7o-DV-wzh"/>
+                <outlet property="subtitleLogoImage" destination="qVZ-aL-kqi" id="42C-OC-uES"/>
+                <outlet property="titleLogoImage" destination="1uq-SW-Dgo" id="niG-6v-JBo"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="224"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iPr-ed-jbX">
+                    <rect key="frame" x="10" y="48.333333333333329" width="113" height="140.33333333333331"/>
+                    <imageReference key="image" image="brain.head.profile" catalog="system" renderingMode="hierarchical">
+                        <hierarchicalColors>
+                            <color red="0.80000000000000004" green="0.16078431372549018" blue="0.047058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color systemColor="tertiaryLabelColor"/>
+                        </hierarchicalColors>
+                    </imageReference>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qVZ-aL-kqi">
+                    <rect key="frame" x="123" y="191" width="260" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="AaF-IE-4sh"/>
+                        <constraint firstAttribute="width" constant="260" id="Nha-L0-M0y"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J5u-qg-oDx">
+                    <rect key="frame" x="0.0" y="222" width="393" height="2"/>
+                    <color key="backgroundColor" red="0.80000000000000004" green="0.16078431369999999" blue="0.047058823530000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="gAZ-na-s9Q"/>
+                    </constraints>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1uq-SW-Dgo">
+                    <rect key="frame" x="123" y="37" width="260" height="150"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="Aq5-Lp-LfH"/>
+                        <constraint firstAttribute="width" constant="260" id="zxb-Ek-w7h"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" red="0.96862745098039216" green="0.82745098039215681" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="J5u-qg-oDx" secondAttribute="trailing" id="BCq-nW-Vh8"/>
+                <constraint firstItem="iPr-ed-jbX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="Cv8-Wi-2sE"/>
+                <constraint firstItem="qVZ-aL-kqi" firstAttribute="centerX" secondItem="1uq-SW-Dgo" secondAttribute="centerX" id="MKf-V7-uiB"/>
+                <constraint firstAttribute="bottom" secondItem="J5u-qg-oDx" secondAttribute="bottom" id="NMT-r5-WBw"/>
+                <constraint firstItem="1uq-SW-Dgo" firstAttribute="leading" secondItem="iPr-ed-jbX" secondAttribute="trailing" id="dWF-yK-Ccx"/>
+                <constraint firstItem="iPr-ed-jbX" firstAttribute="bottom" secondItem="1uq-SW-Dgo" secondAttribute="bottom" id="lKb-Ef-egL"/>
+                <constraint firstItem="J5u-qg-oDx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="lOo-nq-8Xl"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1uq-SW-Dgo" secondAttribute="trailing" constant="10" id="ooF-fL-Xnu"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="qVZ-aL-kqi" secondAttribute="bottom" constant="8" id="rV7-5c-I9S"/>
+                <constraint firstItem="qVZ-aL-kqi" firstAttribute="top" secondItem="1uq-SW-Dgo" secondAttribute="bottom" constant="4" id="tIy-jD-nS0"/>
+                <constraint firstItem="iPr-ed-jbX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="vSD-6i-0Ge"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="130.53435114503816" y="-211.26760563380282"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="brain.head.profile" catalog="system" width="120" height="128"/>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

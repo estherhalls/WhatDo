@@ -24,21 +24,35 @@
             </objects>
             <point key="canvasLocation" x="859" y="23"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="AwL-cz-ifG">
             <objects>
-                <viewController id="gMK-T1-KHi" sceneMemberID="viewController">
+                <viewController id="gMK-T1-KHi" customClass="HomeViewController" customModule="WhatDo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vs0-2q-qTQ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eGr-yY-6sV" customClass="headerLargeView">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="224"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="224" id="254-rW-aZJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="4jb-oH-pGs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eGr-yY-6sV" firstAttribute="leading" secondItem="4jb-oH-pGs" secondAttribute="leading" id="3Vu-g7-rH4"/>
+                            <constraint firstItem="eGr-yY-6sV" firstAttribute="trailing" secondItem="4jb-oH-pGs" secondAttribute="trailing" id="7xN-uX-FUe"/>
+                            <constraint firstItem="eGr-yY-6sV" firstAttribute="top" secondItem="vs0-2q-qTQ" secondAttribute="top" id="sZI-y6-vO0"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="e3v-Vb-98l"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YNs-o1-d99" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-16" y="23"/>
+            <point key="canvasLocation" x="-16.030534351145036" y="22.535211267605636"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="eFf-Xa-C8H">
@@ -48,11 +62,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <tabBarAppearance key="standardAppearance">
+                            <color key="selectionIndicatorTintColor" red="0.80000000000000004" green="0.16078431369999999" blue="0.047058823530000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </tabBarAppearance>
                     </tabBar>
                     <connections>
+                        <segue destination="gAi-s8-yOA" kind="relationship" relationship="viewControllers" id="DsH-Ts-O9Q"/>
                         <segue destination="Xdg-Ny-h6Z" kind="relationship" relationship="viewControllers" id="F2C-gk-5NM"/>
-                        <segue destination="uLi-W6-q2g" kind="relationship" relationship="viewControllers" id="lF5-3y-Cpg"/>
                         <segue destination="rHw-ha-9qW" kind="relationship" relationship="viewControllers" id="xLm-ll-HaN"/>
+                        <segue destination="uLi-W6-q2g" kind="relationship" relationship="viewControllers" id="lF5-3y-Cpg"/>
+                        <segue destination="p18-M4-JrT" kind="relationship" relationship="viewControllers" id="cOx-Gd-Rxx"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gyi-1j-CME" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -91,11 +110,27 @@
             </objects>
             <point key="canvasLocation" x="2581" y="23"/>
         </scene>
-        <!--Item 1-->
+        <!--View Controller-->
+        <scene sceneID="nEB-We-HhG">
+            <objects>
+                <viewController id="kqX-fS-Pje" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4UU-5T-3pj">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="oJK-Ja-R6v"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="YgZ-ra-orw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i8Z-q9-0sR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3477" y="23"/>
+        </scene>
+        <!--Home-->
         <scene sceneID="C5P-gY-8Ex">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gAi-s8-yOA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="ncE-Md-s3L"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="brain.head.profile" catalog="system" id="ncE-Md-s3L"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DeZ-18-dNE">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -110,11 +145,11 @@
             </objects>
             <point key="canvasLocation" x="-16.030534351145036" y="-773.23943661971839"/>
         </scene>
-        <!--Item 1-->
+        <!--Dining-->
         <scene sceneID="4la-yq-n3u">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rHw-ha-9qW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="UWG-G1-Azg"/>
+                    <tabBarItem key="tabBarItem" title="Dining" image="fork.knife" catalog="system" id="UWG-G1-Azg"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9TN-hH-y7K">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -129,11 +164,11 @@
             </objects>
             <point key="canvasLocation" x="1718.3206106870227" y="-773.23943661971839"/>
         </scene>
-        <!--Item 2-->
+        <!--Activity-->
         <scene sceneID="5OW-pq-Avr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xdg-Ny-h6Z" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="dCm-RO-RNZ"/>
+                    <tabBarItem key="tabBarItem" title="Activity" image="mountain.2" catalog="system" id="dCm-RO-RNZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YHW-6J-epb">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -148,11 +183,11 @@
             </objects>
             <point key="canvasLocation" x="859" y="-773"/>
         </scene>
-        <!--Item 1-->
+        <!--Event-->
         <scene sceneID="eKx-oU-q4b">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uLi-W6-q2g" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="nQR-R5-vDW"/>
+                    <tabBarItem key="tabBarItem" title="Event" image="music.mic" catalog="system" id="nQR-R5-vDW"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Yo4-US-QHA">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -167,8 +202,32 @@
             </objects>
             <point key="canvasLocation" x="2581" y="-773"/>
         </scene>
+        <!--Cinema-->
+        <scene sceneID="23D-UX-RzW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="p18-M4-JrT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Cinema" image="popcorn" catalog="system" id="wDY-zr-Qp0"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ahb-6O-wCN">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kqX-fS-Pje" kind="relationship" relationship="rootViewController" id="mSn-x7-TdE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ctw-Ha-ACd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3477" y="-773"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="brain.head.profile" catalog="system" width="120" height="128"/>
+        <image name="fork.knife" catalog="system" width="94" height="128"/>
+        <image name="mountain.2" catalog="system" width="128" height="65"/>
+        <image name="music.mic" catalog="system" width="128" height="119"/>
+        <image name="popcorn" catalog="system" width="102" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

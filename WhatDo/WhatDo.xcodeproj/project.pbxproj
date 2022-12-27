@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB0B3604295A97C800BD4713 /* HeaderLargeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB0B3603295A97C800BD4713 /* HeaderLargeView.xib */; };
+		EB0B3606295A980A00BD4713 /* HeaderSmallView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB0B3605295A980A00BD4713 /* HeaderSmallView.xib */; };
+		EB0B3608295A995700BD4713 /* HeaderLargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0B3607295A995700BD4713 /* HeaderLargeView.swift */; };
+		EB0B360E295AB31D00BD4713 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0B360D295AB31D00BD4713 /* HomeViewController.swift */; };
 		EBE8F3FF2953D4E0001BC7B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE8F3FE2953D4E0001BC7B7 /* AppDelegate.swift */; };
 		EBE8F4012953D4E0001BC7B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE8F4002953D4E0001BC7B7 /* SceneDelegate.swift */; };
 		EBE8F4032953D4E0001BC7B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE8F4022953D4E0001BC7B7 /* ViewController.swift */; };
@@ -21,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EB0B3603295A97C800BD4713 /* HeaderLargeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderLargeView.xib; sourceTree = "<group>"; };
+		EB0B3605295A980A00BD4713 /* HeaderSmallView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderSmallView.xib; sourceTree = "<group>"; };
+		EB0B3607295A995700BD4713 /* HeaderLargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLargeView.swift; sourceTree = "<group>"; };
+		EB0B360D295AB31D00BD4713 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EBE8F3FB2953D4E0001BC7B7 /* WhatDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBE8F3FE2953D4E0001BC7B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBE8F4002953D4E0001BC7B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +81,10 @@
 				EBE8F4072953D4E2001BC7B7 /* Assets.xcassets */,
 				EBE8F4092953D4E2001BC7B7 /* LaunchScreen.storyboard */,
 				EBE8F40C2953D4E2001BC7B7 /* Info.plist */,
+				EB0B3603295A97C800BD4713 /* HeaderLargeView.xib */,
+				EB0B3605295A980A00BD4713 /* HeaderSmallView.xib */,
+				EB0B3607295A995700BD4713 /* HeaderLargeView.swift */,
+				EB0B360D295AB31D00BD4713 /* HomeViewController.swift */,
 			);
 			path = WhatDo;
 			sourceTree = "<group>";
@@ -151,11 +163,13 @@
 				FFD1A6AE2955030D0021D539 /* Food.storyboard in Resources */,
 				FFD1A6AC2955019B0021D539 /* Movie.storyboard in Resources */,
 				FFD1A6B029550C460021D539 /* Events.storyboard in Resources */,
+				EB0B3604295A97C800BD4713 /* HeaderLargeView.xib in Resources */,
 				EBE8F40B2953D4E2001BC7B7 /* LaunchScreen.storyboard in Resources */,
 				EBE8F4082953D4E2001BC7B7 /* Assets.xcassets in Resources */,
 				FFD1A6A92954FD800021D539 /* Bars.storyboard in Resources */,
 				FFD1A6D729566A3E0021D539 /* Roulette.storyboard in Resources */,
 				EBE8F4062953D4E0001BC7B7 /* Main.storyboard in Resources */,
+				EB0B3606295A980A00BD4713 /* HeaderSmallView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,9 +180,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB0B360E295AB31D00BD4713 /* HomeViewController.swift in Sources */,
 				EBE8F4032953D4E0001BC7B7 /* ViewController.swift in Sources */,
 				EBE8F3FF2953D4E0001BC7B7 /* AppDelegate.swift in Sources */,
 				EBE8F4012953D4E0001BC7B7 /* SceneDelegate.swift in Sources */,
+				EB0B3608295A995700BD4713 /* HeaderLargeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
