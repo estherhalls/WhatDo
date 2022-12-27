@@ -8,13 +8,14 @@
 import UIKit
 
 // tried @IBDesignable so I don't have to run simulator to see modifications, but it is throwing errors. If you want to try to debug later, add @IBDesignable before class on next line
-@IBDesignable class HeaderLargeView: UIView {
+class HeaderLargeView: UIView {
 
     @IBOutlet weak var sfSymbolImage: UIImageView!
     @IBOutlet weak var titleLogoImage: UIImageView!
     @IBOutlet weak var subtitleLogoImage: UIImageView?
     
     var view: UIView!
+    static let identifier = "HeaderLargeView"
     
     // When component is initialized via code
     override init(frame: CGRect) {
@@ -37,7 +38,7 @@ import UIKit
     }
     
     func loadViewFromNib() -> UIView {
-        let nib = UINib(nibName: "HeaderLargeView", bundle: nil)
+        let nib = UINib(nibName: HeaderLargeView.identifier, bundle: nil)
         guard let view = nib.instantiate(withOwner: self)[0] as? UIView else {
             fatalError("Unable to Convert Nib")
         }

@@ -9,6 +9,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    @IBOutlet weak var homeHeaderView: HeaderLargeView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -16,10 +18,11 @@ class HomeViewController: UIViewController {
 //        let navigationHeader = HeaderLargeView(frame: rect)
 //        // Add background color and dividing stripe to header swift file to change here?
 //        self.view.addSubview(navigationHeader)
-//        let subtitleImage = UIImage(named: "subtitle")
-//        if let titleImage = UIImage(named: "whatDoLarge") {
-//            navigationHeader.configureImageViews(withImages: titleImage, subtitle: subtitleImage)
-//        }
+        
+        let subtitleImage = UIImage(named: "subtitle")
+        if let titleImage = UIImage(named: "whatDoLarge") {
+            homeHeaderView.configureImageViews(withImages: titleImage, subtitle: subtitleImage)
+        }
     }
     
     

@@ -32,8 +32,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eGr-yY-6sV" customClass="headerLargeView">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="224"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eGr-yY-6sV" customClass="HeaderLargeView" customModule="WhatDo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="180"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="224" id="254-rW-aZJ"/>
@@ -49,6 +49,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="e3v-Vb-98l"/>
+                    <connections>
+                        <outlet property="homeHeaderView" destination="eGr-yY-6sV" id="0fA-U7-y2a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YNs-o1-d99" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
