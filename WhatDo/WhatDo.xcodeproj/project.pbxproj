@@ -56,7 +56,6 @@
 		EBE8F3F22953D4E0001BC7B7 = {
 			isa = PBXGroup;
 			children = (
-				FFFB9367295B5BAA00191939 /* Resources */,
 				EBE8F3FD2953D4E0001BC7B7 /* WhatDo */,
 				EBE8F3FC2953D4E0001BC7B7 /* Products */,
 			);
@@ -73,24 +72,24 @@
 		EBE8F3FD2953D4E0001BC7B7 /* WhatDo */ = {
 			isa = PBXGroup;
 			children = (
+				FFFB9367295B5BAA00191939 /* Resources */,
 				FFFB9366295B5B5300191939 /* Cinema */,
 				FFFB935F295B5B0400191939 /* Dining */,
 				FFFB9362295B5B2A00191939 /* Events */,
 				FFFB935B295B5ADF00191939 /* Activity */,
 				FFFB9358295B5A8800191939 /* Home */,
-				FFD1A6AA2954FD8C0021D539 /* Storyboards */,
-				FFFB9368295B5BDF00191939 /* New Group */,
-				EBE8F40C2953D4E2001BC7B7 /* Info.plist */,
+				FFD1A6AA2954FD8C0021D539 /* Main */,
+				FFFB9368295B5BDF00191939 /* Header View */,
 			);
 			path = WhatDo;
 			sourceTree = "<group>";
 		};
-		FFD1A6AA2954FD8C0021D539 /* Storyboards */ = {
+		FFD1A6AA2954FD8C0021D539 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				EBE8F4042953D4E0001BC7B7 /* Main.storyboard */,
 			);
-			path = Storyboards;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		FFFB9358295B5A8800191939 /* Home */ = {
@@ -138,6 +137,7 @@
 		FFFB9367295B5BAA00191939 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EBE8F40C2953D4E2001BC7B7 /* Info.plist */,
 				EBE8F3FE2953D4E0001BC7B7 /* AppDelegate.swift */,
 				EBE8F4002953D4E0001BC7B7 /* SceneDelegate.swift */,
 				EBE8F4072953D4E2001BC7B7 /* Assets.xcassets */,
@@ -146,13 +146,13 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		FFFB9368295B5BDF00191939 /* New Group */ = {
+		FFFB9368295B5BDF00191939 /* Header View */ = {
 			isa = PBXGroup;
 			children = (
 				FF29F9D7295B5DDC000D3183 /* HeaderLargeView.xib */,
 				EB0B3607295A995700BD4713 /* HeaderLargeView.swift */,
 			);
-			path = "New Group";
+			path = "Header View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -408,7 +408,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = WhatDo/Info.plist;
+				INFOPLIST_FILE = WhatDo/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -435,7 +435,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = WhatDo/Info.plist;
+				INFOPLIST_FILE = WhatDo/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
