@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		EB0B3608295A995700BD4713 /* HeaderLargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0B3607295A995700BD4713 /* HeaderLargeView.swift */; };
 		EB0B360E295AB31D00BD4713 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0B360D295AB31D00BD4713 /* HomeViewController.swift */; };
+		EBA3FAF9295CBC70002AF566 /* CategoryRefinement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBA3FAF8295CBC70002AF566 /* CategoryRefinement.storyboard */; };
+		EBA3FAFC295CC41F002AF566 /* SwipeableCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBA3FAFB295CC41F002AF566 /* SwipeableCardView.xib */; };
+		EBA3FAFE295CC58E002AF566 /* CardViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA3FAFD295CC58E002AF566 /* CardViewContainer.swift */; };
+		EBA3FB00295CC9B1002AF566 /* CardViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA3FAFF295CC9B1002AF566 /* CardViewDataSource.swift */; };
+		EBA3FB02295CCB36002AF566 /* SwipeableCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA3FB01295CCB36002AF566 /* SwipeableCardView.swift */; };
+		EBA3FB04295CD1E9002AF566 /* CardViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA3FB03295CD1E9002AF566 /* CardViewDelegate.swift */; };
+		EBA3FB06295CD896002AF566 /* SwipeableViewGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA3FB05295CD896002AF566 /* SwipeableViewGestures.swift */; };
+		EBA3FB08295CD8EE002AF566 /* SwipeableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA3FB07295CD8EE002AF566 /* SwipeableViewDelegate.swift */; };
+		EBA3FB0A295CDD56002AF566 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA3FB09295CDD56002AF566 /* UIView.swift */; };
+		EBA3FB0C295CE2A8002AF566 /* SwipeDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA3FB0B295CE2A8002AF566 /* SwipeDirection.swift */; };
 		EBE8F3FF2953D4E0001BC7B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE8F3FE2953D4E0001BC7B7 /* AppDelegate.swift */; };
 		EBE8F4012953D4E0001BC7B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE8F4002953D4E0001BC7B7 /* SceneDelegate.swift */; };
 		EBE8F4062953D4E0001BC7B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBE8F4042953D4E0001BC7B7 /* Main.storyboard */; };
@@ -26,6 +36,16 @@
 /* Begin PBXFileReference section */
 		EB0B3607295A995700BD4713 /* HeaderLargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLargeView.swift; sourceTree = "<group>"; };
 		EB0B360D295AB31D00BD4713 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		EBA3FAF8295CBC70002AF566 /* CategoryRefinement.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoryRefinement.storyboard; sourceTree = "<group>"; };
+		EBA3FAFB295CC41F002AF566 /* SwipeableCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwipeableCardView.xib; sourceTree = "<group>"; };
+		EBA3FAFD295CC58E002AF566 /* CardViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewContainer.swift; sourceTree = "<group>"; };
+		EBA3FAFF295CC9B1002AF566 /* CardViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewDataSource.swift; sourceTree = "<group>"; };
+		EBA3FB01295CCB36002AF566 /* SwipeableCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableCardView.swift; sourceTree = "<group>"; };
+		EBA3FB03295CD1E9002AF566 /* CardViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewDelegate.swift; sourceTree = "<group>"; };
+		EBA3FB05295CD896002AF566 /* SwipeableViewGestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableViewGestures.swift; sourceTree = "<group>"; };
+		EBA3FB07295CD8EE002AF566 /* SwipeableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableViewDelegate.swift; sourceTree = "<group>"; };
+		EBA3FB09295CDD56002AF566 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		EBA3FB0B295CE2A8002AF566 /* SwipeDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeDirection.swift; sourceTree = "<group>"; };
 		EBE8F3FB2953D4E0001BC7B7 /* WhatDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBE8F3FE2953D4E0001BC7B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBE8F4002953D4E0001BC7B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +73,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EBA3FAFA295CC281002AF566 /* Category Refinement */ = {
+			isa = PBXGroup;
+			children = (
+				EBA3FAF8295CBC70002AF566 /* CategoryRefinement.storyboard */,
+				EBA3FAFB295CC41F002AF566 /* SwipeableCardView.xib */,
+				EBA3FB01295CCB36002AF566 /* SwipeableCardView.swift */,
+				EBA3FAFD295CC58E002AF566 /* CardViewContainer.swift */,
+				EBA3FAFF295CC9B1002AF566 /* CardViewDataSource.swift */,
+				EBA3FB03295CD1E9002AF566 /* CardViewDelegate.swift */,
+				EBA3FB05295CD896002AF566 /* SwipeableViewGestures.swift */,
+				EBA3FB07295CD8EE002AF566 /* SwipeableViewDelegate.swift */,
+				EBA3FB09295CDD56002AF566 /* UIView.swift */,
+				EBA3FB0B295CE2A8002AF566 /* SwipeDirection.swift */,
+			);
+			path = "Category Refinement";
+			sourceTree = "<group>";
+		};
 		EBE8F3F22953D4E0001BC7B7 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +117,7 @@
 				FFFB9358295B5A8800191939 /* Home */,
 				FFD1A6AA2954FD8C0021D539 /* Main */,
 				FFFB9368295B5BDF00191939 /* Header View */,
+				EBA3FAFA295CC281002AF566 /* Category Refinement */,
 			);
 			path = WhatDo;
 			sourceTree = "<group>";
@@ -215,6 +253,7 @@
 			files = (
 				FFFB935E295B5AFD00191939 /* Dining.storyboard in Resources */,
 				FFFB935A295B5ACE00191939 /* Activity.storyboard in Resources */,
+				EBA3FAFC295CC41F002AF566 /* SwipeableCardView.xib in Resources */,
 				FFFB9357295B5A6100191939 /* Home.storyboard in Resources */,
 				FF29F9D8295B5DDC000D3183 /* HeaderLargeView.xib in Resources */,
 				FFFB9365295B5B4E00191939 /* Cinema.storyboard in Resources */,
@@ -222,6 +261,7 @@
 				FFFB9361295B5B2400191939 /* Events.storyboard in Resources */,
 				EBE8F4082953D4E2001BC7B7 /* Assets.xcassets in Resources */,
 				EBE8F4062953D4E0001BC7B7 /* Main.storyboard in Resources */,
+				EBA3FAF9295CBC70002AF566 /* CategoryRefinement.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,11 +272,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBA3FB0C295CE2A8002AF566 /* SwipeDirection.swift in Sources */,
+				EBA3FAFE295CC58E002AF566 /* CardViewContainer.swift in Sources */,
+				EBA3FB06295CD896002AF566 /* SwipeableViewGestures.swift in Sources */,
 				EB0B360E295AB31D00BD4713 /* HomeViewController.swift in Sources */,
+				EBA3FB04295CD1E9002AF566 /* CardViewDelegate.swift in Sources */,
+				EBA3FB0A295CDD56002AF566 /* UIView.swift in Sources */,
 				EBE8F3FF2953D4E0001BC7B7 /* AppDelegate.swift in Sources */,
+				EBA3FB02295CCB36002AF566 /* SwipeableCardView.swift in Sources */,
 				EBF827DA295AF1350042DA9B /* TabSearchViewController.swift in Sources */,
 				EBE8F4012953D4E0001BC7B7 /* SceneDelegate.swift in Sources */,
+				EBA3FB08295CD8EE002AF566 /* SwipeableViewDelegate.swift in Sources */,
 				EB0B3608295A995700BD4713 /* HeaderLargeView.swift in Sources */,
+				EBA3FB00295CC9B1002AF566 /* CardViewDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
