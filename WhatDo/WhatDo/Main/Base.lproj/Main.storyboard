@@ -55,10 +55,10 @@
             </objects>
             <point key="canvasLocation" x="859" y="-773"/>
         </scene>
-        <!--Dining-->
+        <!--YelpCVStoryboard-->
         <scene sceneID="yMx-Il-xui">
             <objects>
-                <viewControllerPlaceholder storyboardName="Dining" id="3C8-8K-YMb" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="YelpCVStoryboard" id="3C8-8K-YMb" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="dTH-6q-qig"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4TW-RT-5e6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

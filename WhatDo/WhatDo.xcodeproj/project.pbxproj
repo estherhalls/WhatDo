@@ -18,9 +18,12 @@
 		FF29F9D8295B5DDC000D3183 /* HeaderLargeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF29F9D7295B5DDC000D3183 /* HeaderLargeView.xib */; };
 		FF29F9DB295B8DE0000D3183 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF29F9D9295B8DE0000D3183 /* CollectionViewCell.swift */; };
 		FF29F9DC295B8DE0000D3183 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF29F9DA295B8DE0000D3183 /* CollectionViewCell.xib */; };
+		FFECE29A295E367C00BC7C6F /* YelpCVStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFECE299295E367C00BC7C6F /* YelpCVStoryboard.storyboard */; };
+		FFECE29C295E371100BC7C6F /* YelpCVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFECE29B295E371100BC7C6F /* YelpCVViewController.swift */; };
+		FFECE29F295E3E3300BC7C6F /* YelpCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFECE29D295E3E3300BC7C6F /* YelpCollectionViewCell.swift */; };
+		FFECE2A0295E3E3300BC7C6F /* YelpCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFECE29E295E3E3300BC7C6F /* YelpCollectionViewCell.xib */; };
 		FFFB9357295B5A6100191939 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFFB9355295B5A6100191939 /* Home.storyboard */; };
 		FFFB935A295B5ACE00191939 /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFFB9359295B5ACE00191939 /* Activity.storyboard */; };
-		FFFB935E295B5AFD00191939 /* Dining.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFFB935C295B5AFD00191939 /* Dining.storyboard */; };
 		FFFB9361295B5B2400191939 /* Events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFFB9360295B5B2400191939 /* Events.storyboard */; };
 		FFFB9365295B5B4E00191939 /* Cinema.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFFB9363295B5B4E00191939 /* Cinema.storyboard */; };
 /* End PBXBuildFile section */
@@ -39,9 +42,12 @@
 		FF29F9D7295B5DDC000D3183 /* HeaderLargeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderLargeView.xib; sourceTree = "<group>"; };
 		FF29F9D9295B8DE0000D3183 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		FF29F9DA295B8DE0000D3183 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		FFECE299295E367C00BC7C6F /* YelpCVStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YelpCVStoryboard.storyboard; sourceTree = "<group>"; };
+		FFECE29B295E371100BC7C6F /* YelpCVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpCVViewController.swift; sourceTree = "<group>"; };
+		FFECE29D295E3E3300BC7C6F /* YelpCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpCollectionViewCell.swift; sourceTree = "<group>"; };
+		FFECE29E295E3E3300BC7C6F /* YelpCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YelpCollectionViewCell.xib; sourceTree = "<group>"; };
 		FFFB9356295B5A6100191939 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = WhatDo/Storyboards/Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		FFFB9359295B5ACE00191939 /* Activity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
-		FFFB935D295B5AFD00191939 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = WhatDo/Storyboards/Base.lproj/Dining.storyboard; sourceTree = "<group>"; };
 		FFFB9360295B5B2400191939 /* Events.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Events.storyboard; sourceTree = "<group>"; };
 		FFFB9364295B5B4E00191939 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = WhatDo/Storyboards/Base.lproj/Cinema.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,9 +82,9 @@
 		EBE8F3FD2953D4E0001BC7B7 /* WhatDo */ = {
 			isa = PBXGroup;
 			children = (
+				FFECE298295E362E00BC7C6F /* YelpCollectionView */,
 				FFFB9367295B5BAA00191939 /* Resources */,
 				FFFB9366295B5B5300191939 /* Cinema */,
-				FFFB935F295B5B0400191939 /* Dining */,
 				FFFB9362295B5B2A00191939 /* Events */,
 				FFFB935B295B5ADF00191939 /* Activity */,
 				FFFB9358295B5A8800191939 /* Home */,
@@ -94,6 +100,17 @@
 				EBE8F4042953D4E0001BC7B7 /* Main.storyboard */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		FFECE298295E362E00BC7C6F /* YelpCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				FFECE299295E367C00BC7C6F /* YelpCVStoryboard.storyboard */,
+				FFECE29B295E371100BC7C6F /* YelpCVViewController.swift */,
+				FFECE29D295E3E3300BC7C6F /* YelpCollectionViewCell.swift */,
+				FFECE29E295E3E3300BC7C6F /* YelpCollectionViewCell.xib */,
+			);
+			path = YelpCollectionView;
 			sourceTree = "<group>";
 		};
 		FFFB9358295B5A8800191939 /* Home */ = {
@@ -114,14 +131,6 @@
 				FFFB9359295B5ACE00191939 /* Activity.storyboard */,
 			);
 			path = Activity;
-			sourceTree = "<group>";
-		};
-		FFFB935F295B5B0400191939 /* Dining */ = {
-			isa = PBXGroup;
-			children = (
-				FFFB935C295B5AFD00191939 /* Dining.storyboard */,
-			);
-			path = Dining;
 			sourceTree = "<group>";
 		};
 		FFFB9362295B5B2A00191939 /* Events */ = {
@@ -219,13 +228,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFFB935E295B5AFD00191939 /* Dining.storyboard in Resources */,
 				FFFB935A295B5ACE00191939 /* Activity.storyboard in Resources */,
 				FFFB9357295B5A6100191939 /* Home.storyboard in Resources */,
 				FF29F9D8295B5DDC000D3183 /* HeaderLargeView.xib in Resources */,
 				FF29F9DC295B8DE0000D3183 /* CollectionViewCell.xib in Resources */,
 				FFFB9365295B5B4E00191939 /* Cinema.storyboard in Resources */,
 				EBE8F40B2953D4E2001BC7B7 /* LaunchScreen.storyboard in Resources */,
+				FFECE2A0295E3E3300BC7C6F /* YelpCollectionViewCell.xib in Resources */,
+				FFECE29A295E367C00BC7C6F /* YelpCVStoryboard.storyboard in Resources */,
 				FFFB9361295B5B2400191939 /* Events.storyboard in Resources */,
 				EBE8F4082953D4E2001BC7B7 /* Assets.xcassets in Resources */,
 				EBE8F4062953D4E0001BC7B7 /* Main.storyboard in Resources */,
@@ -239,10 +249,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFECE29F295E3E3300BC7C6F /* YelpCollectionViewCell.swift in Sources */,
 				EB0B360E295AB31D00BD4713 /* HomeViewController.swift in Sources */,
 				EBE8F3FF2953D4E0001BC7B7 /* AppDelegate.swift in Sources */,
 				FF29F9DB295B8DE0000D3183 /* CollectionViewCell.swift in Sources */,
 				EBF827DA295AF1350042DA9B /* TabSearchViewController.swift in Sources */,
+				FFECE29C295E371100BC7C6F /* YelpCVViewController.swift in Sources */,
 				EBE8F4012953D4E0001BC7B7 /* SceneDelegate.swift in Sources */,
 				EB0B3608295A995700BD4713 /* HeaderLargeView.swift in Sources */,
 			);
@@ -273,14 +285,6 @@
 				FFFB9356295B5A6100191939 /* Base */,
 			);
 			name = Home.storyboard;
-			sourceTree = "<group>";
-		};
-		FFFB935C295B5AFD00191939 /* Dining.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FFFB935D295B5AFD00191939 /* Base */,
-			);
-			name = Dining.storyboard;
 			sourceTree = "<group>";
 		};
 		FFFB9363295B5B4E00191939 /* Cinema.storyboard */ = {
