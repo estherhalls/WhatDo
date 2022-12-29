@@ -17,13 +17,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZFI-Lk-sgq">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZFI-Lk-sgq" customClass="CollectionViewCell" customModule="WhatDo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BgT-3g-dcW">
+                                <rect key="frame" x="-70" y="-14" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4G-pF-MvG">
                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="dynamic"/>
+                                <buttonConfiguration key="configuration" style="plain" cornerStyle="dynamic"/>
+                                <connections>
+                                    <action selector="categoryButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="olR-0D-zJK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -46,7 +53,8 @@
                 <constraint firstItem="ZFI-Lk-sgq" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="cyn-xG-wSv"/>
             </constraints>
             <connections>
-                <outlet property="categoryButton" destination="R4G-pF-MvG" id="GL4-EB-lR0"/>
+                <outlet property="categoryButton" destination="R4G-pF-MvG" id="T24-1l-zHK"/>
+                <outlet property="categoryImage" destination="BgT-3g-dcW" id="Smb-Aa-sk7"/>
             </connections>
             <point key="canvasLocation" x="10.687022900763358" y="-11.267605633802818"/>
         </collectionViewCell>

@@ -8,8 +8,9 @@
 import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
-  
+
     @IBOutlet weak var categoryButton: UIButton!
+    @IBOutlet weak var categoryImage: UIImageView!
     
     static let identifier = "categoryCell"
  
@@ -20,16 +21,22 @@ class CollectionViewCell: UICollectionViewCell {
     public func configure(with image: String) {
      
         let image = UIImage(named: image)
-        categoryButton.setImage(image, for: .normal)
-        categoryButton.imageView?.contentMode = .scaleAspectFit
+        categoryImage.image = image
+//        categoryImage.image.contentMode = .scaleAspectFit
+        categoryImage.clipsToBounds = true
         self.layer.cornerRadius = 50
         self.layer.masksToBounds = true
-//        categoryButton.imageView?.layer.cornerRadius = categoryButton.frame.height / 2
-//        categoryButton.layer.masksToBounds = true
+        self.layer.borderWidth = 1.5
+        self.layer.borderColor = UIColor.systemRed.cgColor
+       
     }
     
     static func nib() -> UINib {
         return UINib(nibName: "categoryCell", bundle: nil)
     }
     
+    @IBAction func categoryButtonTapped(_ sender: AnyObject) {
+        self.inputViewController?.performSegue(withIdentifier: CollectionViewCell.identifier, sender: AnyObject.self)
+        print("Take me there!")
+    }
 }

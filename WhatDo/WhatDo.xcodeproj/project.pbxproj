@@ -100,8 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				FFFB9355295B5A6100191939 /* Home.storyboard */,
-				EB0B360D295AB31D00BD4713 /* HomeViewController.swift */,
 				FF29F9DA295B8DE0000D3183 /* CollectionViewCell.xib */,
+				EB0B360D295AB31D00BD4713 /* HomeViewController.swift */,
 				FF29F9D9295B8DE0000D3183 /* CollectionViewCell.swift */,
 			);
 			path = Home;
