@@ -11,24 +11,47 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var homeHeaderView: HeaderLargeView!
     
+    @IBOutlet weak var generateOptionsLabel: UILabel!
+    @IBOutlet weak var selectDescriptionLabel: UILabel!
+    
+    @IBOutlet weak var categoryCollectionView: UICollectionView!
+    
+
+    let categories = [
+        "diningCategory",
+        "drinkCategory",
+        "cinemaCategory",
+        "eventCategory",
+        "activityCategory",
+        "Unknown"
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let subtitleImage = UIImage(named: "subtitle")
         if let titleImage = UIImage(named: "whatDoLarge") {
             homeHeaderView.configureImageViews(withImages: titleImage, subtitle: subtitleImage)
+            
+            categoryCollectionView.delegate = self
+            categoryCollectionView.dataSource = self
+            
+            categoryCollectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "categoryCell")
         }
     }
+}
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 6
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        // Return the cell by dequeueing it
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifier, for: indexPath) as! CollectionViewCell
+        let category = categories[indexPath.row]
+        
+        cell.configure(with: category)
+        
+        return cell
+    }
 }
