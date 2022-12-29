@@ -25,24 +25,23 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="rHq-HS-vNa">
-                                <rect key="frame" x="0.0" y="283" width="393" height="71.333333333333314"/>
+                                <rect key="frame" x="0.0" y="283" width="393" height="70"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(SELECT A CATEGORY)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="taa-eX-hfy">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELECT A CATEGORY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="taa-eX-hfy">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(TO GENERATE 3 OPTIONS)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t2P-R4-B3J">
-                                        <rect key="frame" x="0.0" y="52" width="393" height="19.333333333333329"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TO GENERATE 3 OPTIONS" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t2P-R4-B3J">
+                                        <rect key="frame" x="0.0" y="52" width="393" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sP0-GI-rYl" userLabel="Category Collection View">
-                                <rect key="frame" x="4" y="414.33333333333326" width="385" height="303.66666666666674"/>
+                                <rect key="frame" x="4" y="413" width="385" height="401"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="v4s-WN-eXG">
                                     <size key="itemSize" width="128" height="128"/>
@@ -72,7 +71,7 @@
                             <constraint firstItem="sP0-GI-rYl" firstAttribute="top" secondItem="rHq-HS-vNa" secondAttribute="bottom" constant="60" id="DG0-hB-25R"/>
                             <constraint firstItem="sP0-GI-rYl" firstAttribute="leading" secondItem="4jb-oH-pGs" secondAttribute="leading" constant="4" id="RBc-Vp-UlM"/>
                             <constraint firstItem="rHq-HS-vNa" firstAttribute="top" secondItem="4jb-oH-pGs" secondAttribute="top" constant="180" id="ZTl-eE-6J4"/>
-                            <constraint firstItem="4jb-oH-pGs" firstAttribute="bottom" secondItem="sP0-GI-rYl" secondAttribute="bottom" constant="100" id="aDd-hV-DmD"/>
+                            <constraint firstItem="4jb-oH-pGs" firstAttribute="bottom" secondItem="sP0-GI-rYl" secondAttribute="bottom" constant="4" id="aDd-hV-DmD"/>
                             <constraint firstItem="rHq-HS-vNa" firstAttribute="centerX" secondItem="4jb-oH-pGs" secondAttribute="centerX" id="bo1-lx-zbw"/>
                             <constraint firstItem="rHq-HS-vNa" firstAttribute="leading" secondItem="4jb-oH-pGs" secondAttribute="leading" id="czK-Q4-N9q"/>
                             <constraint firstItem="eGr-yY-6sV" firstAttribute="top" secondItem="vs0-2q-qTQ" secondAttribute="top" id="sZI-y6-vO0"/>

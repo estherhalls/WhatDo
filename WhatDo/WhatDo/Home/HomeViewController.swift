@@ -22,7 +22,8 @@ class HomeViewController: UIViewController {
         "drinkCategory",
         "cinemaCategory",
         "eventCategory",
-        "activityCategory"
+        "activityCategory",
+        "Unknown"
     ]
     
     override func viewDidLoad() {
@@ -42,7 +43,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 6
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // Return the cell by dequeueing it
