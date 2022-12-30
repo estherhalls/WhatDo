@@ -22,7 +22,6 @@ class CollectionViewCell: UICollectionViewCell {
      
         let image = UIImage(named: image)
         categoryImage.image = image
-//        categoryImage.image.contentMode = .scaleAspectFit
         categoryImage.clipsToBounds = true
         self.layer.cornerRadius = 50
         self.layer.masksToBounds = true
