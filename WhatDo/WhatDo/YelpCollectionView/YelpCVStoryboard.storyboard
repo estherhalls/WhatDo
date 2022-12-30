@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iv7-BB-SIp">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="318" width="393" height="500"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="F2D-IP-byi">
                                     <size key="itemSize" width="128" height="128"/>
@@ -27,23 +27,68 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1qI-mt-N0P">
+                                <rect key="frame" x="0.0" y="162" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="GaU-KU-sQR"/>
+                                    <constraint firstAttribute="width" constant="100" id="jbx-Zh-N8M"/>
+                                </constraints>
+                            </imageView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="MOi-bh-0X6">
+                                <rect key="frame" x="0.0" y="262" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="cfg-Mi-abJ"/>
+                                </connections>
+                            </searchBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QiR-qx-iMC">
+                                <rect key="frame" x="100" y="162" width="293" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZtF-Se-Kks">
+                                        <rect key="frame" x="0.0" y="0.0" width="293" height="100"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="ZtF-Se-Kks" firstAttribute="top" secondItem="QiR-qx-iMC" secondAttribute="top" id="Ej2-QM-J05"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZtF-Se-Kks" secondAttribute="bottom" id="Lml-1A-pec"/>
+                                    <constraint firstItem="ZtF-Se-Kks" firstAttribute="leading" secondItem="QiR-qx-iMC" secondAttribute="leading" id="kow-zP-e8d"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZtF-Se-Kks" secondAttribute="trailing" id="mQ9-Xy-u9x"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iv7-BB-SIp" secondAttribute="trailing" id="It4-FL-oOn"/>
-                            <constraint firstItem="iv7-BB-SIp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Jfq-kC-flU"/>
-                            <constraint firstItem="iv7-BB-SIp" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="QKd-vu-sdB"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="iv7-BB-SIp" secondAttribute="bottom" id="cyo-aW-8FL"/>
+                            <constraint firstItem="QiR-qx-iMC" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="2hc-D2-d6Z"/>
+                            <constraint firstItem="1qI-mt-N0P" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="103" id="3Ee-R9-0Mt"/>
+                            <constraint firstItem="QiR-qx-iMC" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="103" id="7tD-yp-gsM"/>
+                            <constraint firstItem="iv7-BB-SIp" firstAttribute="top" secondItem="MOi-bh-0X6" secondAttribute="bottom" id="Gkl-Zw-B9b"/>
+                            <constraint firstItem="QiR-qx-iMC" firstAttribute="leading" secondItem="1qI-mt-N0P" secondAttribute="trailing" id="Jor-s1-vEN"/>
+                            <constraint firstItem="1qI-mt-N0P" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="NKZ-nm-h8Q"/>
+                            <constraint firstItem="MOi-bh-0X6" firstAttribute="top" secondItem="QiR-qx-iMC" secondAttribute="bottom" id="P1Z-We-5z5"/>
+                            <constraint firstItem="iv7-BB-SIp" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="Ta0-5U-vsx"/>
+                            <constraint firstItem="MOi-bh-0X6" firstAttribute="top" secondItem="1qI-mt-N0P" secondAttribute="bottom" id="gBx-jB-m0d"/>
+                            <constraint firstItem="iv7-BB-SIp" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="pQc-98-1qQ"/>
+                            <constraint firstItem="MOi-bh-0X6" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="wsc-FV-hwn"/>
+                            <constraint firstItem="MOi-bh-0X6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="y5W-1H-QVn"/>
+                            <constraint firstItem="iv7-BB-SIp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="zck-8X-OiG"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="categoryHeaderImage" destination="1qI-mt-N0P" id="KMS-14-maI"/>
+                        <outlet property="categoryHeaderLabel" destination="ZtF-Se-Kks" id="hEs-M9-QK9"/>
                         <outlet property="collectionView" destination="iv7-BB-SIp" id="ka2-Ar-RDc"/>
+                        <outlet property="labelBackground" destination="QiR-qx-iMC" id="Vpu-lq-7lA"/>
+                        <outlet property="searchBar" destination="MOi-bh-0X6" id="PBQ-Ob-nXU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-30" y="-28"/>
+            <point key="canvasLocation" x="-31.297709923664122" y="-28.169014084507044"/>
         </scene>
     </scenes>
     <resources>
