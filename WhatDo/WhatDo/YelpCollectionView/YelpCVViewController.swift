@@ -9,13 +9,15 @@ import UIKit
 
 class YelpCVViewController: UIViewController {
 
+    @IBOutlet weak var headerView: HeaderLargeView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var labelBackground: UIView!
     @IBOutlet weak var categoryHeaderLabel: UILabel!
     @IBOutlet weak var categoryHeaderImage: UIImageView!
     @IBOutlet weak var searchBar: UISearchBar!
-    
+    @IBOutlet weak var micButton: UIButton!
+    @IBOutlet weak var filterButton: UIButton!
     
     let categories = [
         "diningCategory",
@@ -28,12 +30,21 @@ class YelpCVViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let titleImage = UIImage(named: "whatDoSmall") {
+            headerView.configureImageViews(withImages: titleImage, subtitle: nil)
+        }
         collectionView.register(UINib(nibName: "YelpCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "yelpCell")
         collectionView.dataSource = self
         setupCollectionViewLayout(collectionView: collectionView)
         collectionView.register(UINib(nibName: "HeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerCell")
         labelBackground.backgroundColor = .gray
     }
+    
+    @IBAction func micButtonTapped(_ sender: Any) {
+    }
+    @IBAction func filterButtonTapped(_ sender: Any) {
+    }
+    
     func setupCollectionViewLayout(collectionView: UICollectionView) {
         // We want the item to take up as much space as it can.
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
@@ -45,7 +56,7 @@ class YelpCVViewController: UIViewController {
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem:  item, count: 1)
         // This adds padding between groups.
         group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 4, bottom: 0, trailing: 4)
-        // This section represents one full swimlane
+        // This section represents one full swimlane.
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
         let headerItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(44))
