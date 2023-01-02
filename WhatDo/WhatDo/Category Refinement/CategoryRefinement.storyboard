@@ -52,20 +52,36 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q6Q-0Z-9iA">
-                                <rect key="frame" x="142" y="677" width="109" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q6Q-0Z-9iA">
+                                <rect key="frame" x="142" y="613.66666666666663" width="109" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="G8V-vZ-G2g"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="ROULETTE">
                                     <color key="baseForegroundColor" red="0.80000000000000004" green="0.16078431369999999" blue="0.047058823530000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zlv-PX-A7N" customClass="CardViewContainer" customModule="WhatDo" customModuleProvider="target">
+                                <rect key="frame" x="10" y="313.66666666666669" width="373" height="250.00000000000006"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="6Up-8j-dKb"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="q6Q-0Z-9iA" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="3Wa-ec-8kg"/>
+                            <constraint firstItem="Zlv-PX-A7N" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="7fR-DD-2JV"/>
+                            <constraint firstItem="Zlv-PX-A7N" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="H4a-yb-GKe"/>
+                            <constraint firstItem="q6Q-0Z-9iA" firstAttribute="top" secondItem="Zlv-PX-A7N" secondAttribute="bottom" constant="50" id="V53-xf-f6e"/>
+                            <constraint firstItem="Zlv-PX-A7N" firstAttribute="top" relation="greaterThanOrEqual" secondItem="trk-6v-j2a" secondAttribute="bottom" constant="10" id="dd6-nn-hME"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Zlv-PX-A7N" secondAttribute="trailing" constant="10" id="evE-n6-tSf"/>
                             <constraint firstItem="trk-6v-j2a" firstAttribute="top" secondItem="NjB-hD-nnG" secondAttribute="bottom" constant="40" id="gBA-bp-yeM"/>
+                            <constraint firstItem="Zlv-PX-A7N" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="gK7-h3-PMV"/>
                             <constraint firstItem="trk-6v-j2a" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="jzc-vP-S8l"/>
                             <constraint firstItem="NjB-hD-nnG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="wy4-vT-o98"/>
                             <constraint firstItem="NjB-hD-nnG" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="xOM-MH-Uia"/>
@@ -74,6 +90,7 @@
                     </view>
                     <connections>
                         <outlet property="headerView" destination="NjB-hD-nnG" id="SDx-9W-ABw"/>
+                        <outlet property="swipeableCardView" destination="Zlv-PX-A7N" id="2c1-lM-rQp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

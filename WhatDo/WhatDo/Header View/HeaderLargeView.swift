@@ -7,7 +7,7 @@
 
 import UIKit
 
-// tried @IBDesignable so I don't have to run simulator to see modifications, but it is throwing errors. If you want to try to debug later, add @IBDesignable before class on next line
+/// tried @IBDesignable so I don't have to run simulator to see modifications, but it is throwing errors. If you want to try to debug later, add @IBDesignable before class on next line
 class HeaderLargeView: UIView {
 
     @IBOutlet weak var sfSymbolImage: UIImageView!

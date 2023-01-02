@@ -10,6 +10,7 @@ import UIKit
 class CategoryRefinementViewController: UIViewController {
     
     @IBOutlet weak var headerView: HeaderLargeView!
+    @IBOutlet weak var swipeableCardView: CardViewContainer!
     
     override func viewDidLoad() {
         super.viewDidLoad()

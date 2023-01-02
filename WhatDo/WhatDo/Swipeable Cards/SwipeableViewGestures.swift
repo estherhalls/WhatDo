@@ -140,6 +140,7 @@ class SwipeableViewGestures: UIView {
         }
     }
     
+    // When the swiping gesture ends, an animation is applied so the card is flicked off of the screen. If user did not swipe far enough, the card is animated to fall back into its original place in the stack.
     private func endedPanAnimation() {
         if let dragDirection = dragDirection, dragPercentage >= SwipeableViewGestures.swipePercentageMargin {
             let translationAnimation = POPBasicAnimation(propertyNamed: kPOPLayerTranslationXY)

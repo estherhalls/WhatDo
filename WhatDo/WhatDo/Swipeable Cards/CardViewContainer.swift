@@ -46,7 +46,8 @@ class CardViewContainer: UIView, SwipeableViewDelegate {
     
     // MARK: - Lifecycle
     
-    /// Reloads the data used to layout card views in the card stack. Removes all existing card views and calls the dataSource to layout new card views.
+    // Reloads the data used to layout card views in the card stack. Removes all existing card views from superview and calls the dataSource to layout new card views as subviews.
+    /// Frame of each card is manipulated based on its index to achieve stacked appearance (within nested functions addCardView -> setFrame)
     func reloadData() {
         removeAllCardViews()
         guard let dataSource = dataSource else {
@@ -110,6 +111,7 @@ extension CardViewContainer {
         // React to Swipe Began?
     }
     
+    //
     func didEndSwipe(onView view: SwipeableViewGestures) {
         guard let dataSource = dataSource else {
             return
@@ -125,7 +127,9 @@ extension CardViewContainer {
             /// Add new card as subview
             addCardView(cardView: dataSource.card(forQuestionAtIndex: newIndex), atIndex: 2)
             
-            /// Update all existing card frames based on new indices, animate frame changee to reveal new card from underneath the stack of existing cards
+            /// Update all existing card frames based on new indices, animate frame change to reveal new card from underneath the stack of existing cards
+            /// * New subview inserted at origin 0 needs to appear at the back of the line from where user is swiping rather than its default in the front. To reverse the array order of the card indices shown, .reversed() is added to the array of card views
+            /// * Now the subview at origin 0 is farthest back in the hierarchy even though the card indeex associated with that view is 2 (the highest index)
             for (cardIndex, cardView) in visibleCardViews.reversed().enumerated() {
                 UIView.animate(withDuration: 0.2) {
                     cardView.center = self.center
