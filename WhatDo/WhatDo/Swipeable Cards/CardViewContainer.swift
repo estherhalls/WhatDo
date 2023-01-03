@@ -83,7 +83,7 @@ class CardViewContainer: UIView, SwipeableViewDelegate {
         cardViews = []
     }
     
-    /// Set the frame of a card view at given index. Applies a specific horizontal and vertical offset relative to the index in order to create an overlay stack effect on series of cards
+    /// Set the frame of a card view at given index. Applies a specific horizontal and vertical offset relative to the index in order to create an overlay stack effect on series of cards (each new card added to the back of the pile gets smaller by the same ratio for a descending effect)
     private func setFrame(forCardView cardView: SwipeableCardView, atIndex index: Int) {
         var cardViewFrame = bounds
         let horizontalInset = CGFloat(index) * CardViewContainer.horizontalInset
