@@ -11,6 +11,9 @@
 		EB0B3608295A995700BD4713 /* HeaderLargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0B3607295A995700BD4713 /* HeaderLargeView.swift */; };
 		EB0B360E295AB31D00BD4713 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0B360D295AB31D00BD4713 /* HomeViewController.swift */; };
 		EB15767929638067008BD904 /* CategoryRefinementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB15767829638067008BD904 /* CategoryRefinementViewModel.swift */; };
+		EB15767B29639540008BD904 /* RefinementCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB15767A29639540008BD904 /* RefinementCardViewModel.swift */; };
+		EB15767D2963A32F008BD904 /* RefinementCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB15767C2963A32F008BD904 /* RefinementCardViewController.swift */; };
+		EB1576802963A60D008BD904 /* RefinementCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB15767F2963A60D008BD904 /* RefinementCard.xib */; };
 		EBA3FAF9295CBC70002AF566 /* CategoryRefinement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBA3FAF8295CBC70002AF566 /* CategoryRefinement.storyboard */; };
 		EBA3FAFC295CC41F002AF566 /* SwipeableCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBA3FAFB295CC41F002AF566 /* SwipeableCardView.xib */; };
 		EBA3FAFE295CC58E002AF566 /* CardViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA3FAFD295CC58E002AF566 /* CardViewContainer.swift */; };
@@ -44,6 +47,9 @@
 		EB0B3607295A995700BD4713 /* HeaderLargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLargeView.swift; sourceTree = "<group>"; };
 		EB0B360D295AB31D00BD4713 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EB15767829638067008BD904 /* CategoryRefinementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRefinementViewModel.swift; sourceTree = "<group>"; };
+		EB15767A29639540008BD904 /* RefinementCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefinementCardViewModel.swift; sourceTree = "<group>"; };
+		EB15767C2963A32F008BD904 /* RefinementCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefinementCardViewController.swift; sourceTree = "<group>"; };
+		EB15767F2963A60D008BD904 /* RefinementCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RefinementCard.xib; sourceTree = "<group>"; };
 		EBA3FAF8295CBC70002AF566 /* CategoryRefinement.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoryRefinement.storyboard; sourceTree = "<group>"; };
 		EBA3FAFB295CC41F002AF566 /* SwipeableCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwipeableCardView.xib; sourceTree = "<group>"; };
 		EBA3FAFD295CC58E002AF566 /* CardViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewContainer.swift; sourceTree = "<group>"; };
@@ -99,12 +105,23 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		EB15767E2963A35C008BD904 /* Swipeable Card Custom View */ = {
+			isa = PBXGroup;
+			children = (
+				EB15767A29639540008BD904 /* RefinementCardViewModel.swift */,
+				EB15767C2963A32F008BD904 /* RefinementCardViewController.swift */,
+				EB15767F2963A60D008BD904 /* RefinementCard.xib */,
+			);
+			path = "Swipeable Card Custom View";
+			sourceTree = "<group>";
+		};
 		EBA3FAFA295CC281002AF566 /* Category Refinement */ = {
 			isa = PBXGroup;
 			children = (
 				EBA3FAF8295CBC70002AF566 /* CategoryRefinement.storyboard */,
 				EB15767829638067008BD904 /* CategoryRefinementViewModel.swift */,
 				EB06A953295CEEBC000AC7E7 /* CategoryRefinementViewController.swift */,
+				EB15767E2963A35C008BD904 /* Swipeable Card Custom View */,
 			);
 			path = "Category Refinement";
 			sourceTree = "<group>";
@@ -297,6 +314,7 @@
 				FFFB9357295B5A6100191939 /* Home.storyboard in Resources */,
 				FF29F9D8295B5DDC000D3183 /* HeaderLargeView.xib in Resources */,
 				FFFB9365295B5B4E00191939 /* Cinema.storyboard in Resources */,
+				EB1576802963A60D008BD904 /* RefinementCard.xib in Resources */,
 				EBE8F40B2953D4E2001BC7B7 /* LaunchScreen.storyboard in Resources */,
 				FFFB9361295B5B2400191939 /* Events.storyboard in Resources */,
 				EBE8F4082953D4E2001BC7B7 /* Assets.xcassets in Resources */,
@@ -355,8 +373,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBA3FB0C295CE2A8002AF566 /* SwipeDirection.swift in Sources */,
+				EB15767B29639540008BD904 /* RefinementCardViewModel.swift in Sources */,
 				EBA3FAFE295CC58E002AF566 /* CardViewContainer.swift in Sources */,
 				EBA3FB06295CD896002AF566 /* SwipeableViewGestures.swift in Sources */,
+				EB15767D2963A32F008BD904 /* RefinementCardViewController.swift in Sources */,
 				EB0B360E295AB31D00BD4713 /* HomeViewController.swift in Sources */,
 				EBA3FB04295CD1E9002AF566 /* CardViewDelegate.swift in Sources */,
 				EBA3FB0A295CDD56002AF566 /* UIView.swift in Sources */,

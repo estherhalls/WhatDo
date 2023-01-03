@@ -10,6 +10,8 @@ import UIKit
 /// A base UIView subclass that instaniates a view from a nib file of the same name in order to allow reusable views to be created
 class SwipeableCardView: SwipeableViewGestures {
     
+    // MARK: -  Nib init
+    
     // When component is initialized via code
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,4 +39,6 @@ class SwipeableCardView: SwipeableViewGestures {
         }
         return view
     }
+
 }
+

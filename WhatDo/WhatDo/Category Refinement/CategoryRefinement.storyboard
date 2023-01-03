@@ -65,7 +65,7 @@
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zlv-PX-A7N" customClass="CardViewContainer" customModule="WhatDo" customModuleProvider="target">
                                 <rect key="frame" x="10" y="313.66666666666669" width="373" height="250.00000000000006"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.91487452948715142" green="0.90559815827011514" blue="0.8744744963683625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="6Up-8j-dKb"/>
                                 </constraints>
