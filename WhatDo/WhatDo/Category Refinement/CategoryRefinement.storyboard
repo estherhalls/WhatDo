@@ -53,7 +53,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q6Q-0Z-9iA">
-                                <rect key="frame" x="142" y="613.66666666666663" width="109" height="44"/>
+                                <rect key="frame" x="142" y="643.66666666666663" width="109" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="G8V-vZ-G2g"/>
                                 </constraints>
@@ -77,7 +77,7 @@
                             <constraint firstItem="q6Q-0Z-9iA" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="3Wa-ec-8kg"/>
                             <constraint firstItem="Zlv-PX-A7N" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="7fR-DD-2JV"/>
                             <constraint firstItem="Zlv-PX-A7N" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="H4a-yb-GKe"/>
-                            <constraint firstItem="q6Q-0Z-9iA" firstAttribute="top" secondItem="Zlv-PX-A7N" secondAttribute="bottom" constant="50" id="V53-xf-f6e"/>
+                            <constraint firstItem="q6Q-0Z-9iA" firstAttribute="top" secondItem="Zlv-PX-A7N" secondAttribute="bottom" constant="80" id="V53-xf-f6e"/>
                             <constraint firstItem="Zlv-PX-A7N" firstAttribute="top" relation="greaterThanOrEqual" secondItem="trk-6v-j2a" secondAttribute="bottom" constant="10" id="dd6-nn-hME"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Zlv-PX-A7N" secondAttribute="trailing" constant="10" id="evE-n6-tSf"/>
                             <constraint firstItem="trk-6v-j2a" firstAttribute="top" secondItem="NjB-hD-nnG" secondAttribute="bottom" constant="40" id="gBA-bp-yeM"/>

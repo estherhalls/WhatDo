@@ -37,11 +37,11 @@ class RefinementCard: SwipeableCardView {
 
 // Home VC
 
-var category = ""
+//var category = ""
 /// Add to ibaction body for each category button:
 /// category = "diningCategory"
 /// self.performSegue(withIdentifier: "toRefinementVC", sender: self"
-//
+//  each viewModel card within its category's array will have its own question label, but all cards within a category will have same image (SF symbol)
 //override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //    if segue.identifier == "toRefinementVC" {
 //        let destinationVC = segue.destination as! CategoryRefinementViewController
@@ -49,12 +49,4 @@ var category = ""
 //        destinationVC.sentCategory = category
 //    }
 //}
-//
-//// Refinement View Controller
-//let data = [RefinementCardViewModel]()
-//var viewModels = sentCategory
-//if sentCategory == "dining" {
-//    
-//}
 
-//}
