@@ -15,6 +15,16 @@
 		EBE8F4082953D4E2001BC7B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBE8F4072953D4E2001BC7B7 /* Assets.xcassets */; };
 		EBE8F40B2953D4E2001BC7B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBE8F4092953D4E2001BC7B7 /* LaunchScreen.storyboard */; };
 		EBF827DA295AF1350042DA9B /* TabSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF827D9295AF1350042DA9B /* TabSearchViewController.swift */; };
+		FF09C506296161CD00CEA9DB /* DetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF09C505296161CD00CEA9DB /* DetailView.storyboard */; };
+		FF09C50B2963464F00CEA9DB /* DetailViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09C50A2963464F00CEA9DB /* DetailViewVM.swift */; };
+		FF09C50D2963468900CEA9DB /* BusinessSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09C50C2963468900CEA9DB /* BusinessSearch.swift */; };
+		FF09C50F296346C200CEA9DB /* API Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09C50E296346C200CEA9DB /* API Service.swift */; };
+		FF09C5122963472100CEA9DB /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09C5112963472100CEA9DB /* NetworkError.swift */; };
+		FF09C5142963475A00CEA9DB /* ExtensionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09C5132963475A00CEA9DB /* ExtensionData.swift */; };
+		FF09C5162963478D00CEA9DB /* URLCreation:Call.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09C5152963478D00CEA9DB /* URLCreation:Call.swift */; };
+		FF09C51829634D8900CEA9DB /* DetailViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09C51729634D8900CEA9DB /* DetailViewVC.swift */; };
+		FF09C51B296369FC00CEA9DB /* BusinessListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09C51A296369FC00CEA9DB /* BusinessListVM.swift */; };
+		FF09C51D29638B0F00CEA9DB /* BusinessById.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09C51C29638B0F00CEA9DB /* BusinessById.swift */; };
 		FF29F9D8295B5DDC000D3183 /* HeaderLargeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF29F9D7295B5DDC000D3183 /* HeaderLargeView.xib */; };
 		FF29F9DB295B8DE0000D3183 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF29F9D9295B8DE0000D3183 /* CollectionViewCell.swift */; };
 		FF29F9DC295B8DE0000D3183 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF29F9DA295B8DE0000D3183 /* CollectionViewCell.xib */; };
@@ -41,6 +51,16 @@
 		EBE8F40A2953D4E2001BC7B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EBE8F40C2953D4E2001BC7B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBF827D9295AF1350042DA9B /* TabSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSearchViewController.swift; sourceTree = "<group>"; };
+		FF09C505296161CD00CEA9DB /* DetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailView.storyboard; sourceTree = "<group>"; };
+		FF09C50A2963464F00CEA9DB /* DetailViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewVM.swift; sourceTree = "<group>"; };
+		FF09C50C2963468900CEA9DB /* BusinessSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSearch.swift; sourceTree = "<group>"; };
+		FF09C50E296346C200CEA9DB /* API Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API Service.swift"; sourceTree = "<group>"; };
+		FF09C5112963472100CEA9DB /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		FF09C5132963475A00CEA9DB /* ExtensionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionData.swift; sourceTree = "<group>"; };
+		FF09C5152963478D00CEA9DB /* URLCreation:Call.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLCreation:Call.swift"; sourceTree = "<group>"; };
+		FF09C51729634D8900CEA9DB /* DetailViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewVC.swift; sourceTree = "<group>"; };
+		FF09C51A296369FC00CEA9DB /* BusinessListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessListVM.swift; sourceTree = "<group>"; };
+		FF09C51C29638B0F00CEA9DB /* BusinessById.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessById.swift; sourceTree = "<group>"; };
 		FF29F9D7295B5DDC000D3183 /* HeaderLargeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderLargeView.xib; sourceTree = "<group>"; };
 		FF29F9D9295B8DE0000D3183 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		FF29F9DA295B8DE0000D3183 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
@@ -90,12 +110,54 @@
 				FFFB9366295B5B5300191939 /* Cinema */,
 				FFFB9362295B5B2A00191939 /* Events */,
 				FFFB935B295B5ADF00191939 /* Activity */,
+				FF09C510296346F200CEA9DB /* Networking */,
+				FF09C519296369B100CEA9DB /* List */,
+				FF09C5092963436E00CEA9DB /* Model */,
+				FF09C50729633DCB00CEA9DB /* Detail View */,
 				FFECE298295E362E00BC7C6F /* YelpCollectionView */,
 				FFFB9358295B5A8800191939 /* Home */,
 				FFD1A6AA2954FD8C0021D539 /* Main */,
 				FFFB9368295B5BDF00191939 /* Header View */,
 			);
 			path = WhatDo;
+			sourceTree = "<group>";
+		};
+		FF09C50729633DCB00CEA9DB /* Detail View */ = {
+			isa = PBXGroup;
+			children = (
+				FF09C505296161CD00CEA9DB /* DetailView.storyboard */,
+				FF09C51729634D8900CEA9DB /* DetailViewVC.swift */,
+				FF09C50A2963464F00CEA9DB /* DetailViewVM.swift */,
+			);
+			path = "Detail View";
+			sourceTree = "<group>";
+		};
+		FF09C5092963436E00CEA9DB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FF09C50C2963468900CEA9DB /* BusinessSearch.swift */,
+				FF09C51C29638B0F00CEA9DB /* BusinessById.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FF09C510296346F200CEA9DB /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				FF09C50E296346C200CEA9DB /* API Service.swift */,
+				FF09C5112963472100CEA9DB /* NetworkError.swift */,
+				FF09C5132963475A00CEA9DB /* ExtensionData.swift */,
+				FF09C5152963478D00CEA9DB /* URLCreation:Call.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		FF09C519296369B100CEA9DB /* List */ = {
+			isa = PBXGroup;
+			children = (
+				FF09C51A296369FC00CEA9DB /* BusinessListVM.swift */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 		FFD1A6AA2954FD8C0021D539 /* Main */ = {
@@ -235,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFFB935A295B5ACE00191939 /* Activity.storyboard in Resources */,
+				FF09C506296161CD00CEA9DB /* DetailView.storyboard in Resources */,
 				FFFB9357295B5A6100191939 /* Home.storyboard in Resources */,
 				FF29F9D8295B5DDC000D3183 /* HeaderLargeView.xib in Resources */,
 				FF29F9DC295B8DE0000D3183 /* CollectionViewCell.xib in Resources */,
@@ -259,10 +322,19 @@
 				FFECE29F295E3E3300BC7C6F /* YelpCollectionViewCell.swift in Sources */,
 				FFECE2AD295F4A5E00BC7C6F /* HeaderCollectionReusableView.swift in Sources */,
 				EB0B360E295AB31D00BD4713 /* HomeViewController.swift in Sources */,
+				FF09C50F296346C200CEA9DB /* API Service.swift in Sources */,
+				FF09C51829634D8900CEA9DB /* DetailViewVC.swift in Sources */,
 				EBE8F3FF2953D4E0001BC7B7 /* AppDelegate.swift in Sources */,
+				FF09C5142963475A00CEA9DB /* ExtensionData.swift in Sources */,
 				FF29F9DB295B8DE0000D3183 /* CollectionViewCell.swift in Sources */,
 				EBF827DA295AF1350042DA9B /* TabSearchViewController.swift in Sources */,
+				FF09C50B2963464F00CEA9DB /* DetailViewVM.swift in Sources */,
 				FFECE29C295E371100BC7C6F /* YelpCVViewController.swift in Sources */,
+				FF09C51D29638B0F00CEA9DB /* BusinessById.swift in Sources */,
+				FF09C5162963478D00CEA9DB /* URLCreation:Call.swift in Sources */,
+				FF09C51B296369FC00CEA9DB /* BusinessListVM.swift in Sources */,
+				FF09C50D2963468900CEA9DB /* BusinessSearch.swift in Sources */,
+				FF09C5122963472100CEA9DB /* NetworkError.swift in Sources */,
 				EBE8F4012953D4E0001BC7B7 /* SceneDelegate.swift in Sources */,
 				EB0B3608295A995700BD4713 /* HeaderLargeView.swift in Sources */,
 			);

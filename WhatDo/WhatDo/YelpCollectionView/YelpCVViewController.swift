@@ -38,6 +38,7 @@ class YelpCVViewController: UIViewController {
         setupCollectionViewLayout(collectionView: collectionView)
         collectionView.register(UINib(nibName: "HeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerCell")
         labelBackground.backgroundColor = .gray
+        BusinessListVM().yelpSearch()
     }
     
     @IBAction func micButtonTapped(_ sender: Any) {
