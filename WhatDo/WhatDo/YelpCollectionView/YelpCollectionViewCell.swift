@@ -23,4 +23,5 @@ class YelpCollectionViewCell: UICollectionViewCell {
         titleLabel.text = "test"
         subtitleLabel.text = "test"
     }
+    
 }

@@ -28,6 +28,9 @@ class YelpCVViewController: UIViewController {
         "Unknown"
     ]
     
+//    let image: UIImageView = UIImageView(named: categories)
+//    let categoryImage = [image]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if let titleImage = UIImage(named: "whatDoSmall") {

@@ -15,7 +15,7 @@ struct TopLevelDictionary: Decodable {
 // Yelp Business Search Model
 struct BusinessSearch: Decodable {
     
-    let cBussategories: [CDYelpCategory]?
+    let categories: [CDYelpCategory]?
     let coordinates: CDYelpCoordinates
     let displayPhone: String?
     let distance: Double?
@@ -68,7 +68,6 @@ struct CDYelpCategory: Decodable {
             case alias
             case title
             case parentAliases = "parent_aliases"
-            
         }
     }
 }

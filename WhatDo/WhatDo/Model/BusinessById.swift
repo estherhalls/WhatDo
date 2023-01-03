@@ -12,56 +12,42 @@ struct Response: Decodable {
     let businessId: BusinessById
 }
 struct BusinessById: Decodable {
-    let busHours: [Hours]?
+    let businessHours: [Hours]?
 }
 struct Hours: Decodable {
+    enum CodingKeys: String, CodingKey {
+        case open
+        case hoursType = "hours_type"
+        case isOpenNow = "is_open_now"
+    }
     let open: [String]?
     let hoursType: String?
     let isOpenNow: String?
 }
-enum CodingKeys: String, CodingKey {
-    case open
-    case hoursType = "hours_type"
-    case isOpenNow = "is_open_now"
-}
 struct Open: Decodable {
+    enum CodingKeys: String, CodingKey {
+        case isOvernight = "is_overnight"
+        case start
+        case end
+        case day
+    }
     let isOvernight: Bool?
     let start: Int?
     let end: Int?
-    let dat: Int?
-}
-enum CodingKeys: String, CodingKey {
-    case isOvernight = "is_overnight"
-    case start
-    case end
-    case day
+    let day: Int?
 }
 struct SpecialHours: Decodable {
-    let specialHours: [String]?
-    let date: String?
-    let isClosed: String?
-}
-//"special_hours": [
-//    {
-//      "date": "2023-01-01",
-//      "is_closed": true,
-//      "start": null,
-//      "end": null,
-//      "is_overnight": null
-//    }
     enum CodingKeys: String, CodingKey {
         case specialHours = "special_hours"
         case date
         case isClosed = "is_closed"
+    }
+    let specialHours: [String]?
+    let date: String?
+    let isClosed: String?
 }
+
 struct Location: Decodable {
-    let address1: String?
-    let address2: String?
-    let address3: String?
-    let city: String?
-    let zipCode: String?
-    let displayAddress = [String]?
-}
 enum CodingKeys: String, CodingKey {
     case address1
     case address2
@@ -72,13 +58,21 @@ enum CodingKeys: String, CodingKey {
     case state
     case displayAddress = "display_address"
 }
+    let address1: String?
+    let address2: String?
+    let address3: String?
+    let city: String?
+    let zipCode: String?
+    let country: String?
+    let state: String?
+    var displayAddress = [String]()
+}
 struct CrossStreets: Decodable {
+    enum CodingKeys: String, CodingKey {
+        case crossStreets = "cross_streets"
+    }
     let crossStreets: String?
 }
-enum CodingKeys: String, CodingKey {
-    case crossStreets = "cross_streets"
-}
-
 
 
 //{
