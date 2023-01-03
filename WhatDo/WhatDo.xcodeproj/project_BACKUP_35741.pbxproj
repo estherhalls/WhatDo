@@ -30,7 +30,7 @@
 		EBE8F4082953D4E2001BC7B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBE8F4072953D4E2001BC7B7 /* Assets.xcassets */; };
 		EBE8F40B2953D4E2001BC7B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBE8F4092953D4E2001BC7B7 /* LaunchScreen.storyboard */; };
 		EBF827DA295AF1350042DA9B /* TabSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF827D9295AF1350042DA9B /* TabSearchViewController.swift */; };
-		F3EEF5BE11CE698147AC7188 /* Pods_WhatDo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE06AECBDD1FDE30899D2C4D /* Pods_WhatDo.framework */; };
+<<<<<<< HEAD
 		FF09C506296161CD00CEA9DB /* DetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF09C505296161CD00CEA9DB /* DetailView.storyboard */; };
 		FF09C50B2963464F00CEA9DB /* DetailViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09C50A2963464F00CEA9DB /* DetailViewVM.swift */; };
 		FF09C50D2963468900CEA9DB /* BusinessSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09C50C2963468900CEA9DB /* BusinessSearch.swift */; };
@@ -41,6 +41,9 @@
 		FF09C51829634D8900CEA9DB /* DetailViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09C51729634D8900CEA9DB /* DetailViewVC.swift */; };
 		FF09C51B296369FC00CEA9DB /* BusinessListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09C51A296369FC00CEA9DB /* BusinessListVM.swift */; };
 		FF09C51D29638B0F00CEA9DB /* BusinessById.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09C51C29638B0F00CEA9DB /* BusinessById.swift */; };
+=======
+		F3EEF5BE11CE698147AC7188 /* Pods_WhatDo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE06AECBDD1FDE30899D2C4D /* Pods_WhatDo.framework */; };
+>>>>>>> develop
 		FF29F9D8295B5DDC000D3183 /* HeaderLargeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF29F9D7295B5DDC000D3183 /* HeaderLargeView.xib */; };
 		FF29F9DB295B8DE0000D3183 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF29F9D9295B8DE0000D3183 /* CollectionViewCell.swift */; };
 		FF29F9DC295B8DE0000D3183 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF29F9DA295B8DE0000D3183 /* CollectionViewCell.xib */; };
@@ -392,8 +395,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFFB935A295B5ACE00191939 /* Activity.storyboard in Resources */,
-				EBA3FAFC295CC41F002AF566 /* SwipeableCardView.xib in Resources */,
+<<<<<<< HEAD
 				FF09C506296161CD00CEA9DB /* DetailView.storyboard in Resources */,
+=======
+				EBA3FAFC295CC41F002AF566 /* SwipeableCardView.xib in Resources */,
+>>>>>>> develop
 				FFFB9357295B5A6100191939 /* Home.storyboard in Resources */,
 				FF29F9D8295B5DDC000D3183 /* HeaderLargeView.xib in Resources */,
 				FF29F9DC295B8DE0000D3183 /* CollectionViewCell.xib in Resources */,
@@ -467,13 +473,17 @@
 				FFECE29F295E3E3300BC7C6F /* YelpCollectionViewCell.swift in Sources */,
 				FFECE2AD295F4A5E00BC7C6F /* HeaderCollectionReusableView.swift in Sources */,
 				EB0B360E295AB31D00BD4713 /* HomeViewController.swift in Sources */,
-				EBA3FB04295CD1E9002AF566 /* CardViewDelegate.swift in Sources */,
-				EBA3FB0A295CDD56002AF566 /* UIView.swift in Sources */,
+<<<<<<< HEAD
 				FF09C50F296346C200CEA9DB /* API Service.swift in Sources */,
 				FF09C51829634D8900CEA9DB /* DetailViewVC.swift in Sources */,
 				EBE8F3FF2953D4E0001BC7B7 /* AppDelegate.swift in Sources */,
-				EBA3FB02295CCB36002AF566 /* SwipeableCardView.swift in Sources */,
 				FF09C5142963475A00CEA9DB /* ExtensionData.swift in Sources */,
+=======
+				EBA3FB04295CD1E9002AF566 /* CardViewDelegate.swift in Sources */,
+				EBA3FB0A295CDD56002AF566 /* UIView.swift in Sources */,
+				EBE8F3FF2953D4E0001BC7B7 /* AppDelegate.swift in Sources */,
+				EBA3FB02295CCB36002AF566 /* SwipeableCardView.swift in Sources */,
+>>>>>>> develop
 				FF29F9DB295B8DE0000D3183 /* CollectionViewCell.swift in Sources */,
 				EBF827DA295AF1350042DA9B /* TabSearchViewController.swift in Sources */,
 				FF09C50B2963464F00CEA9DB /* DetailViewVM.swift in Sources */,
