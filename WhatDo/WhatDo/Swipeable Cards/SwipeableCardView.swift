@@ -31,7 +31,7 @@ class SwipeableCardView: SwipeableViewGestures {
     }
     
     // Loads view from xib file, returns an instantiated view from the nib file of the same class name
-    func loadViewFromNib<T: UIView>() -> T {
+    fileprivate func loadViewFromNib<T: UIView>() -> T {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: String(describing: type(of: self)), bundle: bundle)
         guard let view = nib.instantiate(withOwner: self, options: nil).first as? T else {
