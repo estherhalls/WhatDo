@@ -11,18 +11,38 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RefinementCardViewController" customModule="WhatDo" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RefinementCard" customModule="WhatDo" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="330" height="330"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="neU-bU-XqY">
-                    <rect key="frame" x="7" y="64.333333333333343" width="50" height="52.666666666666657"/>
+                    <rect key="frame" x="7" y="58.333333333333321" width="50" height="52.666666666666671"/>
                     <color key="tintColor" red="0.80000000000000004" green="0.16078431369999999" blue="0.047058823530000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="AhM-m4-Hwu"/>
                         <constraint firstAttribute="width" constant="50" id="KGu-UN-XEb"/>
                     </constraints>
                     <imageReference key="image" image="wineglass" catalog="system" symbolScale="default"/>
+                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="22" scale="default" weight="regular"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PKi-AP-9Fk">
+                    <rect key="frame" x="64" y="58" width="50" height="52"/>
+                    <color key="tintColor" red="0.80000000000000004" green="0.16078431369999999" blue="0.047058823530000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Fad-Ml-laQ"/>
+                        <constraint firstAttribute="width" constant="50" id="sfR-KA-ePZ"/>
+                    </constraints>
+                    <imageReference key="image" image="fork.knife" catalog="system" symbolScale="default"/>
+                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="22" scale="default" weight="regular"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="soF-IB-Jl7">
+                    <rect key="frame" x="121" y="59.333333333333329" width="50" height="49.333333333333329"/>
+                    <color key="tintColor" red="0.80000000000000004" green="0.16078431369999999" blue="0.047058823530000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="5Oc-Pf-csM"/>
+                        <constraint firstAttribute="height" constant="50" id="ezd-4j-YnA"/>
+                    </constraints>
+                    <imageReference key="image" image="music.mic" catalog="system" symbolScale="default"/>
                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="22" scale="default" weight="regular"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label 1" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q02-wG-e7P">
@@ -69,11 +89,14 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="PKi-AP-9Fk" firstAttribute="centerY" secondItem="neU-bU-XqY" secondAttribute="centerY" id="1Bd-ZA-RMm"/>
                 <constraint firstItem="mgo-2P-be6" firstAttribute="bottom" secondItem="fx9-7J-LSi" secondAttribute="bottom" id="AF0-sF-zBw"/>
                 <constraint firstItem="q02-wG-e7P" firstAttribute="bottom" secondItem="fx9-7J-LSi" secondAttribute="bottom" id="CAe-3P-4Hu"/>
                 <constraint firstItem="q02-wG-e7P" firstAttribute="top" secondItem="fx9-7J-LSi" secondAttribute="top" id="Da2-Cg-obf"/>
-                <constraint firstItem="q02-wG-e7P" firstAttribute="top" secondItem="neU-bU-XqY" secondAttribute="bottom" constant="4" id="Fpb-V9-h2D"/>
+                <constraint firstItem="q02-wG-e7P" firstAttribute="top" secondItem="neU-bU-XqY" secondAttribute="bottom" constant="10" id="Fpb-V9-h2D"/>
+                <constraint firstItem="PKi-AP-9Fk" firstAttribute="leading" secondItem="neU-bU-XqY" secondAttribute="trailing" constant="7" id="HNh-Mp-wiN"/>
                 <constraint firstItem="neU-bU-XqY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="7" id="JZe-uu-mEi"/>
+                <constraint firstItem="soF-IB-Jl7" firstAttribute="leading" secondItem="PKi-AP-9Fk" secondAttribute="trailing" constant="7" id="Lub-pb-0Mh"/>
                 <constraint firstItem="fx9-7J-LSi" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="XRj-IV-jtG"/>
                 <constraint firstItem="fx9-7J-LSi" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="XYl-WX-BDI"/>
                 <constraint firstItem="yKP-W0-1pZ" firstAttribute="centerX" secondItem="q02-wG-e7P" secondAttribute="centerX" id="b4T-Fq-BPY"/>
@@ -84,14 +107,24 @@
                 <constraint firstItem="mgo-2P-be6" firstAttribute="top" secondItem="fx9-7J-LSi" secondAttribute="top" id="fjU-M9-3yj"/>
                 <constraint firstItem="7J7-k6-EzI" firstAttribute="top" secondItem="mgo-2P-be6" secondAttribute="bottom" constant="4" id="flv-0U-3ob"/>
                 <constraint firstItem="q02-wG-e7P" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="29.5" id="fzz-mu-DkQ"/>
+                <constraint firstItem="soF-IB-Jl7" firstAttribute="centerY" secondItem="PKi-AP-9Fk" secondAttribute="centerY" id="uFH-Rj-vbL"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="categorySymbolImage" destination="neU-bU-XqY" id="3b6-3R-TLB"/>
+                <outlet property="labelLeft" destination="q02-wG-e7P" id="dsD-gf-XG4"/>
+                <outlet property="labelRight" destination="mgo-2P-be6" id="CJb-LY-zC4"/>
+                <outlet property="nightOutSymbol2" destination="PKi-AP-9Fk" id="pwr-zi-tsM"/>
+                <outlet property="nightOutSymbol3" destination="soF-IB-Jl7" id="hDZ-pl-Yhg"/>
+            </connections>
             <point key="canvasLocation" x="131.29770992366412" y="-12.67605633802817"/>
         </view>
     </objects>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="95"/>
         <image name="arrow.forward" catalog="system" width="128" height="95"/>
+        <image name="fork.knife" catalog="system" width="94" height="128"/>
+        <image name="music.mic" catalog="system" width="128" height="119"/>
         <image name="wineglass" catalog="system" width="95" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

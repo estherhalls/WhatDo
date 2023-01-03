@@ -7,12 +7,12 @@
 
 import UIKit
 
-struct RefinementCardViewModel {
+protocol RefinementCardViewModel {
     
     // Cards should at least have question label and variable image SF symbol (that indicates which category they selected)
-    let title: String
-    let subtitle: String?
-    let color: UIColor?
-    let image: UIImage?
+    var leftLabel: String { get }
+    var rightLabel: String { get }
+//    let color: UIColor?
+//    let image: UIImage?
     
 }

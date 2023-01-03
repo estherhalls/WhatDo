@@ -9,8 +9,14 @@ import UIKit
 
 class CategoryRefinementViewController: UIViewController, CardViewDataSource {
     
+    // MARK: - Outlets
     @IBOutlet weak var headerView: HeaderLargeView!
     @IBOutlet weak var swipeableCardView: CardViewContainer!
+    
+    // Category Selected - sent data
+    let cardData = []
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,15 +65,83 @@ extension CategoryRefinementViewController {
     
 }
 
+// Individual Category Card Data
+extension CategoryRefinementViewController {
+    
+    var diningCategory: [RefinementCardViewModel] {
+        let questionOne = RefinementCardViewModel(leftLabel: "Fine Dining", rightLabel: "Casual Dining")
+        let questionTwo = RefinementCardViewModel(leftLabel: "Card2: A", rightLabel: "Card2: B")
+        let questionThree = RefinementCardViewModel(leftLabel: "Card3: A", rightLabel: "Card3: B")
+        let questionFour = RefinementCardViewModel(leftLabel: "Card2: A", rightLabel: "Card2: B")
+    }
+    var drinksCategory: [RefinementCardViewModel] {
+        let questionOne = RefinementCardViewModel(leftLabel: "Coffee/Tea", rightLabel: "Boozy Bevs")
+        let questionTwo = RefinementCardViewModel(leftLabel: "Card2: A", rightLabel: "Card2: B")
+        let questionThree = RefinementCardViewModel(leftLabel: "Card3: A", rightLabel: "Card3: B")
+        let questionFour = RefinementCardViewModel(leftLabel: "Card2: A", rightLabel: "Card2: B")
+    }
+    var cinemaCategory: [RefinementCardViewModel] {
+        let questionOne = RefinementCardViewModel(leftLabel: "Going Out", rightLabel: "Staying In")
+        let questionTwo = RefinementCardViewModel(leftLabel: "Card2: A", rightLabel: "Card2: B")
+        let questionThree = RefinementCardViewModel(leftLabel: "Card3: A", rightLabel: "Card3: B")
+        let questionFour = RefinementCardViewModel(leftLabel: "Card2: A", rightLabel: "Card2: B")
+    }
+    var eventsCategory: [RefinementCardViewModel] {
+        let questionOne = RefinementCardViewModel(leftLabel: "Concerts", rightLabel: "Art Festivals")
+        let questionTwo = RefinementCardViewModel(leftLabel: "Card2: A", rightLabel: "Card2: B")
+        let questionThree = RefinementCardViewModel(leftLabel: "Card3: A", rightLabel: "Card3: B")
+        let questionFour = RefinementCardViewModel(leftLabel: "Card2: A", rightLabel: "Card2: B")
+    }
+    var activitiesCategory: [RefinementCardViewModel] {
+        let questionOne = RefinementCardViewModel(leftLabel: "High Energy", rightLabel: "Low Energy")
+        let questionTwo = RefinementCardViewModel(leftLabel: "Card2: A", rightLabel: "Card2: B")
+        let questionThree = RefinementCardViewModel(leftLabel: "Card3: A", rightLabel: "Card3: B")
+        let questionFour = RefinementCardViewModel(leftLabel: "Card2: A", rightLabel: "Card2: B")
+    }
+    var nightOutCategory: [RefinementCardViewModel] {
+        let questionOne = RefinementCardViewModel(leftLabel: "Casual", rightLabel: "Feeling Fancy")
+        let questionTwo = RefinementCardViewModel(leftLabel: "Card2: A", rightLabel: "Card2: B")
+        let questionThree = RefinementCardViewModel(leftLabel: "Card3: A", rightLabel: "Card3: B")
+        let questionFour = RefinementCardViewModel(leftLabel: "Card2: A", rightLabel: "Card2: B")
+    }
+}
+
 // Card data arrays based on which category was selected by user on home page
 extension CategoryRefinementViewController {
     // each viewModel card within its category's array will have its own question label, but all cards within a category will have same image (SF symbol)
-    enum CategoryQuestions {
+    enum viewModels {
+        
         case dining
         case drinks
         case cinema
         case events
         case activities
         case nightOut
+        
+        var viewModels: [RefinementCardViewModel]? {
+            switch self {
+            case .dining:
+                return diningCategory
+            case .drinks:
+                return drinksCategory
+            case .cinema:
+                return cinemaCategory
+            case .events:
+                return eventsCategory
+            case .nightOut:
+                return nightOutCategory
+            }
+        }
     }
 }
+
+//extension RefinementCardViewModel {
+//
+//    var dining: [RefinementCardViewModel] {
+//        let questionOne = RefinementCardViewModel(leftLabel: "Fine Dining", rightLabel: "Casual Dining")
+//    }
+//}
+//var category = ""
+//viewModels =
+//
+//}
