@@ -27,9 +27,7 @@ class YelpCVViewController: UIViewController {
         "activityCategory",
         "Unknown"
     ]
-    
-//    let image: UIImageView = UIImageView(named: categories)
-//    let categoryImage = [image]
+    var businessListVM: BusinessListVM!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,8 +39,10 @@ class YelpCVViewController: UIViewController {
         setupCollectionViewLayout(collectionView: collectionView)
         collectionView.register(UINib(nibName: "HeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerCell")
         labelBackground.backgroundColor = .gray
-        BusinessListVM().yelpSearch()
+        businessListVM = BusinessListVM(delegate: self)
+        businessListVM.yelpSearch(latitude: "21.27702694074651", longitude: "-157.81304640731193", radius: "8000")
     }
+
     
     @IBAction func micButtonTapped(_ sender: Any) {
     }
@@ -72,15 +72,15 @@ class YelpCVViewController: UIViewController {
 }
 extension YelpCVViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return businessListVM.businesses.count
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 4
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "yelpCell", for: indexPath) as? YelpCollectionViewCell else {
-            return UICollectionViewCell()
-        }
+       guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "yelpCell", for: indexPath) as? YelpCollectionViewCell else
+        { return UICollectionViewCell() }
+
         cell.setup()
         return cell
     }
@@ -91,5 +91,12 @@ extension YelpCVViewController: UICollectionViewDataSource {
         }
         cell.setup()
             return cell
+    }
+}
+extension YelpCVViewController: YelpCollectionViewDelegate {
+    func businessesLoadedSuccessfully() {
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
     }
 }

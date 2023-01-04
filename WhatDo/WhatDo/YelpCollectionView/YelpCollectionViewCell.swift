@@ -18,10 +18,10 @@ class YelpCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-    func setup() {
+    func setup(title: String?, subtitle: String?) {
         imageView.backgroundColor = .black
-        titleLabel.text = "test"
-        subtitleLabel.text = "test"
+        titleLabel.text = title
+        subtitleLabel.text = subtitle
     }
     
 }

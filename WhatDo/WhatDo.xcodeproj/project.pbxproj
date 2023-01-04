@@ -37,7 +37,7 @@
 		FF09C50F296346C200CEA9DB /* API Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09C50E296346C200CEA9DB /* API Service.swift */; };
 		FF09C5122963472100CEA9DB /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09C5112963472100CEA9DB /* NetworkError.swift */; };
 		FF09C5142963475A00CEA9DB /* ExtensionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09C5132963475A00CEA9DB /* ExtensionData.swift */; };
-		FF09C5162963478D00CEA9DB /* URLCreation:Call.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09C5152963478D00CEA9DB /* URLCreation:Call.swift */; };
+		FF09C5162963478D00CEA9DB /* URLCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09C5152963478D00CEA9DB /* URLCreation.swift */; };
 		FF09C51829634D8900CEA9DB /* DetailViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09C51729634D8900CEA9DB /* DetailViewVC.swift */; };
 		FF09C51B296369FC00CEA9DB /* BusinessListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09C51A296369FC00CEA9DB /* BusinessListVM.swift */; };
 		FF09C51D29638B0F00CEA9DB /* BusinessById.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09C51C29638B0F00CEA9DB /* BusinessById.swift */; };
@@ -91,7 +91,7 @@
 		FF09C50E296346C200CEA9DB /* API Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API Service.swift"; sourceTree = "<group>"; };
 		FF09C5112963472100CEA9DB /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		FF09C5132963475A00CEA9DB /* ExtensionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionData.swift; sourceTree = "<group>"; };
-		FF09C5152963478D00CEA9DB /* URLCreation:Call.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLCreation:Call.swift"; sourceTree = "<group>"; };
+		FF09C5152963478D00CEA9DB /* URLCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLCreation.swift; sourceTree = "<group>"; };
 		FF09C51729634D8900CEA9DB /* DetailViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewVC.swift; sourceTree = "<group>"; };
 		FF09C51A296369FC00CEA9DB /* BusinessListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessListVM.swift; sourceTree = "<group>"; };
 		FF09C51C29638B0F00CEA9DB /* BusinessById.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessById.swift; sourceTree = "<group>"; };
@@ -240,7 +240,7 @@
 				FF09C50E296346C200CEA9DB /* API Service.swift */,
 				FF09C5112963472100CEA9DB /* NetworkError.swift */,
 				FF09C5132963475A00CEA9DB /* ExtensionData.swift */,
-				FF09C5152963478D00CEA9DB /* URLCreation:Call.swift */,
+				FF09C5152963478D00CEA9DB /* URLCreation.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -479,7 +479,7 @@
 				FF09C50B2963464F00CEA9DB /* DetailViewVM.swift in Sources */,
 				FFECE29C295E371100BC7C6F /* YelpCVViewController.swift in Sources */,
 				FF09C51D29638B0F00CEA9DB /* BusinessById.swift in Sources */,
-				FF09C5162963478D00CEA9DB /* URLCreation:Call.swift in Sources */,
+				FF09C5162963478D00CEA9DB /* URLCreation.swift in Sources */,
 				FF09C51B296369FC00CEA9DB /* BusinessListVM.swift in Sources */,
 				FF09C50D2963468900CEA9DB /* BusinessSearch.swift in Sources */,
 				FF09C5122963472100CEA9DB /* NetworkError.swift in Sources */,
