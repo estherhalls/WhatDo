@@ -23,7 +23,7 @@ class HomeViewController: UIViewController {
         "cinemaCategory",
         "eventCategory",
         "activityCategory",
-        "Unknown"
+        "nightOut"
     ]
     
     override func viewDidLoad() {

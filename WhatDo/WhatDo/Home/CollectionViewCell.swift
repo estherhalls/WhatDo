@@ -13,7 +13,8 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var categoryImage: UIImageView!
     
     static let identifier = "categoryCell"
- 
+    let whatDoRed: UIColor = UIColor(red: 0.80, green: 0.16, blue: 0.05, alpha: 1.00)
+//    let whatDoRed : UIColor(red:202.0/255.0, green:228.0/255.0, blue:230.0/255.0, alpha:1.0)
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -26,7 +27,7 @@ class CollectionViewCell: UICollectionViewCell {
         self.layer.cornerRadius = 50
         self.layer.masksToBounds = true
         self.layer.borderWidth = 1.5
-        self.layer.borderColor = UIColor.systemRed.cgColor
+//        self.layer.borderColor = whatDoRed.cgColor
        
     }
     
