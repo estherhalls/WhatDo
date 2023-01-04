@@ -14,7 +14,6 @@
 		EB15767B29639540008BD904 /* RefinementCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB15767A29639540008BD904 /* RefinementCardViewModel.swift */; };
 		EB15767D2963A32F008BD904 /* RefinementCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB15767C2963A32F008BD904 /* RefinementCard.swift */; };
 		EB1576802963A60D008BD904 /* RefinementCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB15767F2963A60D008BD904 /* RefinementCard.xib */; };
-		EB7F89AE2964F8ED004F00D4 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7F89AD2964F8ED004F00D4 /* UIColor.swift */; };
 		EBA3FAF9295CBC70002AF566 /* CategoryRefinement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBA3FAF8295CBC70002AF566 /* CategoryRefinement.storyboard */; };
 		EBA3FAFC295CC41F002AF566 /* SwipeableCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBA3FAFB295CC41F002AF566 /* SwipeableCardView.xib */; };
 		EBA3FAFE295CC58E002AF566 /* CardViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA3FAFD295CC58E002AF566 /* CardViewContainer.swift */; };
@@ -58,7 +57,6 @@
 		EB15767A29639540008BD904 /* RefinementCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefinementCardViewModel.swift; sourceTree = "<group>"; };
 		EB15767C2963A32F008BD904 /* RefinementCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefinementCard.swift; sourceTree = "<group>"; };
 		EB15767F2963A60D008BD904 /* RefinementCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RefinementCard.xib; sourceTree = "<group>"; };
-		EB7F89AD2964F8ED004F00D4 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		EBA3FAF8295CBC70002AF566 /* CategoryRefinement.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoryRefinement.storyboard; sourceTree = "<group>"; };
 		EBA3FAFB295CC41F002AF566 /* SwipeableCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwipeableCardView.xib; sourceTree = "<group>"; };
 		EBA3FAFD295CC58E002AF566 /* CardViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewContainer.swift; sourceTree = "<group>"; };
@@ -258,7 +256,6 @@
 				EBE8F4002953D4E0001BC7B7 /* SceneDelegate.swift */,
 				EBE8F4072953D4E2001BC7B7 /* Assets.xcassets */,
 				EBE8F4092953D4E2001BC7B7 /* LaunchScreen.storyboard */,
-				EB7F89AD2964F8ED004F00D4 /* UIColor.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -406,7 +403,6 @@
 				EB15767D2963A32F008BD904 /* RefinementCard.swift in Sources */,
 				FFECE29F295E3E3300BC7C6F /* YelpCollectionViewCell.swift in Sources */,
 				FFECE2AD295F4A5E00BC7C6F /* HeaderCollectionReusableView.swift in Sources */,
-				EB7F89AE2964F8ED004F00D4 /* UIColor.swift in Sources */,
 				EB0B360E295AB31D00BD4713 /* HomeViewController.swift in Sources */,
 				EBA3FB04295CD1E9002AF566 /* CardViewDelegate.swift in Sources */,
 				EBA3FB0A295CDD56002AF566 /* UIView.swift in Sources */,
