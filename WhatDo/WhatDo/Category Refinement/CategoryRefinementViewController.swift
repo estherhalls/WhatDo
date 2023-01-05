@@ -12,10 +12,14 @@ class CategoryRefinementViewController: UIViewController, CardViewDataSource {
     // MARK: - Outlets
     @IBOutlet weak var headerView: HeaderLargeView!
     @IBOutlet weak var swipeableCardView: CardViewContainer!
-    
-    // Category Selected - sent data
-    let sentCategory: String = "dining"
-    
+
+    // Reciever Property - Selected Category Sent Data
+    var sentCategory = ""
+//    {
+//        didSet {
+//            updateViews()
+//        }
+//    }
     
     
     override func viewDidLoad() {
@@ -28,30 +32,37 @@ class CategoryRefinementViewController: UIViewController, CardViewDataSource {
         swipeableCardView.dataSource = self
     }
     
+    // MARK: - Methods
+    func updateViews() {
+        //        guard let category = sentCategory else {return}
+        //        let image = park.images[0]
+    }
+        
     // Individual Category Card Data
     let categoryArray = CategoryRefinementViewModel()
     var cardData: [RefinementCardViewModel] {
-        if sentCategory == "dining" {
+        // Switch statement instead of if? Cleaner?
+        if sentCategory == "diningCategory" {
             return categoryArray.diningCategory
         }
         
-        if sentCategory == "drinks" {
+        if sentCategory == "drinksCategory" {
             return categoryArray.drinksCategory
             }
 
-        if sentCategory == "cinema" {
+        if sentCategory == "cinemaCategory" {
             return categoryArray.cinemaCategory
             }
 
-        if sentCategory == "events" {
+        if sentCategory == "eventsCategory" {
             return categoryArray.eventsCategory
             }
 
-        if sentCategory == "activities" {
+        if sentCategory == "activitiesCategory" {
             return categoryArray.activitiesCategory
             }
 
-        if sentCategory == "nightOut" {
+        if sentCategory == "nightOutCategory" {
             return categoryArray.nightOutCategory
         }
         return []
