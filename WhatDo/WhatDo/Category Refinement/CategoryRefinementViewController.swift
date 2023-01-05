@@ -15,13 +15,7 @@ class CategoryRefinementViewController: UIViewController, CardViewDataSource {
 
     // Reciever Property - Selected Category Sent Data
     var sentCategory: String?
-//    {
-//        didSet {
-//            updateViews()
-//        }
-//    }
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // App Header
@@ -30,12 +24,6 @@ class CategoryRefinementViewController: UIViewController, CardViewDataSource {
         }
         // Swipeable cards will need view model data sources for the questions for each category.
         swipeableCardView.dataSource = self
-    }
-    
-    // MARK: - Methods
-    func updateViews() {
-        //        guard let category = sentCategory else {return}
-        //        let image = park.images[0]
     }
         
     // Individual Category Card Data
@@ -66,6 +54,20 @@ class CategoryRefinementViewController: UIViewController, CardViewDataSource {
             return categoryArray.nightOutCategory
         }
         return []
+    }
+    
+    @IBAction func rouletteButtonTapped(_ sender: Any) {
+        // Navigate to Selection Results and bring information about network call without refining (random?)
+        
+        /// Display the home view via tab bar controller
+        let storyboard = UIStoryboard(name: "SelectionResults", bundle: nil)
+        let resultsVC = storyboard.instantiateViewController(withIdentifier: "selectionResultsVC")
+        
+        /// This is to get the SceneDelegate object from your view controller
+        /// then call the change root view controller function to change to main tab bar
+        /// Use this rather than PresentVC function to clear memory and show home as root controller instead of card on top
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(resultsVC)
+    
     }
 }
     // MARK: - Swipeable Card View Data Source

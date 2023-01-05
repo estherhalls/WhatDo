@@ -10,7 +10,6 @@ import UIKit
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var homeHeaderView: HeaderLargeView!
-    
     @IBOutlet weak var generateOptionsLabel: UILabel!
     @IBOutlet weak var selectDescriptionLabel: UILabel!
     
@@ -68,7 +67,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     //    }
 //    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
 //        if let cell = collectionView.cellForItem(at: indexPath) {
-//            
+//
 //        }
 //    }
 }
