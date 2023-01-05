@@ -14,7 +14,7 @@ class CategoryRefinementViewController: UIViewController, CardViewDataSource {
     @IBOutlet weak var swipeableCardView: CardViewContainer!
 
     // Reciever Property - Selected Category Sent Data
-    var sentCategory = ""
+    var sentCategory: String?
 //    {
 //        didSet {
 //            updateViews()
@@ -46,7 +46,7 @@ class CategoryRefinementViewController: UIViewController, CardViewDataSource {
             return categoryArray.diningCategory
         }
         
-        if sentCategory == "drinksCategory" {
+        if sentCategory == "drinkCategory" {
             return categoryArray.drinksCategory
             }
 
@@ -54,11 +54,11 @@ class CategoryRefinementViewController: UIViewController, CardViewDataSource {
             return categoryArray.cinemaCategory
             }
 
-        if sentCategory == "eventsCategory" {
+        if sentCategory == "eventCategory" {
             return categoryArray.eventsCategory
             }
 
-        if sentCategory == "activitiesCategory" {
+        if sentCategory == "activityCategory" {
             return categoryArray.activitiesCategory
             }
 
