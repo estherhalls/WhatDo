@@ -56,20 +56,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         return cell
     }
-    
-    //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    //
-    //        //        let vc = storyboard?.instantiateViewController(withIdentifier: "CategoryRefinementViewController") as? CategoryRefinementViewController
-    //        //        vc?.sentCategory = categories[indexPath.row]
-    //        //        self.navigationController?.pushViewController(vc!, animated: true)
-    //        //        print("take me there!")
-    //
-    //    }
-//    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-//        if let cell = collectionView.cellForItem(at: indexPath) {
-//
-//        }
-//    }
 }
 
 extension HomeViewController: CollectionViewCellDelegate {

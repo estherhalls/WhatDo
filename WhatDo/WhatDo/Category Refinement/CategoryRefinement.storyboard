@@ -93,6 +93,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="cNv-ik-SN3"/>
                     <connections>
+                        <outlet property="backgroundGradient" destination="5EZ-qb-Rvc" id="fwk-S6-3dZ"/>
                         <outlet property="headerView" destination="NjB-hD-nnG" id="SDx-9W-ABw"/>
                         <outlet property="swipeableCardView" destination="Zlv-PX-A7N" id="2c1-lM-rQp"/>
                     </connections>
