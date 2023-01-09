@@ -27,6 +27,7 @@
 		EBD5726A29679341000EF4A9 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD5726929679341000EF4A9 /* TabBarViewController.swift */; };
 		EBD5726E296C7EA7000EF4A9 /* LocationManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD5726D296C7EA7000EF4A9 /* LocationManagerViewModel.swift */; };
 		EBD57270296C7EC0000EF4A9 /* LocationManager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD5726F296C7EC0000EF4A9 /* LocationManager.storyboard */; };
+		EBD57273296C965F000EF4A9 /* LocationManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD57272296C965F000EF4A9 /* LocationManagerViewController.swift */; };
 		EBE840D12967898D00DC578E /* SelectionResults.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBE840D02967898D00DC578E /* SelectionResults.storyboard */; };
 		EBE840D3296789A800DC578E /* SelectionResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE840D2296789A800DC578E /* SelectionResultsViewController.swift */; };
 		EBE8F3FF2953D4E0001BC7B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE8F3FE2953D4E0001BC7B7 /* AppDelegate.swift */; };
@@ -75,6 +76,7 @@
 		EBD5726929679341000EF4A9 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		EBD5726D296C7EA7000EF4A9 /* LocationManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerViewModel.swift; sourceTree = "<group>"; };
 		EBD5726F296C7EC0000EF4A9 /* LocationManager.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LocationManager.storyboard; sourceTree = "<group>"; };
+		EBD57272296C965F000EF4A9 /* LocationManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerViewController.swift; sourceTree = "<group>"; };
 		EBE840D02967898D00DC578E /* SelectionResults.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectionResults.storyboard; sourceTree = "<group>"; };
 		EBE840D2296789A800DC578E /* SelectionResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionResultsViewController.swift; sourceTree = "<group>"; };
 		EBE8F3FB2953D4E0001BC7B7 /* WhatDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,8 +172,9 @@
 		EBD57271296C7EC5000EF4A9 /* Location Manager */ = {
 			isa = PBXGroup;
 			children = (
-				EBD5726D296C7EA7000EF4A9 /* LocationManagerViewModel.swift */,
 				EBD5726F296C7EC0000EF4A9 /* LocationManager.storyboard */,
+				EBD5726D296C7EA7000EF4A9 /* LocationManagerViewModel.swift */,
+				EBD57272296C965F000EF4A9 /* LocationManagerViewController.swift */,
 			);
 			path = "Location Manager";
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				EBD5726A29679341000EF4A9 /* TabBarViewController.swift in Sources */,
 				FFECE29C295E371100BC7C6F /* YelpCVViewController.swift in Sources */,
 				EBE8F4012953D4E0001BC7B7 /* SceneDelegate.swift in Sources */,
+				EBD57273296C965F000EF4A9 /* LocationManagerViewController.swift in Sources */,
 				EB15767929638067008BD904 /* CategoryRefinementViewModel.swift in Sources */,
 				EBA3FB08295CD8EE002AF566 /* SwipeableViewDelegate.swift in Sources */,
 				EBD5726E296C7EA7000EF4A9 /* LocationManagerViewModel.swift in Sources */,

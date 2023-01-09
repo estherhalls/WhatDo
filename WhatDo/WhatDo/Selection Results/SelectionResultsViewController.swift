@@ -11,6 +11,7 @@ import CoreLocation
 
 class SelectionResultsViewController: UIViewController {
     
+    // MARK: - Outlets
     @IBOutlet weak var whatDoHeaderViewSmall: HeaderLargeView!
     
     private let map: MKMapView = {
@@ -18,12 +19,14 @@ class SelectionResultsViewController: UIViewController {
         return map
     }()
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.insertSubview(map, at: 0)
         // Map - call weak self in closure to avoid memory leak
         LocationManagerViewModel.shared.getUserLocation { [weak self] location in
             DispatchQueue.main.async {
+                /// Unwrap [weak self]
                 guard let strongSelf = self else { return }
                 strongSelf.addMapAnnotationUserLocation(with: location)
             }
@@ -50,6 +53,7 @@ class SelectionResultsViewController: UIViewController {
         map.setRegion(MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.7, longitudeDelta: 0.7)), animated: true)
         map.addAnnotation(pin)
         
+        // Location title shown on navigation bar
         LocationManagerViewModel.shared.resolveLocationName(with: location) { [weak self] locationName in
             self?.title = locationName
         }

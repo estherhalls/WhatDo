@@ -69,6 +69,7 @@ class CategoryRefinementViewController: UIViewController, CardViewDataSource {
         return []
     }
     
+    // MARK: - Navigation
     @IBAction func rouletteButtonTapped(_ sender: Any) {
         // Navigate to Selection Results and bring information about network call without refining (random?)
         

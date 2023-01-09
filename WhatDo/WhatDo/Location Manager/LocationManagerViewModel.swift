@@ -13,7 +13,13 @@ class LocationManagerViewModel: NSObject, CLLocationManagerDelegate {
     // Singleton
     static let shared = LocationManagerViewModel()
     
+    // Instance of CLLocationManager
     let manager = CLLocationManager()
+    
+    // User's current or set location to be used in network calls. CLLocation must be converted to lat/long which are input as individual String parameters in network calls
+    static var userLatitude: Double?
+    static var userLongitude: Double?
+    static var radius: String?
     
     // Hold completion handler as global
     var completion: ((CLLocation) -> Void)?
@@ -24,6 +30,8 @@ class LocationManagerViewModel: NSObject, CLLocationManagerDelegate {
         manager.delegate = self
         manager.startUpdatingLocation()
     }
+    // Reverse Geocode the user's location to return the Lat/Long of it that we can add user location as parameter to network calls
+    
     
     // Reverse Geocode the user's location to return the name of it that we can add to a label, etc.
     public func resolveLocationName(with location: CLLocation, completion: @escaping ((String?) -> Void)) {
