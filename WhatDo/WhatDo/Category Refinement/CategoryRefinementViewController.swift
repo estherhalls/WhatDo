@@ -19,15 +19,16 @@ class CategoryRefinementViewController: UIViewController, CardViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Create Gradient Background Layer
         let gradientLayer = CAGradientLayer()
-        // Set the size of the layer to be equal to the size of the display
+        /// Set the size of the layer to be equal to the size of the display
         gradientLayer.frame = view.bounds
-        // Set an array of core graphics colors (.cgColor) to create the gradient
+        /// Set an array of core graphics colors (.cgColor) to create the gradient
         gradientLayer.colors = [UIColor(red: 0.80, green: 0.16, blue: 0.05, alpha: 1.00).cgColor, UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00).cgColor]
-        // Rasterize this static layer to improve performance
+        /// Rasterize this static layer to improve performance
         gradientLayer.shouldRasterize = true
-        // Apply the gradient to the backgroundGradient UIView
+        /// Apply the gradient to the backgroundGradient UIView
         backgroundGradient.layer.insertSublayer(gradientLayer, at: 0)
         
         // App Header
@@ -71,16 +72,16 @@ class CategoryRefinementViewController: UIViewController, CardViewDataSource {
     @IBAction func rouletteButtonTapped(_ sender: Any) {
         // Navigate to Selection Results and bring information about network call without refining (random?)
         
-        /// Display the home view via tab bar controller
+        /// Display the results view
         let storyboard = UIStoryboard(name: "SelectionResults", bundle: nil)
         let resultsVC = storyboard.instantiateViewController(withIdentifier: "selectionResultsVC")
-        
+        self.navigationController?.pushViewController(resultsVC, animated: true)
         /// This is to get the SceneDelegate object from your view controller
         /// then call the change root view controller function to change to main tab bar
         /// Use this rather than PresentVC function to clear memory and show home as root controller instead of card on top
-        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(resultsVC)
-        
+//        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(resultsVC)
     }
+
 }
 // MARK: - Swipeable Card View Data Source
 

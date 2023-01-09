@@ -62,12 +62,11 @@ extension HomeViewController: CollectionViewCellDelegate {
     
     func categoryCellTapped(cell: CollectionViewCell) {
         
-        
         let storyboard = UIStoryboard(name: "CategoryRefinement", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: "categoryRefinement") as? CategoryRefinementViewController {
             guard let category = cell.category else {return}
             vc.sentCategory = category
-            self.present(vc, animated: true, completion: nil)
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         //        self.inputViewController?.performSegue(withIdentifier: "toRefinementVC", sender: AnyObject.self)
         print("Take me there!")
