@@ -12,11 +12,14 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var labelBackground: UIView!
     
+    var category: CDYelpCategory?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    func setup() {
-        headerLabel.text = "test"
+    func setupCategoryTitle(category: CDYelpCategory) {
+        headerLabel.text = "\(category.alias)"
+        
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+// TopLevelDictionary
 struct Response: Decodable {
     let businessId: BusinessById
 }
