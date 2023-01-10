@@ -33,8 +33,10 @@ class LocationManagerViewController: UIViewController {
     
     // MARK: - Methods
     func showNewLocationAlert() {
-        let secondAlert = UIAlertController(title: "New Starting Location", message: "Search from your current location, or enter another address.", preferredStyle: .alert)
-        
+        let secondAlert = UIAlertController(title: "New Starting Location", message: "Search from your current location, or enter another address below.", preferredStyle: .alert)
+        secondAlert.addTextField { textField in
+            textField.placeholder = "New Location Name"
+        }
         let dismissAction = UIAlertAction(title: "Cancel", style: .cancel)
         
         let setLocationAction = UIAlertAction(title: "Set Location", style: .default) { _ in
