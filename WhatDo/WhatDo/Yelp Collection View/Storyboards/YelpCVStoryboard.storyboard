@@ -24,7 +24,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iv7-BB-SIp">
-                                <rect key="frame" x="0.0" y="256" width="393" height="562"/>
+                                <rect key="frame" x="0.0" y="256" width="393" height="513"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="F2D-IP-byi">
                                     <size key="itemSize" width="128" height="128"/>
@@ -91,11 +91,13 @@
             </objects>
             <point key="canvasLocation" x="895.41984732824426" y="-28.169014084507044"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Dining-->
         <scene sceneID="er0-Zh-VJi">
             <objects>
                 <navigationController storyboardIdentifier="yelpCVNav" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="xnc-r7-jGZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Dining" image="fork.knife" catalog="system" id="8Uh-Q6-IhH"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6AI-Ou-OhE">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -110,6 +112,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="fork.knife" catalog="system" width="94" height="128"/>
         <image name="headerDining" width="2000" height="500"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
