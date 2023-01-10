@@ -19,6 +19,7 @@ class YelpCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
+    static let identifier = "yelpCell"
     var business: BusinessSearch?
     var cellViewModel = YelpCollectionViewCellVM()
     

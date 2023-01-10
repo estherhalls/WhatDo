@@ -7,11 +7,11 @@
 
 import UIKit
 
-class YelpCVViewController: UIViewController {
-
+class YelpCVViewController: UIViewController, YelpCollectionViewDelegate {
+    
+// MARK: - Outlets
     @IBOutlet weak var headerView: HeaderLargeView!
     @IBOutlet weak var collectionView: UICollectionView!
-    
     @IBOutlet weak var labelBackground: UIView!
     @IBOutlet weak var categoryHeaderLabel: UILabel!
     @IBOutlet weak var categoryHeaderImage: UIImageView!
@@ -19,35 +19,33 @@ class YelpCVViewController: UIViewController {
     @IBOutlet weak var micButton: UIButton!
     @IBOutlet weak var filterButton: UIButton!
     
+    // MARK: - Properties
     let categoryHeaderImages = [
         "headerActivity",
         "headerDining",
         "headerEvent",
         "headerCinema"
         ]
-    let categoryImage = [
-        "diningCategory",
-        "drinkCategory",
-        "cinemaCategory",
-        "eventCategory",
-        "activityCategory",
-        "Unknown"
-    ]
+    
     var businessListVM: BusinessListVM!
     var businessSearch: BusinessSearch?
     var categories: [CDYelpCategory]?
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Header
         if let titleImage = UIImage(named: "whatDoSmall") {
             headerView.configureImageViews(withImages: titleImage, subtitle: nil)
-        }
-        collectionView.register(UINib(nibName: "YelpCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "yelpCell")
+        
         collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(UINib(nibName: "YelpCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "yelpCell")
         setupCollectionViewLayout(collectionView: collectionView)
         collectionView.register(UINib(nibName: "HeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerCell")
         labelBackground.backgroundColor = .gray
 //        categoryHeaderImage.image = categoryHeaderImages
+        }
          
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -82,15 +80,24 @@ class YelpCVViewController: UIViewController {
         collectionView.collectionViewLayout = layout
     }
 }
-extension YelpCVViewController: UICollectionViewDataSource {
+extension YelpCVViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func businessesLoadedSuccessfully() {
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return businessListVM.businessesArray[section].count
 //        return businessListVM.businesses.count
     }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return businessListVM.businessesArray.count
 //        return businessListVM.businesses.count
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "yelpCell", for: indexPath) as! YelpCollectionViewCell
             
@@ -119,13 +126,7 @@ extension YelpCVViewController: UICollectionViewDataSource {
 //        return cell
 //    }
 }
-extension YelpCVViewController: YelpCollectionViewDelegate {
-    func businessesLoadedSuccessfully() {
-        DispatchQueue.main.async {
-            self.collectionView.reloadData()
-        }
-    }
-}
+
 
 extension YelpCVViewController: YelpCollectionViewCellDelegate {
     func cellTapped(cell: YelpCollectionViewCell) {
