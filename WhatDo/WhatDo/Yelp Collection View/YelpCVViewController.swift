@@ -19,6 +19,12 @@ class YelpCVViewController: UIViewController {
     @IBOutlet weak var micButton: UIButton!
     @IBOutlet weak var filterButton: UIButton!
     
+    let categoryHeaderImages = [
+        "headerActivity",
+        "headerDining",
+        "headerEvent",
+        "headerCinema"
+        ]
     let categoryImage = [
         "diningCategory",
         "drinkCategory",
@@ -28,7 +34,8 @@ class YelpCVViewController: UIViewController {
         "Unknown"
     ]
     var businessListVM: BusinessListVM!
-    var category: CDYelpCategory!
+    var businessSearch: BusinessSearch?
+    var categories: [CDYelpCategory]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +47,7 @@ class YelpCVViewController: UIViewController {
         setupCollectionViewLayout(collectionView: collectionView)
         collectionView.register(UINib(nibName: "HeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerCell")
         labelBackground.backgroundColor = .gray
-        
+//        categoryHeaderImage.image = categoryHeaderImages
          
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -77,10 +84,12 @@ class YelpCVViewController: UIViewController {
 }
 extension YelpCVViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return businessListVM.businesses.count
+        return businessListVM.businessesArray[section].count
+//        return businessListVM.businesses.count
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return businessListVM.businesses.count
+        return businessListVM.businessesArray.count
+//        return businessListVM.businesses.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "yelpCell", for: indexPath) as? YelpCollectionViewCell else
@@ -99,14 +108,19 @@ extension YelpCVViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         // Check the kind of supplementary view here, it needs to match the kind in your cell registration. Then call collectionView.dequeueReusableSupplementaryView and the rest should be pretty familiar.
-       guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCell", for: indexPath) as? HeaderCollectionReusableView else { return UICollectionReusableView() }
+        guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCell", for: indexPath) as? HeaderCollectionReusableView else { return UICollectionReusableView() }
         
-//        let category = category.alias?[indexPath]
-//        cell.setupCategoryTitle(category: category)
+        //        let category = categoryHeaderImages[indexPath.section]
+        //
+        //        cell.configure(with: category)
+        //
+        //        return cell
+        //    }
+        
+        let category = businessListVM.businessesArray[indexPath.section]
+        cell.category
         return cell
     }
-    
-   
 }
 extension YelpCVViewController: YelpCollectionViewDelegate {
     func businessesLoadedSuccessfully() {

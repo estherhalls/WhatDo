@@ -11,6 +11,7 @@ protocol YelpCollectionViewDelegate: YelpCVViewController {
 }
 
 class BusinessListVM {
+    var businessesArray: [[BusinessSearch]] = [[]]
     var businesses: [BusinessSearch] = []
     weak var delegate: YelpCollectionViewDelegate?
     init(delegate: YelpCollectionViewDelegate) {
@@ -28,12 +29,23 @@ class BusinessListVM {
             case .success(let businesses):
                 // We need to inform the view controller that the data is ready
                 self.businesses = businesses
+                
+                let popularRating = businesses.filter { business in
+                    return business.rating! >= 4.0
+                }
+                let nearBy = businesses.filter { business in
+                return business.distance! <= 24000
+                }
+                
+                self.businessesArray = [nearBy, popularRating]
                 self.delegate?.businessesLoadedSuccessfully()
                 print(businesses)
             case .failure(let error):
                 print(error)
             }
         }
+      
+
     }
 }
 

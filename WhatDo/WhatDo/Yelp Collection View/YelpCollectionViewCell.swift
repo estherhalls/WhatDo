@@ -23,7 +23,6 @@ class YelpCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     func setupBusinessCell(business: BusinessSearch) {
-        
 
         titleLabel.text = business.name
         let distance = cellViewModel.convertMetersToMiles(distance: business.distance!)
@@ -46,6 +45,6 @@ class YelpCollectionViewCell: UICollectionViewCell {
                 print(error)
             }
         }
-
+        
     }
 }

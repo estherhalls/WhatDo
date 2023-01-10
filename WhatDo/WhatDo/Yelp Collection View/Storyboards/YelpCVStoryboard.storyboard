@@ -23,12 +23,9 @@
                                     <constraint firstAttribute="height" constant="125" id="thU-z4-6zQ"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iv7-BB-SIp">
-                                <rect key="frame" x="0.0" y="245" width="393" height="573"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iv7-BB-SIp">
+                                <rect key="frame" x="0.0" y="256" width="393" height="562"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="530" id="VyM-zS-QoQ"/>
-                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="F2D-IP-byi">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -38,29 +35,29 @@
                                 <cells/>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QiR-qx-iMC">
-                                <rect key="frame" x="0.0" y="148" width="393" height="101"/>
+                                <rect key="frame" x="0.0" y="148" width="393" height="115"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZtF-Se-Kks">
-                                        <rect key="frame" x="208" y="30" width="77" height="41"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1qI-mt-N0P">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="101"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headerDining" translatesAutoresizingMaskIntoConstraints="NO" id="1qI-mt-N0P">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="115"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="jbx-Zh-N8M"/>
                                         </constraints>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZtF-Se-Kks">
+                                        <rect key="frame" x="208" y="30" width="77" height="55"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.33827222442010096" green="0.45365593192136294" blue="0.46885067654639179" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="1qI-mt-N0P" secondAttribute="bottom" id="30N-Iy-rAv"/>
                                     <constraint firstItem="1qI-mt-N0P" firstAttribute="leading" secondItem="QiR-qx-iMC" secondAttribute="leading" id="3Xs-6m-JYd"/>
                                     <constraint firstItem="ZtF-Se-Kks" firstAttribute="top" secondItem="QiR-qx-iMC" secondAttribute="top" constant="30" id="EKS-SR-sEV"/>
                                     <constraint firstAttribute="trailing" secondItem="ZtF-Se-Kks" secondAttribute="trailing" constant="108" id="IMb-sa-ela"/>
-                                    <constraint firstItem="1qI-mt-N0P" firstAttribute="top" secondItem="QiR-qx-iMC" secondAttribute="top" id="Jgw-4a-bYG"/>
+                                    <constraint firstAttribute="bottom" secondItem="1qI-mt-N0P" secondAttribute="bottom" id="KEn-3i-xaq"/>
                                     <constraint firstAttribute="bottom" secondItem="ZtF-Se-Kks" secondAttribute="bottom" constant="30" id="Lck-au-NJS"/>
+                                    <constraint firstItem="1qI-mt-N0P" firstAttribute="top" secondItem="QiR-qx-iMC" secondAttribute="top" id="YaT-fs-iaJ"/>
                                     <constraint firstItem="ZtF-Se-Kks" firstAttribute="leading" secondItem="1qI-mt-N0P" secondAttribute="trailing" constant="108" id="rUz-S1-J6v"/>
                                 </constraints>
                             </view>
@@ -95,6 +92,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="headerDining" width="2000" height="500"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
