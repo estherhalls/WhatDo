@@ -10,16 +10,27 @@ import UIKit
 class CategoryRefinementViewController: UIViewController, CardViewDataSource {
     
     // MARK: - Outlets
+    @IBOutlet var backgroundGradient: UIView!
     @IBOutlet weak var headerView: HeaderLargeView!
     @IBOutlet weak var swipeableCardView: CardViewContainer!
     
-    // Category Selected - sent data
-    let sentCategory: String = "dining"
-    
-    
+    // Reciever Property - Selected Category Sent Data
+    var sentCategory: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Create Gradient Background Layer
+        let gradientLayer = CAGradientLayer()
+        /// Set the size of the layer to be equal to the size of the display
+        gradientLayer.frame = view.bounds
+        /// Set an array of core graphics colors (.cgColor) to create the gradient
+        gradientLayer.colors = [UIColor(red: 0.80, green: 0.16, blue: 0.05, alpha: 1.00).cgColor, UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00).cgColor]
+        /// Rasterize this static layer to improve performance
+        gradientLayer.shouldRasterize = true
+        /// Apply the gradient to the backgroundGradient UIView
+        backgroundGradient.layer.insertSublayer(gradientLayer, at: 0)
+        
         // App Header
         if let titleImage = UIImage(named: "whatDoSmall") {
             headerView.configureImageViews(withImages: titleImage, subtitle: nil)
@@ -31,50 +42,66 @@ class CategoryRefinementViewController: UIViewController, CardViewDataSource {
     // Individual Category Card Data
     let categoryArray = CategoryRefinementViewModel()
     var cardData: [RefinementCardViewModel] {
-        if sentCategory == "dining" {
+        // Switch statement instead of if? Cleaner?
+        if sentCategory == "diningCategory" {
             return categoryArray.diningCategory
         }
         
-        if sentCategory == "drinks" {
+        if sentCategory == "drinkCategory" {
             return categoryArray.drinksCategory
-            }
-
-        if sentCategory == "cinema" {
+        }
+        
+        if sentCategory == "cinemaCategory" {
             return categoryArray.cinemaCategory
-            }
-
-        if sentCategory == "events" {
+        }
+        
+        if sentCategory == "eventCategory" {
             return categoryArray.eventsCategory
-            }
-
-        if sentCategory == "activities" {
+        }
+        
+        if sentCategory == "activityCategory" {
             return categoryArray.activitiesCategory
-            }
-
-        if sentCategory == "nightOut" {
+        }
+        
+        if sentCategory == "nightOutCategory" {
             return categoryArray.nightOutCategory
         }
         return []
     }
-}
-    // MARK: - Swipeable Card View Data Source
     
-    // Conform to CardViewDataSource
-    extension CategoryRefinementViewController {
+    // MARK: - Navigation
+    @IBAction func rouletteButtonTapped(_ sender: Any) {
+        // Navigate to Selection Results and bring information about network call without refining (random?)
         
-        func numberOfCards() -> Int {
-            return cardData.count
-        }
-        
-        func card(forQuestionAtIndex index: Int) -> SwipeableCardView {
-            let viewModel = cardData[index]
-            let cardView = RefinementCard()
-            cardView.viewModel = viewModel
-            return cardView
-        }
-        
-        func viewForEmptyCards() -> UIView? {
-            return nil
-        }
+        /// Display the results view
+        let storyboard = UIStoryboard(name: "SelectionResults", bundle: nil)
+        let resultsVC = storyboard.instantiateViewController(withIdentifier: "selectionResultsVC")
+        self.navigationController?.pushViewController(resultsVC, animated: true)
+        /// This is to get the SceneDelegate object from your view controller
+        /// then call the change root view controller function to change to main tab bar
+        /// Use this rather than PresentVC function to clear memory and show home as root controller instead of card on top
+//        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(resultsVC)
     }
+
+}
+// MARK: - Swipeable Card View Data Source
+
+// Conform to CardViewDataSource
+extension CategoryRefinementViewController {
+    
+    func numberOfCards() -> Int {
+        return cardData.count
+    }
+    
+    func card(forQuestionAtIndex index: Int) -> SwipeableCardView {
+        let viewModel = cardData[index]
+        let cardView = RefinementCard()
+        cardView.viewModel = viewModel
+        return cardView
+    }
+    
+    func viewForEmptyCards() -> UIView? {
+        return nil
+    }
+}
 
