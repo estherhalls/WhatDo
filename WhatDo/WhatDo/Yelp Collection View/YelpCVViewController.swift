@@ -130,12 +130,13 @@ extension YelpCVViewController: YelpCollectionViewDelegate {
 extension YelpCVViewController: YelpCollectionViewCellDelegate {
     func cellTapped(cell: YelpCollectionViewCell) {
         let storyboard = UIStoryboard(name: "DetailView", bundle: nil)
-        if let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewVC") as? DetailViewVC {
+        if let vc = storyboard.instantiateViewController(withIdentifier: "detailViewVC") as? DetailViewVC {
             guard let data = cell.business else {return}
             vc.sentData = data
-            self.navigationController?.pushViewController(vc, animated: true)
+//            self.navigationController?.pushViewController(vc, animated: true)
+            self.present(vc, animated: true, completion: nil)
         }
-    
         print("Take me there!")
     }
+    
 }

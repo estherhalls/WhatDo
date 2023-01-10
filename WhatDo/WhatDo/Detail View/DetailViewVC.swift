@@ -9,7 +9,7 @@ import UIKit
 import MapKit
 
 class DetailViewVC: UIViewController {
-
+    
     @IBOutlet weak var headerView: HeaderLargeView!
     @IBOutlet weak var businessImage: UIImageView!
     @IBOutlet weak var hoursHeader: UILabel!
@@ -21,7 +21,11 @@ class DetailViewVC: UIViewController {
     
     
     let locationManager = CLLocationManager()
-    var sentData: BusinessSearch?
+    var sentData: BusinessSearch? {
+        didSet {
+            updateViews()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,35 +35,36 @@ class DetailViewVC: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         // Triggers a one-time location request.
         locationManager.requestLocation()
-        
     }
-    func configure( with business: BusinessSearch, and image: UIImage?) {
+    
+    func updateViews(){
         loadViewIfNeeded()
-        if let image {
-           businessImage.image = image
-        }
+        guard let business = sentData else {return}
+        // Need a fetchImage network call
+//        businessImage.image = business.imageUrl
         businessName.text = business.name
-        }
+    }
     
     @IBAction func callButtonTapped(_ sender: Any) {
     }
 }
+
 extension DetailViewVC : CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse { // This method gets called when the user responds to the permission dialog. If the user chose Allow, the status becomes CLAuthorizationStatus.AuthorizedWhenInUse
             locationManager.requestLocation() // Also triggers another requestLocation() because the first attempt would have suffered a permission failure
         }
     }
-
+    
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) { // This gets called when location information comes back. You get an array of locations, but you’re only interested in the first item
         if let location = locations.first {
             let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-                  let region = MKCoordinateRegion(center: location.coordinate, span: span)
-                  mapView.setRegion(region, animated: true)
+            let region = MKCoordinateRegion(center: location.coordinate, span: span)
+            mapView.setRegion(region, animated: true)
             print("location: \(location)")
         }
     }
-
+    
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         print("error: \(NetworkError.requestError)")
     }
