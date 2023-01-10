@@ -13,6 +13,8 @@ class LocationManagerViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var headerView: HeaderLargeView!
+    @IBOutlet weak var travelDistanceSlider: UISlider!
+    @IBOutlet weak var travelRadiusMilesLabel: UILabel!
     
     // Initialize view model class property
     var viewModel = LocationManagerViewModel()
@@ -50,7 +52,6 @@ class LocationManagerViewController: UIViewController {
                     return
                 }
                 strongSelf.viewModel.setLocationCoordinates(with: newLocation)
-                print(LocationManagerViewModel.userLatitude!, LocationManagerViewModel.userLongitude!)
             }
         }
         secondAlert.addAction(dismissAction)
@@ -82,26 +83,42 @@ class LocationManagerViewController: UIViewController {
             /// Unwrap [weak self]
             guard let strongSelf = self else {return}
             strongSelf.viewModel.setLocationCoordinates(with: location)
-            print(LocationManagerViewModel.userLatitude!, LocationManagerViewModel.userLongitude!)
+            
         }
+    }
+    // MARK: - Actions
+    /// Radius in miles should be assigned to radius variable in model and converted to meters to use as parameter in network calls
+    @IBAction func travelDistanceSliderValueChanged(_ sender: Any) {
+        var distanceLabel = Int(round(travelDistanceSlider.value))
+        travelRadiusMilesLabel.text = "\(distanceLabel) Mi."
+        
+        var distanceValue = Double(round(travelDistanceSlider.value))
+        let miles = distanceValue
+        let milesToMeters = miles.convert(from: .miles, to: .meters)
+        let roundedMeters = Int(milesToMeters)
+        LocationManagerViewModel.radius = "\(roundedMeters)"
+        print (LocationManagerViewModel.radius!)
+    }
+    
+    @IBAction func setLocationTapped(_ sender: Any) {
+        showLocationAlert()
     }
     
     // MARK: - Navigation
-    @IBAction func setLocationTapped(_ sender: Any) {
-     showLocationAlert()
-
-    }
-    
     @IBAction func nextButtonTapped(_ sender: Any) {
-        
         let storyboard = UIStoryboard(name: "CategoryRefinement", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: "categoryRefinement") as? CategoryRefinementViewController {
             guard let category = sentCategory else { return }
             vc.sentCategory = category
             self.navigationController?.pushViewController(vc, animated: true)
         }
-        
         print("Take me there!")
     }
- 
+    
+} // End of Class
+
+extension Double {
+    func convert(from originalUnit: UnitLength, to convertedUnit: UnitLength) -> Double {
+        return Measurement(value: self, unit: originalUnit).converted(to: convertedUnit).value
+      }
 }

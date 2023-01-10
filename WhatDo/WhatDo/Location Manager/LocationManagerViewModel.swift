@@ -34,6 +34,7 @@ class LocationManagerViewModel: NSObject, CLLocationManagerDelegate {
     public func setLocationCoordinates(with location: CLLocation) {
         LocationManagerViewModel.userLatitude = location.coordinate.latitude
         LocationManagerViewModel.userLongitude = location.coordinate.longitude
+        print(LocationManagerViewModel.userLatitude!, LocationManagerViewModel.userLongitude!)
     }
     
     // Reverse Geocode the user input new location name into CLLocation, then call setLocationCoordinates to convert to the Lat/Long that we can add user location as parameter to network calls
