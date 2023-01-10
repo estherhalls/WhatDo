@@ -7,23 +7,30 @@
 
 import UIKit
 
-class YelpCollectionViewCell: UICollectionViewCell {
+// Protocol Declaration:
+protocol YelpCollectionViewCellDelegate: AnyObject {
+    func cellTapped(cell: YelpCollectionViewCell)
+}
 
+class YelpCollectionViewCell: UICollectionViewCell {
+    
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var labelBackgroundView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
-
+    
+    static let identifier = "yelpCell"
     var business: BusinessSearch?
     var cellViewModel = YelpCollectionViewCellVM()
     
+    weak var delegate: YelpCollectionViewDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     func setupBusinessCell(business: BusinessSearch) {
-
+        
         titleLabel.text = business.name
         let distance = cellViewModel.convertMetersToMiles(distance: business.distance!)
         print(distance)
@@ -45,6 +52,10 @@ class YelpCollectionViewCell: UICollectionViewCell {
                 print(error)
             }
         }
-        
     }
+    
+    @IBAction func cellTapped(_ sender: AnyObject) {
+        delegate?.cellTapped(cell:self)
+    }
+    
 }

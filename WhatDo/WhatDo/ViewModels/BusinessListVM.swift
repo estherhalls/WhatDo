@@ -11,6 +11,13 @@ protocol YelpCollectionViewDelegate: YelpCVViewController {
 }
 
 class BusinessListVM {
+    
+    // Initialize view model class property
+    var viewModel = LocationManagerViewModel()
+    let latitude = LocationManagerViewModel.userLatitude!
+    let longitude = LocationManagerViewModel.userLongitude!
+    let radius = "16000"
+    
     var businessesArray: [[BusinessSearch]] = [[]]
     var businesses: [BusinessSearch] = []
     weak var delegate: YelpCollectionViewDelegate?
@@ -23,8 +30,11 @@ class BusinessListVM {
 //    let longValue = "-157.81304640731193"
 //    let radius = "8000"
     // When has this yelp function completed
-    func yelpSearch(latitude: String, longitude: String, radius: String){
-        URLCreation().searchYelpRestaurants(userLat: latitude, userLong: longitude, userRadius: radius) { result in
+//    func yelpSearch(latitude: String, longitude: String, radius: String){
+    
+    func yelpSearch(){
+
+        URLCreation().searchYelpRestaurants(userLat: "\(String(describing: latitude))", userLong: "\(longitude)", userRadius: radius) { result in
             switch result {
             case .success(let businesses):
                 // We need to inform the view controller that the data is ready
