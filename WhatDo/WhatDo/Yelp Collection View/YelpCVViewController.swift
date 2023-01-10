@@ -19,7 +19,13 @@ class YelpCVViewController: UIViewController {
     @IBOutlet weak var micButton: UIButton!
     @IBOutlet weak var filterButton: UIButton!
     
-    let categories = [
+    let categoryHeaderImages = [
+        "headerActivity",
+        "headerDining",
+        "headerEvent",
+        "headerCinema"
+        ]
+    let categoryImage = [
         "diningCategory",
         "drinkCategory",
         "cinemaCategory",
@@ -27,6 +33,9 @@ class YelpCVViewController: UIViewController {
         "activityCategory",
         "Unknown"
     ]
+    var businessListVM: BusinessListVM!
+    var businessSearch: BusinessSearch?
+    var categories: [CDYelpCategory]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +47,13 @@ class YelpCVViewController: UIViewController {
         setupCollectionViewLayout(collectionView: collectionView)
         collectionView.register(UINib(nibName: "HeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerCell")
         labelBackground.backgroundColor = .gray
+//        categoryHeaderImage.image = categoryHeaderImages
+         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        businessListVM = BusinessListVM(delegate: self)
+        businessListVM.yelpSearch(latitude: "21.27702694074651", longitude: "-157.81304640731193", radius: "8000")
     }
     
     @IBAction func micButtonTapped(_ sender: Any) {
@@ -68,24 +84,56 @@ class YelpCVViewController: UIViewController {
 }
 extension YelpCVViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return businessListVM.businessesArray[section].count
+//        return businessListVM.businesses.count
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return businessListVM.businessesArray.count
+//        return businessListVM.businesses.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "yelpCell", for: indexPath) as? YelpCollectionViewCell else {
-            return UICollectionViewCell()
-        }
-        cell.setup()
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "yelpCell", for: indexPath) as? YelpCollectionViewCell else
+        { return UICollectionViewCell() }
+            
+        let business = businessListVM.businesses[indexPath.row]
+       
+        cell.setupBusinessCell(business: business)
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        let business = businessListVM.businesses[indexPath.row]
+        
+    }
+    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         // Check the kind of supplementary view here, it needs to match the kind in your cell registration. Then call collectionView.dequeueReusableSupplementaryView and the rest should be pretty familiar.
-        guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCell", for: indexPath) as? HeaderCollectionReusableView else {
-            return UICollectionReusableView()
+        guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCell", for: indexPath) as? HeaderCollectionReusableView else { return UICollectionReusableView() }
+        
+        //        let category = categoryHeaderImages[indexPath.section]
+        //
+        //        cell.configure(with: category)
+        //
+        //        return cell
+        //    }
+        
+        let category = businessListVM.businessesArray[indexPath.section]
+        cell.category
+        return cell
+    }
+}
+extension YelpCVViewController: YelpCollectionViewDelegate {
+    func businessesLoadedSuccessfully() {
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
         }
-        cell.setup()
-            return cell
+    }
+    func collectionViewTapped(cell: YelpCollectionViewCell) {
+//        let storyboard = UIStoryboard(name: "DetailView", bundle: nil)
+//        guard let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewVC") as? YelpCVViewController else { return UICollectionView() }
+//            guard let category = cell.business else { return }
+//        vc?.business = category
+//            self.present(vc, animated: true, completion: nil)
+        
     }
 }

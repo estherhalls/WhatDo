@@ -523,13 +523,18 @@
 				FF09C51829634D8900CEA9DB /* DetailViewVC.swift in Sources */,
 				EBE8F3FF2953D4E0001BC7B7 /* AppDelegate.swift in Sources */,
 				EBA3FB02295CCB36002AF566 /* SwipeableCardView.swift in Sources */,
-				EBE840D3296789A800DC578E /* SelectionResultsViewController.swift in Sources */,
+<<<<<<< HEAD
 				FF3FBFF429674AA800287660 /* YelpCollectionViewCellVM.swift in Sources */,
 				FF09C5142963475A00CEA9DB /* ExtensionData.swift in Sources */,
 				FF29F9DB295B8DE0000D3183 /* CollectionViewCell.swift in Sources */,
 				EBF827DA295AF1350042DA9B /* TabSearchViewController.swift in Sources */,
-				EBD5726A29679341000EF4A9 /* TabBarViewController.swift in Sources */,
 				FF09C50B2963464F00CEA9DB /* DetailViewVM.swift in Sources */,
+=======
+				EBE840D3296789A800DC578E /* SelectionResultsViewController.swift in Sources */,
+				FF29F9DB295B8DE0000D3183 /* CollectionViewCell.swift in Sources */,
+				EBF827DA295AF1350042DA9B /* TabSearchViewController.swift in Sources */,
+				EBD5726A29679341000EF4A9 /* TabBarViewController.swift in Sources */,
+>>>>>>> develop
 				FFECE29C295E371100BC7C6F /* YelpCVViewController.swift in Sources */,
 				FF09C51D29638B0F00CEA9DB /* BusinessById.swift in Sources */,
 				FF09C5162963478D00CEA9DB /* URLCreation.swift in Sources */,

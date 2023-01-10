@@ -24,12 +24,6 @@
 		EBA3FB08295CD8EE002AF566 /* SwipeableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA3FB07295CD8EE002AF566 /* SwipeableViewDelegate.swift */; };
 		EBA3FB0A295CDD56002AF566 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA3FB09295CDD56002AF566 /* UIView.swift */; };
 		EBA3FB0C295CE2A8002AF566 /* SwipeDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA3FB0B295CE2A8002AF566 /* SwipeDirection.swift */; };
-		EBD5726A29679341000EF4A9 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD5726929679341000EF4A9 /* TabBarViewController.swift */; };
-		EBD5726E296C7EA7000EF4A9 /* LocationManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD5726D296C7EA7000EF4A9 /* LocationManagerViewModel.swift */; };
-		EBD57270296C7EC0000EF4A9 /* LocationManager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD5726F296C7EC0000EF4A9 /* LocationManager.storyboard */; };
-		EBD57273296C965F000EF4A9 /* LocationManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD57272296C965F000EF4A9 /* LocationManagerViewController.swift */; };
-		EBE840D12967898D00DC578E /* SelectionResults.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBE840D02967898D00DC578E /* SelectionResults.storyboard */; };
-		EBE840D3296789A800DC578E /* SelectionResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE840D2296789A800DC578E /* SelectionResultsViewController.swift */; };
 		EBE8F3FF2953D4E0001BC7B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE8F3FE2953D4E0001BC7B7 /* AppDelegate.swift */; };
 		EBE8F4012953D4E0001BC7B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE8F4002953D4E0001BC7B7 /* SceneDelegate.swift */; };
 		EBE8F4062953D4E0001BC7B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBE8F4042953D4E0001BC7B7 /* Main.storyboard */; };
@@ -37,21 +31,9 @@
 		EBE8F40B2953D4E2001BC7B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBE8F4092953D4E2001BC7B7 /* LaunchScreen.storyboard */; };
 		EBF827DA295AF1350042DA9B /* TabSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF827D9295AF1350042DA9B /* TabSearchViewController.swift */; };
 		F3EEF5BE11CE698147AC7188 /* Pods_WhatDo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE06AECBDD1FDE30899D2C4D /* Pods_WhatDo.framework */; };
-		FF09C506296161CD00CEA9DB /* DetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF09C505296161CD00CEA9DB /* DetailView.storyboard */; };
-		FF09C50B2963464F00CEA9DB /* DetailViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09C50A2963464F00CEA9DB /* DetailViewVM.swift */; };
-		FF09C50D2963468900CEA9DB /* BusinessSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09C50C2963468900CEA9DB /* BusinessSearch.swift */; };
-		FF09C50F296346C200CEA9DB /* API Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09C50E296346C200CEA9DB /* API Service.swift */; };
-		FF09C5122963472100CEA9DB /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09C5112963472100CEA9DB /* NetworkError.swift */; };
-		FF09C5142963475A00CEA9DB /* ExtensionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09C5132963475A00CEA9DB /* ExtensionData.swift */; };
-		FF09C5162963478D00CEA9DB /* URLCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09C5152963478D00CEA9DB /* URLCreation.swift */; };
-		FF09C51829634D8900CEA9DB /* DetailViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09C51729634D8900CEA9DB /* DetailViewVC.swift */; };
-		FF09C51B296369FC00CEA9DB /* BusinessListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09C51A296369FC00CEA9DB /* BusinessListVM.swift */; };
-		FF09C51D29638B0F00CEA9DB /* BusinessById.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF09C51C29638B0F00CEA9DB /* BusinessById.swift */; };
 		FF29F9D8295B5DDC000D3183 /* HeaderLargeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF29F9D7295B5DDC000D3183 /* HeaderLargeView.xib */; };
 		FF29F9DB295B8DE0000D3183 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF29F9D9295B8DE0000D3183 /* CollectionViewCell.swift */; };
 		FF29F9DC295B8DE0000D3183 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF29F9DA295B8DE0000D3183 /* CollectionViewCell.xib */; };
-		FF3FBFF429674AA800287660 /* YelpCollectionViewCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FBFF329674AA800287660 /* YelpCollectionViewCellVM.swift */; };
-		FF3FC032296A8D4700287660 /* BusinessStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FC031296A8D4700287660 /* BusinessStatus.swift */; };
 		FFECE29A295E367C00BC7C6F /* YelpCVStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFECE299295E367C00BC7C6F /* YelpCVStoryboard.storyboard */; };
 		FFECE29C295E371100BC7C6F /* YelpCVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFECE29B295E371100BC7C6F /* YelpCVViewController.swift */; };
 		FFECE29F295E3E3300BC7C6F /* YelpCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFECE29D295E3E3300BC7C6F /* YelpCollectionViewCell.swift */; };
@@ -85,12 +67,6 @@
 		EBA3FB07295CD8EE002AF566 /* SwipeableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableViewDelegate.swift; sourceTree = "<group>"; };
 		EBA3FB09295CDD56002AF566 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		EBA3FB0B295CE2A8002AF566 /* SwipeDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeDirection.swift; sourceTree = "<group>"; };
-		EBD5726929679341000EF4A9 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-		EBD5726D296C7EA7000EF4A9 /* LocationManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerViewModel.swift; sourceTree = "<group>"; };
-		EBD5726F296C7EC0000EF4A9 /* LocationManager.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LocationManager.storyboard; sourceTree = "<group>"; };
-		EBD57272296C965F000EF4A9 /* LocationManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerViewController.swift; sourceTree = "<group>"; };
-		EBE840D02967898D00DC578E /* SelectionResults.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectionResults.storyboard; sourceTree = "<group>"; };
-		EBE840D2296789A800DC578E /* SelectionResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionResultsViewController.swift; sourceTree = "<group>"; };
 		EBE8F3FB2953D4E0001BC7B7 /* WhatDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBE8F3FE2953D4E0001BC7B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBE8F4002953D4E0001BC7B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,27 +75,15 @@
 		EBE8F40A2953D4E2001BC7B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EBE8F40C2953D4E2001BC7B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBF827D9295AF1350042DA9B /* TabSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSearchViewController.swift; sourceTree = "<group>"; };
-		FF09C505296161CD00CEA9DB /* DetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailView.storyboard; sourceTree = "<group>"; };
-		FF09C50A2963464F00CEA9DB /* DetailViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewVM.swift; sourceTree = "<group>"; };
-		FF09C50C2963468900CEA9DB /* BusinessSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSearch.swift; sourceTree = "<group>"; };
-		FF09C50E296346C200CEA9DB /* API Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API Service.swift"; sourceTree = "<group>"; };
-		FF09C5112963472100CEA9DB /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		FF09C5132963475A00CEA9DB /* ExtensionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionData.swift; sourceTree = "<group>"; };
-		FF09C5152963478D00CEA9DB /* URLCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLCreation.swift; sourceTree = "<group>"; };
-		FF09C51729634D8900CEA9DB /* DetailViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewVC.swift; sourceTree = "<group>"; };
-		FF09C51A296369FC00CEA9DB /* BusinessListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessListVM.swift; sourceTree = "<group>"; };
-		FF09C51C29638B0F00CEA9DB /* BusinessById.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessById.swift; sourceTree = "<group>"; };
 		FF29F9D7295B5DDC000D3183 /* HeaderLargeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderLargeView.xib; sourceTree = "<group>"; };
 		FF29F9D9295B8DE0000D3183 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		FF29F9DA295B8DE0000D3183 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
-		FF3FBFF329674AA800287660 /* YelpCollectionViewCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpCollectionViewCellVM.swift; sourceTree = "<group>"; };
-		FF3FC031296A8D4700287660 /* BusinessStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessStatus.swift; sourceTree = "<group>"; };
 		FFECE299295E367C00BC7C6F /* YelpCVStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YelpCVStoryboard.storyboard; sourceTree = "<group>"; };
 		FFECE29B295E371100BC7C6F /* YelpCVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpCVViewController.swift; sourceTree = "<group>"; };
 		FFECE29D295E3E3300BC7C6F /* YelpCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpCollectionViewCell.swift; sourceTree = "<group>"; };
 		FFECE29E295E3E3300BC7C6F /* YelpCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YelpCollectionViewCell.xib; sourceTree = "<group>"; };
 		FFECE2AB295F4A5E00BC7C6F /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
-		FFECE2AC295F4A5E00BC7C6F /* HeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HeaderCollectionReusableView.xib; path = ../HeaderCollectionReusableView.xib; sourceTree = "<group>"; };
+		FFECE2AC295F4A5E00BC7C6F /* HeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		FFFB9356295B5A6100191939 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = WhatDo/Storyboards/Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		FFFB9359295B5ACE00191939 /* Activity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
 		FFFB9360295B5B2400191939 /* Events.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Events.storyboard; sourceTree = "<group>"; };
@@ -172,7 +136,6 @@
 				EB15767829638067008BD904 /* CategoryRefinementViewModel.swift */,
 				EB06A953295CEEBC000AC7E7 /* CategoryRefinementViewController.swift */,
 				EB15767E2963A35C008BD904 /* Swipeable Card Custom View */,
-				EBC55F66295D0C48007F890F /* Swipeable Cards */,
 			);
 			path = "Category Refinement";
 			sourceTree = "<group>";
@@ -191,25 +154,6 @@
 				EBA3FB0B295CE2A8002AF566 /* SwipeDirection.swift */,
 			);
 			path = "Swipeable Cards";
-			sourceTree = "<group>";
-		};
-		EBD57271296C7EC5000EF4A9 /* Location Manager */ = {
-			isa = PBXGroup;
-			children = (
-				EBD5726F296C7EC0000EF4A9 /* LocationManager.storyboard */,
-				EBD5726D296C7EA7000EF4A9 /* LocationManagerViewModel.swift */,
-				EBD57272296C965F000EF4A9 /* LocationManagerViewController.swift */,
-			);
-			path = "Location Manager";
-			sourceTree = "<group>";
-		};
-		EBE840D429678AD600DC578E /* Selection Results */ = {
-			isa = PBXGroup;
-			children = (
-				EBE840D02967898D00DC578E /* SelectionResults.storyboard */,
-				EBE840D2296789A800DC578E /* SelectionResultsViewController.swift */,
-			);
-			path = "Selection Results";
 			sourceTree = "<group>";
 		};
 		EBE8F3F22953D4E0001BC7B7 = {
@@ -237,69 +181,14 @@
 				FFFB9366295B5B5300191939 /* Cinema */,
 				FFFB9362295B5B2A00191939 /* Events */,
 				FFFB935B295B5ADF00191939 /* Activity */,
-				FF09C510296346F200CEA9DB /* Networking */,
-				FF09C519296369B100CEA9DB /* ViewModels */,
-				FF09C5092963436E00CEA9DB /* Model */,
-				FF09C50729633DCB00CEA9DB /* Detail View */,
-				FFECE298295E362E00BC7C6F /* Yelp Collection View */,
+				FFECE298295E362E00BC7C6F /* YelpCollectionView */,
 				FFFB9358295B5A8800191939 /* Home */,
 				FFD1A6AA2954FD8C0021D539 /* Main */,
 				FFFB9368295B5BDF00191939 /* Header View */,
+				EBC55F66295D0C48007F890F /* Swipeable Cards */,
 				EBA3FAFA295CC281002AF566 /* Category Refinement */,
-				EBE840D429678AD600DC578E /* Selection Results */,
-				EBD57271296C7EC5000EF4A9 /* Location Manager */,
 			);
 			path = WhatDo;
-			sourceTree = "<group>";
-		};
-		FF09C50729633DCB00CEA9DB /* Detail View */ = {
-			isa = PBXGroup;
-			children = (
-				FF09C505296161CD00CEA9DB /* DetailView.storyboard */,
-				FF09C51729634D8900CEA9DB /* DetailViewVC.swift */,
-				FF09C50A2963464F00CEA9DB /* DetailViewVM.swift */,
-			);
-			path = "Detail View";
-			sourceTree = "<group>";
-		};
-		FF09C5092963436E00CEA9DB /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				FF09C50C2963468900CEA9DB /* BusinessSearch.swift */,
-				FF09C51C29638B0F00CEA9DB /* BusinessById.swift */,
-				FF3FC031296A8D4700287660 /* BusinessStatus.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		FF09C510296346F200CEA9DB /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				FF09C50E296346C200CEA9DB /* API Service.swift */,
-				FF09C5112963472100CEA9DB /* NetworkError.swift */,
-				FF09C5132963475A00CEA9DB /* ExtensionData.swift */,
-				FF09C5152963478D00CEA9DB /* URLCreation.swift */,
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
-		FF09C519296369B100CEA9DB /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				FF09C51A296369FC00CEA9DB /* BusinessListVM.swift */,
-				FF3FBFF329674AA800287660 /* YelpCollectionViewCellVM.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		FF9939F82965E60A001FF52C /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				FFECE2AC295F4A5E00BC7C6F /* HeaderCollectionReusableView.xib */,
-				FFECE299295E367C00BC7C6F /* YelpCVStoryboard.storyboard */,
-				FFECE29E295E3E3300BC7C6F /* YelpCollectionViewCell.xib */,
-			);
-			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		FFD1A6AA2954FD8C0021D539 /* Main */ = {
@@ -310,15 +199,17 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		FFECE298295E362E00BC7C6F /* Yelp Collection View */ = {
+		FFECE298295E362E00BC7C6F /* YelpCollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				FF9939F82965E60A001FF52C /* Storyboards */,
+				FFECE299295E367C00BC7C6F /* YelpCVStoryboard.storyboard */,
+				FFECE29E295E3E3300BC7C6F /* YelpCollectionViewCell.xib */,
+				FFECE2AC295F4A5E00BC7C6F /* HeaderCollectionReusableView.xib */,
 				FFECE29B295E371100BC7C6F /* YelpCVViewController.swift */,
 				FFECE29D295E3E3300BC7C6F /* YelpCollectionViewCell.swift */,
 				FFECE2AB295F4A5E00BC7C6F /* HeaderCollectionReusableView.swift */,
 			);
-			path = "Yelp Collection View";
+			path = YelpCollectionView;
 			sourceTree = "<group>";
 		};
 		FFFB9358295B5A8800191939 /* Home */ = {
@@ -328,7 +219,6 @@
 				FF29F9DA295B8DE0000D3183 /* CollectionViewCell.xib */,
 				EB0B360D295AB31D00BD4713 /* HomeViewController.swift */,
 				FF29F9D9295B8DE0000D3183 /* CollectionViewCell.swift */,
-				EBD5726929679341000EF4A9 /* TabBarViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -441,17 +331,14 @@
 			files = (
 				FFFB935A295B5ACE00191939 /* Activity.storyboard in Resources */,
 				EBA3FAFC295CC41F002AF566 /* SwipeableCardView.xib in Resources */,
-				FF09C506296161CD00CEA9DB /* DetailView.storyboard in Resources */,
 				FFFB9357295B5A6100191939 /* Home.storyboard in Resources */,
 				FF29F9D8295B5DDC000D3183 /* HeaderLargeView.xib in Resources */,
 				FF29F9DC295B8DE0000D3183 /* CollectionViewCell.xib in Resources */,
 				FFFB9365295B5B4E00191939 /* Cinema.storyboard in Resources */,
-				EBD57270296C7EC0000EF4A9 /* LocationManager.storyboard in Resources */,
 				EB1576802963A60D008BD904 /* RefinementCard.xib in Resources */,
 				EBE8F40B2953D4E2001BC7B7 /* LaunchScreen.storyboard in Resources */,
 				FFECE2A0295E3E3300BC7C6F /* YelpCollectionViewCell.xib in Resources */,
 				FFECE29A295E367C00BC7C6F /* YelpCVStoryboard.storyboard in Resources */,
-				EBE840D12967898D00DC578E /* SelectionResults.storyboard in Resources */,
 				FFECE2AE295F4A5E00BC7C6F /* HeaderCollectionReusableView.xib in Resources */,
 				FFFB9361295B5B2400191939 /* Events.storyboard in Resources */,
 				EBE8F4082953D4E2001BC7B7 /* Assets.xcassets in Resources */,
@@ -519,32 +406,17 @@
 				EB0B360E295AB31D00BD4713 /* HomeViewController.swift in Sources */,
 				EBA3FB04295CD1E9002AF566 /* CardViewDelegate.swift in Sources */,
 				EBA3FB0A295CDD56002AF566 /* UIView.swift in Sources */,
-				FF09C50F296346C200CEA9DB /* API Service.swift in Sources */,
-				FF09C51829634D8900CEA9DB /* DetailViewVC.swift in Sources */,
 				EBE8F3FF2953D4E0001BC7B7 /* AppDelegate.swift in Sources */,
 				EBA3FB02295CCB36002AF566 /* SwipeableCardView.swift in Sources */,
-				EBE840D3296789A800DC578E /* SelectionResultsViewController.swift in Sources */,
-				FF3FBFF429674AA800287660 /* YelpCollectionViewCellVM.swift in Sources */,
-				FF09C5142963475A00CEA9DB /* ExtensionData.swift in Sources */,
 				FF29F9DB295B8DE0000D3183 /* CollectionViewCell.swift in Sources */,
 				EBF827DA295AF1350042DA9B /* TabSearchViewController.swift in Sources */,
-				EBD5726A29679341000EF4A9 /* TabBarViewController.swift in Sources */,
-				FF09C50B2963464F00CEA9DB /* DetailViewVM.swift in Sources */,
 				FFECE29C295E371100BC7C6F /* YelpCVViewController.swift in Sources */,
-				FF09C51D29638B0F00CEA9DB /* BusinessById.swift in Sources */,
-				FF09C5162963478D00CEA9DB /* URLCreation.swift in Sources */,
-				FF09C51B296369FC00CEA9DB /* BusinessListVM.swift in Sources */,
-				FF09C50D2963468900CEA9DB /* BusinessSearch.swift in Sources */,
-				FF09C5122963472100CEA9DB /* NetworkError.swift in Sources */,
 				EBE8F4012953D4E0001BC7B7 /* SceneDelegate.swift in Sources */,
-				EBD57273296C965F000EF4A9 /* LocationManagerViewController.swift in Sources */,
 				EB15767929638067008BD904 /* CategoryRefinementViewModel.swift in Sources */,
 				EBA3FB08295CD8EE002AF566 /* SwipeableViewDelegate.swift in Sources */,
-				EBD5726E296C7EA7000EF4A9 /* LocationManagerViewModel.swift in Sources */,
 				EB0B3608295A995700BD4713 /* HeaderLargeView.swift in Sources */,
 				EBA3FB00295CC9B1002AF566 /* CardViewDataSource.swift in Sources */,
 				EB06A954295CEEBC000AC7E7 /* CategoryRefinementViewController.swift in Sources */,
-				FF3FC032296A8D4700287660 /* BusinessStatus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
