@@ -6,10 +6,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--TabBar-->
+        <!--Tab Bar Controller-->
         <scene sceneID="eFf-Xa-C8H">
             <objects>
-                <tabBarController title="TabBar" id="z67-5S-eby" sceneMemberID="viewController">
+                <tabBarController id="z67-5S-eby" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="y4U-rc-Kli">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

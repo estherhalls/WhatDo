@@ -12,9 +12,9 @@ class RefinementCard: SwipeableCardView {
     // MARK: - Outlets
     
     @IBOutlet weak var backgroundContainerView: UIView!
-    @IBOutlet weak var sfSymbol: UIImageView?
-    @IBOutlet weak var sfSymbol2: UIImageView?
-    @IBOutlet weak var sfSymbol3: UIImageView?
+    @IBOutlet weak var categorySymbolImage: UIImageView!
+    @IBOutlet weak var nightOutSymbol2: UIImageView?
+    @IBOutlet weak var nightOutSymbol3: UIImageView?
     @IBOutlet weak var labelLeft: UILabel!
     @IBOutlet weak var labelRight: UILabel!
     
@@ -33,13 +33,9 @@ class RefinementCard: SwipeableCardView {
     // MARK: -  Configure Cards
     
     private func configure(forViewModel viewModel: RefinementCardViewModel?) {
-      
         if let viewModel {
             labelLeft.text = viewModel.leftLabel
             labelRight.text = viewModel.rightLabel
-            sfSymbol?.image = viewModel.sfSymbol
-            sfSymbol2?.image = viewModel.sfSymbol2
-            sfSymbol3?.image = viewModel.sfSymbol3
             
             backgroundContainerView.layer.cornerRadius = 14.0
         }
