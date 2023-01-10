@@ -53,7 +53,7 @@ class YelpCVViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         businessListVM = BusinessListVM(delegate: self)
-        businessListVM.yelpSearch(latitude: "21.27702694074651", longitude: "-157.81304640731193", radius: "8000")
+        businessListVM.yelpSearch()
     }
     
     @IBAction func micButtonTapped(_ sender: Any) {
@@ -92,35 +92,32 @@ extension YelpCVViewController: UICollectionViewDataSource {
 //        return businessListVM.businesses.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "yelpCell", for: indexPath) as? YelpCollectionViewCell else
-        { return UICollectionViewCell() }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "yelpCell", for: indexPath) as! YelpCollectionViewCell
             
         let business = businessListVM.businesses[indexPath.row]
        
+        cell.delegate = self
         cell.setupBusinessCell(business: business)
+        
         return cell
     }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.deselectItem(at: indexPath, animated: true)
-        let business = businessListVM.businesses[indexPath.row]
-        
-    }
+
     
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        // Check the kind of supplementary view here, it needs to match the kind in your cell registration. Then call collectionView.dequeueReusableSupplementaryView and the rest should be pretty familiar.
-        guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCell", for: indexPath) as? HeaderCollectionReusableView else { return UICollectionReusableView() }
-        
-        //        let category = categoryHeaderImages[indexPath.section]
-        //
-        //        cell.configure(with: category)
-        //
-        //        return cell
-        //    }
-        
-        let category = businessListVM.businessesArray[indexPath.section]
-        cell.category
-        return cell
-    }
+//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+//        // Check the kind of supplementary view here, it needs to match the kind in your cell registration. Then call collectionView.dequeueReusableSupplementaryView and the rest should be pretty familiar.
+//        guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCell", for: indexPath) as? HeaderCollectionReusableView else { return UICollectionReusableView() }
+//
+//        //        let category = categoryHeaderImages[indexPath.section]
+//        //
+//        //        cell.configure(with: category)
+//        //
+//        //        return cell
+//        //    }
+//
+//        let category = businessListVM.businessesArray[indexPath.section]
+//        cell.category
+//        return cell
+//    }
 }
 extension YelpCVViewController: YelpCollectionViewDelegate {
     func businessesLoadedSuccessfully() {
@@ -128,12 +125,17 @@ extension YelpCVViewController: YelpCollectionViewDelegate {
             self.collectionView.reloadData()
         }
     }
-    func collectionViewTapped(cell: YelpCollectionViewCell) {
-//        let storyboard = UIStoryboard(name: "DetailView", bundle: nil)
-//        guard let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewVC") as? YelpCVViewController else { return UICollectionView() }
-//            guard let category = cell.business else { return }
-//        vc?.business = category
-//            self.present(vc, animated: true, completion: nil)
-        
+}
+
+extension YelpCVViewController: YelpCollectionViewCellDelegate {
+    func cellTapped(cell: YelpCollectionViewCell) {
+        let storyboard = UIStoryboard(name: "DetailView", bundle: nil)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewVC") as? DetailViewVC {
+            guard let data = cell.business else {return}
+            vc.sentData = data
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    
+        print("Take me there!")
     }
 }

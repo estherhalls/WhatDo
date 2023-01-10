@@ -21,7 +21,7 @@ class DetailViewVC: UIViewController {
     
     
     let locationManager = CLLocationManager()
-    
+    var sentData: BusinessSearch?
     
     override func viewDidLoad() {
         super.viewDidLoad()
