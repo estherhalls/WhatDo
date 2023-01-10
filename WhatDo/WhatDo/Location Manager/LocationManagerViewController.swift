@@ -8,14 +8,14 @@
 import UIKit
 import CoreLocation
 
-// User Lat and Long should be set here by confirming location services/setting new location. Lat and long are parameters passed to Yelp network calls. Slider sets radius from user location (will need to convert miles on user end to meters for yelp network call). Can manual location set override current? They should probably just both lead to setting location lat/long and whichever they choose will override because it is the latest to set those variables
+/// User Lat and Long should be set here by confirming location services/setting new location. Lat and long are parameters passed to Yelp network calls. Slider sets radius from user location (will need to convert miles on user end to meters for yelp network call). Can manual location set override current? They should probably just both lead to setting location lat/long and whichever they choose will override because it is the latest to set those variables
 class LocationManagerViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var headerView: HeaderLargeView!
     
     // Initialize view model class property
-    var viewModel: LocationManagerViewModel!
+    var viewModel = LocationManagerViewModel()
     
     // Reciever Property - Selected Category Sent Data
     var sentCategory: String?
@@ -50,7 +50,7 @@ class LocationManagerViewController: UIViewController {
                     return
                 }
                 strongSelf.viewModel.setLocationCoordinates(with: newLocation)
-                print(LocationManagerViewModel.userLatitude, LocationManagerViewModel.userLongitude)
+                print(LocationManagerViewModel.userLatitude!, LocationManagerViewModel.userLongitude!)
             }
         }
         secondAlert.addAction(dismissAction)
@@ -82,13 +82,14 @@ class LocationManagerViewController: UIViewController {
             /// Unwrap [weak self]
             guard let strongSelf = self else {return}
             strongSelf.viewModel.setLocationCoordinates(with: location)
-            print(LocationManagerViewModel.userLatitude, LocationManagerViewModel.userLongitude)
+            print(LocationManagerViewModel.userLatitude!, LocationManagerViewModel.userLongitude!)
         }
     }
     
     // MARK: - Navigation
     @IBAction func setLocationTapped(_ sender: Any) {
      showLocationAlert()
+
     }
     
     @IBAction func nextButtonTapped(_ sender: Any) {

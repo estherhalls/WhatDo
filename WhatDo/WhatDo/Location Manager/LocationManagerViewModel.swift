@@ -36,6 +36,7 @@ class LocationManagerViewModel: NSObject, CLLocationManagerDelegate {
         LocationManagerViewModel.userLongitude = location.coordinate.longitude
     }
     
+    // Reverse Geocode the user input new location name into CLLocation, then call setLocationCoordinates to convert to the Lat/Long that we can add user location as parameter to network calls
     public func setLocationManually(_ newLocation: String, completion: @escaping ((CLLocation?)-> Void)) {
         CLGeocoder().geocodeAddressString(newLocation) { placemarks, error in
             if error != nil {
@@ -49,10 +50,7 @@ class LocationManagerViewModel: NSObject, CLLocationManagerDelegate {
             return completion(nil)
         }
     }
-        
-    // Reverse Geocode the user's location to return the Lat/Long of it that we can add user location as parameter to network calls
-    
-    
+ 
     // Reverse Geocode the user's location to return the name of it that we can add to a label, etc.
     public func resolveLocationName(with location: CLLocation, completion: @escaping ((String?) -> Void)) {
         let geocoder = CLGeocoder()
