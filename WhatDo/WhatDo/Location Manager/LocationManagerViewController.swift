@@ -89,13 +89,17 @@ class LocationManagerViewController: UIViewController {
     // MARK: - Actions
     /// Radius in miles should be assigned to radius variable in model and converted to meters to use as parameter in network calls
     @IBAction func travelDistanceSliderValueChanged(_ sender: Any) {
-        var distanceLabel = Int(round(travelDistanceSlider.value))
+        let distanceLabel = Int(round(travelDistanceSlider.value))
         travelRadiusMilesLabel.text = "\(distanceLabel) Mi."
         
-        var distanceValue = Double(round(travelDistanceSlider.value))
+        let distanceValue = Double(round(travelDistanceSlider.value))
+        
         let miles = distanceValue
+        
         let milesToMeters = miles.convert(from: .miles, to: .meters)
+        
         let roundedMeters = Int(milesToMeters)
+        
         LocationManagerViewModel.radius = "\(roundedMeters)"
         print (LocationManagerViewModel.radius!)
     }

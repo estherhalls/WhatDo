@@ -16,6 +16,8 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     
+    // Initialize view model class property
+    var viewModel = LocationManagerViewModel()
     
     let categories = [
         "diningCategory",
@@ -29,15 +31,25 @@ class HomeViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // Header
         let subtitleImage = UIImage(named: "subtitle")
         if let titleImage = UIImage(named: "whatDoLarge") {
             homeHeaderView.configureImageViews(withImages: titleImage, subtitle: subtitleImage)
-            
+            // Collection View of Categories
             categoryCollectionView.delegate = self
             categoryCollectionView.dataSource = self
             
             categoryCollectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "categoryCell")
+        }
+        
+        // Request Location Services Upon App Launch
+        
+        // Alert that allows user to use current location or set a location manually
+        LocationManagerViewModel.shared.getUserLocation { [weak self] location in
+            /// Unwrap [weak self]
+            guard let strongSelf = self else {return}
+            strongSelf.viewModel.setLocationCoordinates(with: location)
+            
         }
     }
 }
