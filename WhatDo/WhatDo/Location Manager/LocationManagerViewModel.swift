@@ -30,6 +30,26 @@ class LocationManagerViewModel: NSObject, CLLocationManagerDelegate {
         manager.delegate = self
         manager.startUpdatingLocation()
     }
+    
+    public func setLocationCoordinates(with location: CLLocation) {
+        LocationManagerViewModel.userLatitude = location.coordinate.latitude
+        LocationManagerViewModel.userLongitude = location.coordinate.longitude
+    }
+    
+    public func setLocationManually(_ newLocation: String, completion: @escaping ((CLLocation?)-> Void)) {
+        CLGeocoder().geocodeAddressString(newLocation) { placemarks, error in
+            if error != nil {
+                print("error: \(error as Optional)")
+            } else {
+                if let placemark = placemarks?.first,
+                   let coord = placemark.location?.coordinate {
+                    return completion(CLLocation(latitude: coord.latitude, longitude: coord.longitude))
+                }
+            }
+            return completion(nil)
+        }
+    }
+        
     // Reverse Geocode the user's location to return the Lat/Long of it that we can add user location as parameter to network calls
     
     
@@ -57,6 +77,7 @@ class LocationManagerViewModel: NSObject, CLLocationManagerDelegate {
         }
     }
     
+    // implementing CLLocationManagerDelegate - delegate is assigned in getUserLocation function, and this will automatically trigger when the condition occurs
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else { return }
         completion?(location)

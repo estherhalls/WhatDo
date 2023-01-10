@@ -14,6 +14,8 @@ class LocationManagerViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var headerView: HeaderLargeView!
     
+    // Initialize view model class property
+    var viewModel: LocationManagerViewModel!
     
     // Reciever Property - Selected Category Sent Data
     var sentCategory: String?
@@ -30,21 +32,61 @@ class LocationManagerViewController: UIViewController {
     }
     
     // MARK: - Methods
-    func setLocationCoordinates(with location: CLLocation) {
-        LocationManagerViewModel.userLatitude = location.coordinate.latitude
-        LocationManagerViewModel.userLongitude = location.coordinate.longitude
-     
+    func showNewLocationAlert() {
+        let secondAlert = UIAlertController(title: "New Starting Location", message: "Search from your current location, or enter another address.", preferredStyle: .alert)
+        
+        let dismissAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        let setLocationAction = UIAlertAction(title: "Set Location", style: .default) { _ in
+            guard let contentTextField = secondAlert.textFields?.first,
+                  let locationName = contentTextField.text else {return}
+            self.viewModel.setLocationManually(locationName) { [weak self] location in
+                /// Unwrap [weak self]
+                guard let strongSelf = self else {return}
+                guard let newLocation = location else {
+                    self?.updateUserLocation()
+                    return
+                }
+                strongSelf.viewModel.setLocationCoordinates(with: newLocation)
+                print(LocationManagerViewModel.userLatitude, LocationManagerViewModel.userLongitude)
+            }
+        }
+        secondAlert.addAction(dismissAction)
+        secondAlert.addAction(setLocationAction)
+        present(secondAlert, animated: true)
+    }
+    
+    func showLocationAlert() {
+        let alert = UIAlertController(title: "Starting Location", message: "Enter a city name or street address.", preferredStyle: .alert)
+        
+        let dismissAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        let currentLocationAction = UIAlertAction(title: "Use Current Location", style: .default) { _ in
+            self.updateUserLocation()
+        }
+        
+        let newLocationAction = UIAlertAction(title: "Enter New Address", style: .default) { _ in
+            self.showNewLocationAlert()
+        }
+        alert.addAction(dismissAction)
+        alert.addAction(currentLocationAction)
+        alert.addAction(newLocationAction)
+        present(alert, animated: true)
+    }
+    
+    func updateUserLocation() {
+        // Alert that allows user to use current location or set a location manually
+        LocationManagerViewModel.shared.getUserLocation { [weak self] location in
+            /// Unwrap [weak self]
+            guard let strongSelf = self else {return}
+            strongSelf.viewModel.setLocationCoordinates(with: location)
+            print(LocationManagerViewModel.userLatitude, LocationManagerViewModel.userLongitude)
+        }
     }
     
     // MARK: - Navigation
     @IBAction func setLocationTapped(_ sender: Any) {
-        // Alert that allows user to use current location or set a location manually
-        LocationManagerViewModel.shared.getUserLocation { [weak self] location in
-            /// Unwrap [weak self]
-            guard let strongSelf = self else { return }
-            strongSelf.setLocationCoordinates(with: location)
-            print(LocationManagerViewModel.userLatitude, LocationManagerViewModel.userLongitude)
-        }
+     showLocationAlert()
     }
     
     @IBAction func nextButtonTapped(_ sender: Any) {
