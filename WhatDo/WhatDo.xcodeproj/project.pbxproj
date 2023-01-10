@@ -213,6 +213,7 @@
 				FFECE298295E362E00BC7C6F /* Yelp Collection View */,
 				FFFB9358295B5A8800191939 /* Home */,
 				FFD1A6AA2954FD8C0021D539 /* Main */,
+				FFFB9368295B5BDF00191939 /* Header View */,
 				EBA3FAFA295CC281002AF566 /* Category Refinement */,
 			);
 			path = WhatDo;
@@ -271,7 +272,6 @@
 		FFD1A6AA2954FD8C0021D539 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				FFFB9368295B5BDF00191939 /* Header View */,
 				EBE8F4042953D4E0001BC7B7 /* Main.storyboard */,
 			);
 			path = Main;
