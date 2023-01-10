@@ -23,7 +23,7 @@ class YelpCollectionViewCell: UICollectionViewCell {
     var business: BusinessSearch?
     var cellViewModel = YelpCollectionViewCellVM()
     
-    weak var delegate: YelpCollectionViewDelegate?
+    weak var delegate: YelpCollectionViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()

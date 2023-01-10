@@ -64,6 +64,7 @@
                 <constraint firstItem="wIG-NV-UNH" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="1TX-Zy-IVe"/>
                 <constraint firstItem="Cat-t2-yrF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="F1y-Mz-878"/>
                 <constraint firstItem="tUO-sh-TEM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="GGn-BP-2Yg"/>
+                <constraint firstItem="Cat-t2-yrF" firstAttribute="width" secondItem="wIG-NV-UNH" secondAttribute="height" multiplier="59:69" id="H7x-q2-Keo"/>
                 <constraint firstAttribute="trailing" secondItem="Cat-t2-yrF" secondAttribute="trailing" id="Iol-kR-XMC"/>
                 <constraint firstAttribute="trailing" secondItem="wIG-NV-UNH" secondAttribute="trailing" id="K1W-QL-XaA"/>
                 <constraint firstItem="tUO-sh-TEM" firstAttribute="height" secondItem="wIG-NV-UNH" secondAttribute="height" multiplier="0.35" id="SDh-Xj-TXK"/>
