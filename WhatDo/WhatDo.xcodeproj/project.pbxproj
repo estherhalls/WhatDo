@@ -160,6 +160,7 @@
 				EB15767829638067008BD904 /* CategoryRefinementViewModel.swift */,
 				EB06A953295CEEBC000AC7E7 /* CategoryRefinementViewController.swift */,
 				EB15767E2963A35C008BD904 /* Swipeable Card Custom View */,
+				EBC55F66295D0C48007F890F /* Swipeable Cards */,
 			);
 			path = "Category Refinement";
 			sourceTree = "<group>";
@@ -212,7 +213,7 @@
 				FFECE298295E362E00BC7C6F /* Yelp Collection View */,
 				FFFB9358295B5A8800191939 /* Home */,
 				FFD1A6AA2954FD8C0021D539 /* Main */,
-				EBC55F66295D0C48007F890F /* Swipeable Cards */,
+				FFFB9368295B5BDF00191939 /* Header View */,
 				EBA3FAFA295CC281002AF566 /* Category Refinement */,
 			);
 			path = WhatDo;
@@ -271,7 +272,6 @@
 		FFD1A6AA2954FD8C0021D539 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				FFFB9368295B5BDF00191939 /* Header View */,
 				EBE8F4042953D4E0001BC7B7 /* Main.storyboard */,
 			);
 			path = Main;
