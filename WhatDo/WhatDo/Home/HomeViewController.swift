@@ -9,23 +9,24 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    // MARK: - Outlets
     @IBOutlet weak var homeHeaderView: HeaderLargeView!
-    
     @IBOutlet weak var generateOptionsLabel: UILabel!
     @IBOutlet weak var selectDescriptionLabel: UILabel!
     
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     
-
+    
     let categories = [
         "diningCategory",
         "drinkCategory",
         "cinemaCategory",
         "eventCategory",
         "activityCategory",
-        "Unknown"
+        "nightOutCategory"
     ]
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,18 +41,43 @@ class HomeViewController: UIViewController {
         }
     }
 }
+
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return categories.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // Return the cell by dequeueing it
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifier, for: indexPath) as! CollectionViewCell
+        
         let category = categories[indexPath.row]
         
+        cell.delegate = self
         cell.configure(with: category)
         
         return cell
     }
 }
+
+extension HomeViewController: CollectionViewCellDelegate {
+    
+    func categoryCellTapped(cell: CollectionViewCell) {
+        
+        let storyboard = UIStoryboard(name: "LocationManager", bundle: nil)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "locationVC") as? LocationManagerViewController {
+            guard let category = cell.category else {return}
+            vc.sentCategory = category
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    
+        print("Take me there!")
+    }
+    
+    
+    
+}
+
+
+
+

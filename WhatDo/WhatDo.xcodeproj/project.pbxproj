@@ -24,6 +24,12 @@
 		EBA3FB08295CD8EE002AF566 /* SwipeableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA3FB07295CD8EE002AF566 /* SwipeableViewDelegate.swift */; };
 		EBA3FB0A295CDD56002AF566 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA3FB09295CDD56002AF566 /* UIView.swift */; };
 		EBA3FB0C295CE2A8002AF566 /* SwipeDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA3FB0B295CE2A8002AF566 /* SwipeDirection.swift */; };
+		EBD5726A29679341000EF4A9 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD5726929679341000EF4A9 /* TabBarViewController.swift */; };
+		EBD5726E296C7EA7000EF4A9 /* LocationManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD5726D296C7EA7000EF4A9 /* LocationManagerViewModel.swift */; };
+		EBD57270296C7EC0000EF4A9 /* LocationManager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD5726F296C7EC0000EF4A9 /* LocationManager.storyboard */; };
+		EBD57273296C965F000EF4A9 /* LocationManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD57272296C965F000EF4A9 /* LocationManagerViewController.swift */; };
+		EBE840D12967898D00DC578E /* SelectionResults.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBE840D02967898D00DC578E /* SelectionResults.storyboard */; };
+		EBE840D3296789A800DC578E /* SelectionResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE840D2296789A800DC578E /* SelectionResultsViewController.swift */; };
 		EBE8F3FF2953D4E0001BC7B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE8F3FE2953D4E0001BC7B7 /* AppDelegate.swift */; };
 		EBE8F4012953D4E0001BC7B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE8F4002953D4E0001BC7B7 /* SceneDelegate.swift */; };
 		EBE8F4062953D4E0001BC7B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBE8F4042953D4E0001BC7B7 /* Main.storyboard */; };
@@ -79,6 +85,12 @@
 		EBA3FB07295CD8EE002AF566 /* SwipeableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableViewDelegate.swift; sourceTree = "<group>"; };
 		EBA3FB09295CDD56002AF566 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		EBA3FB0B295CE2A8002AF566 /* SwipeDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeDirection.swift; sourceTree = "<group>"; };
+		EBD5726929679341000EF4A9 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		EBD5726D296C7EA7000EF4A9 /* LocationManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerViewModel.swift; sourceTree = "<group>"; };
+		EBD5726F296C7EC0000EF4A9 /* LocationManager.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LocationManager.storyboard; sourceTree = "<group>"; };
+		EBD57272296C965F000EF4A9 /* LocationManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerViewController.swift; sourceTree = "<group>"; };
+		EBE840D02967898D00DC578E /* SelectionResults.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectionResults.storyboard; sourceTree = "<group>"; };
+		EBE840D2296789A800DC578E /* SelectionResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionResultsViewController.swift; sourceTree = "<group>"; };
 		EBE8F3FB2953D4E0001BC7B7 /* WhatDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBE8F3FE2953D4E0001BC7B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBE8F4002953D4E0001BC7B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -181,6 +193,25 @@
 			path = "Swipeable Cards";
 			sourceTree = "<group>";
 		};
+		EBD57271296C7EC5000EF4A9 /* Location Manager */ = {
+			isa = PBXGroup;
+			children = (
+				EBD5726F296C7EC0000EF4A9 /* LocationManager.storyboard */,
+				EBD5726D296C7EA7000EF4A9 /* LocationManagerViewModel.swift */,
+				EBD57272296C965F000EF4A9 /* LocationManagerViewController.swift */,
+			);
+			path = "Location Manager";
+			sourceTree = "<group>";
+		};
+		EBE840D429678AD600DC578E /* Selection Results */ = {
+			isa = PBXGroup;
+			children = (
+				EBE840D02967898D00DC578E /* SelectionResults.storyboard */,
+				EBE840D2296789A800DC578E /* SelectionResultsViewController.swift */,
+			);
+			path = "Selection Results";
+			sourceTree = "<group>";
+		};
 		EBE8F3F22953D4E0001BC7B7 = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +246,8 @@
 				FFD1A6AA2954FD8C0021D539 /* Main */,
 				FFFB9368295B5BDF00191939 /* Header View */,
 				EBA3FAFA295CC281002AF566 /* Category Refinement */,
+				EBE840D429678AD600DC578E /* Selection Results */,
+				EBD57271296C7EC5000EF4A9 /* Location Manager */,
 			);
 			path = WhatDo;
 			sourceTree = "<group>";
@@ -295,6 +328,7 @@
 				FF29F9DA295B8DE0000D3183 /* CollectionViewCell.xib */,
 				EB0B360D295AB31D00BD4713 /* HomeViewController.swift */,
 				FF29F9D9295B8DE0000D3183 /* CollectionViewCell.swift */,
+				EBD5726929679341000EF4A9 /* TabBarViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -412,10 +446,12 @@
 				FF29F9D8295B5DDC000D3183 /* HeaderLargeView.xib in Resources */,
 				FF29F9DC295B8DE0000D3183 /* CollectionViewCell.xib in Resources */,
 				FFFB9365295B5B4E00191939 /* Cinema.storyboard in Resources */,
+				EBD57270296C7EC0000EF4A9 /* LocationManager.storyboard in Resources */,
 				EB1576802963A60D008BD904 /* RefinementCard.xib in Resources */,
 				EBE8F40B2953D4E2001BC7B7 /* LaunchScreen.storyboard in Resources */,
 				FFECE2A0295E3E3300BC7C6F /* YelpCollectionViewCell.xib in Resources */,
 				FFECE29A295E367C00BC7C6F /* YelpCVStoryboard.storyboard in Resources */,
+				EBE840D12967898D00DC578E /* SelectionResults.storyboard in Resources */,
 				FFECE2AE295F4A5E00BC7C6F /* HeaderCollectionReusableView.xib in Resources */,
 				FFFB9361295B5B2400191939 /* Events.storyboard in Resources */,
 				EBE8F4082953D4E2001BC7B7 /* Assets.xcassets in Resources */,
@@ -487,10 +523,12 @@
 				FF09C51829634D8900CEA9DB /* DetailViewVC.swift in Sources */,
 				EBE8F3FF2953D4E0001BC7B7 /* AppDelegate.swift in Sources */,
 				EBA3FB02295CCB36002AF566 /* SwipeableCardView.swift in Sources */,
+				EBE840D3296789A800DC578E /* SelectionResultsViewController.swift in Sources */,
 				FF3FBFF429674AA800287660 /* YelpCollectionViewCellVM.swift in Sources */,
 				FF09C5142963475A00CEA9DB /* ExtensionData.swift in Sources */,
 				FF29F9DB295B8DE0000D3183 /* CollectionViewCell.swift in Sources */,
 				EBF827DA295AF1350042DA9B /* TabSearchViewController.swift in Sources */,
+				EBD5726A29679341000EF4A9 /* TabBarViewController.swift in Sources */,
 				FF09C50B2963464F00CEA9DB /* DetailViewVM.swift in Sources */,
 				FFECE29C295E371100BC7C6F /* YelpCVViewController.swift in Sources */,
 				FF09C51D29638B0F00CEA9DB /* BusinessById.swift in Sources */,
@@ -499,8 +537,10 @@
 				FF09C50D2963468900CEA9DB /* BusinessSearch.swift in Sources */,
 				FF09C5122963472100CEA9DB /* NetworkError.swift in Sources */,
 				EBE8F4012953D4E0001BC7B7 /* SceneDelegate.swift in Sources */,
+				EBD57273296C965F000EF4A9 /* LocationManagerViewController.swift in Sources */,
 				EB15767929638067008BD904 /* CategoryRefinementViewModel.swift in Sources */,
 				EBA3FB08295CD8EE002AF566 /* SwipeableViewDelegate.swift in Sources */,
+				EBD5726E296C7EA7000EF4A9 /* LocationManagerViewModel.swift in Sources */,
 				EB0B3608295A995700BD4713 /* HeaderLargeView.swift in Sources */,
 				EBA3FB00295CC9B1002AF566 /* CardViewDataSource.swift in Sources */,
 				EB06A954295CEEBC000AC7E7 /* CategoryRefinementViewController.swift in Sources */,
