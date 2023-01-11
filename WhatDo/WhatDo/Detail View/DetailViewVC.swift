@@ -26,23 +26,41 @@ class DetailViewVC: UIViewController {
             updateViews()
         }
     }
+   
+    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        locationManager.delegate = self
-//        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        // This triggers the location permission dialog. The user will only see the dialog once.
-//        locationManager.requestWhenInUseAuthorization()
-//        // Triggers a one-time location request.
-//        locationManager.requestLocation()
+//        view.insertSubview(mapView, at: 0)
+        DispatchQueue.main.async {
+            
+            self.addMapAnnotationLocation()
+        }
+    }
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        mapView.frame = view.bounds
+//    }
+    func addMapAnnotationLocation(){
+        guard let business = sentData else {return}
+        let coordinates = business.coordinates
+        let latitude = coordinates.latitude
+        let longitude = coordinates.longitude
+        var location = CLLocation(latitude: latitude, longitude: longitude)
+        let pin = MKPointAnnotation()
+        pin.coordinate = location.coordinate
+        // Adjust span so that map is zoomed in closer - can this be variable based on user's set desired travel distance?
+        mapView.setRegion(MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)), animated: true)
+        mapView.addAnnotation(pin)
     }
     
-    func updateViews(){
+        func updateViews(){
         loadViewIfNeeded()
-        guard let business = sentData else {return}
+        
         // Need a fetchImage network call
 //        businessImage.image = business.imageUrl
-        businessName.text = business.name
+//        businessName.text = business.name
     }
     
     @IBAction func callButtonTapped(_ sender: Any) {
