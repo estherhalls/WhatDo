@@ -77,10 +77,6 @@ class CategoryRefinementViewController: UIViewController, CardViewDataSource {
         let storyboard = UIStoryboard(name: "SelectionResults", bundle: nil)
         let resultsVC = storyboard.instantiateViewController(withIdentifier: "selectionResultsVC")
         self.navigationController?.pushViewController(resultsVC, animated: true)
-        /// This is to get the SceneDelegate object from your view controller
-        /// then call the change root view controller function to change to main tab bar
-        /// Use this rather than PresentVC function to clear memory and show home as root controller instead of card on top
-//        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(resultsVC)
     }
 
 }
@@ -103,5 +99,5 @@ extension CategoryRefinementViewController {
     func viewForEmptyCards() -> UIView? {
         return nil
     }
+    
 }
-
