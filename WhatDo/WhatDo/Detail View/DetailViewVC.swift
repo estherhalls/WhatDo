@@ -47,7 +47,7 @@ class DetailViewVC: UIViewController {
         let coordinates = business.coordinates
         let latitude = coordinates.latitude
         let longitude = coordinates.longitude
-        var location = CLLocation(latitude: latitude, longitude: longitude)
+        let location = CLLocation(latitude: latitude, longitude: longitude)
         let pin = MKPointAnnotation()
         pin.coordinate = location.coordinate
         // Adjust span so that map is zoomed in closer - can this be variable based on user's set desired travel distance?

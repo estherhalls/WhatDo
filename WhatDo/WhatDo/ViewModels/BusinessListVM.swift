@@ -24,17 +24,10 @@ class BusinessListVM {
     init(delegate: YelpCollectionViewDelegate) {
         self.delegate = delegate
     }
-    // Call Function
-    // A way for BusinessListVM to let the view controller to know that there is data to be displayed
-//    let latValue = "21.27702694074651"
-//    let longValue = "-157.81304640731193"
-//    let radius = "8000"
-    // When has this yelp function completed
-//    func yelpSearch(latitude: String, longitude: String, radius: String){
     
     func yelpSearch(){
-
-        URLCreation().searchYelpRestaurants(userLat: "\(String(describing: latitude))", userLong: "\(longitude)", userRadius: radius) { result in
+        /// Long and Lat will automatically be set if user allows location services when app launches. If they deny, they will set if user allows location services when on LocationManager scene setting travel distance afteer selecting category, or when they enter a location that isn't their current location. May need to adjust network calls that take in optional lat and long to guard against coordinates being nil in the event user disallows location services at launch.
+        URLCreation().searchYelpRestaurants(userLat: "\(latitude)", userLong: "\(longitude)", userRadius: radius) { result in
             switch result {
             case .success(let businesses):
                 // We need to inform the view controller that the data is ready
