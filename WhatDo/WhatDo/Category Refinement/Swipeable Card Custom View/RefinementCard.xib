@@ -116,7 +116,6 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="PTG-aX-ow1" secondAttribute="trailing" constant="20" id="4rW-zv-fqT"/>
-                <constraint firstItem="PTG-aX-ow1" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="29.5" id="7FA-oR-UvM"/>
                 <constraint firstItem="PTG-aX-ow1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="BFX-rB-hg4"/>
                 <constraint firstItem="PTG-aX-ow1" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="V1J-yK-PQn"/>
                 <constraint firstItem="PTG-aX-ow1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="jSC-hc-Rx1"/>

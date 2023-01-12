@@ -18,7 +18,7 @@ protocol CardViewDataSource: AnyObject {
     func card(forQuestionAtIndex index: Int) -> SwipeableCardView
     
     // Provides a view to be displayed underneath all of the cards when they have all been swiped away
-    /// - Returns: view to be displayed underneath all cars
+    /// - Returns: view to be displayed underneath all cards
     func viewForEmptyCards() -> UIView?
     
 }
