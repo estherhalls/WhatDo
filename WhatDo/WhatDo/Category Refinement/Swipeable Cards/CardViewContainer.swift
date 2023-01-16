@@ -143,16 +143,16 @@ extension CardViewContainer {
                 self.setFrame(forCardView: cardView, atIndex: cardIndex)
                 self.layoutIfNeeded()
                 
-                if cardIndex == 0  {
-                    // Display the results view
-                            let storyboard = UIStoryboard(name: "SelectionResults", bundle: nil)
-                            let resultsVC = storyboard.instantiateViewController(withIdentifier: "selectionResultsVC")
-//                    self.vc.navigationController?.pushViewController(resultsVC, animated: true)
-                    /// This is to get the SceneDelegate object from your view controller
-                    /// then call the change root view controller function to change to main tab bar
-                    /// Use this rather than PresentVC function to clear memory and show home as root controller instead of card on top
-                    (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(resultsVC)
-                }
+                                if cardIndex == 0  {
+                                    // Display the results view
+                                            let storyboard = UIStoryboard(name: "SelectionResults", bundle: nil)
+                                            let resultsVC = storyboard.instantiateViewController(withIdentifier: "selectionResultsVC")
+                //                    self.vc.navigationController?.pushViewController(resultsVC, animated: true)
+                                    /// This is to get the SceneDelegate object from your view controller
+                                    /// then call the change root view controller function to change to main tab bar
+                                    /// Use this rather than PresentVC function to clear memory and show home as root controller instead of card on top
+                                    (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(resultsVC)
+                            }
             }
         }
     }

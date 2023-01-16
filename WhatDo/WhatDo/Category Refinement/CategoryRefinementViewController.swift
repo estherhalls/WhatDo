@@ -35,6 +35,9 @@ class CategoryRefinementViewController: UIViewController, CardViewDataSource {
         if let titleImage = UIImage(named: "whatDoSmall") {
             headerView.configureImageViews(withImages: titleImage, subtitle: nil)
         }
+        
+        // Check that Coordinate and travel radius properties have been set. If not, prompt user to input location or kick them back to home screen.
+        
         // Swipeable cards will need view model data sources for the questions for each category.
         swipeableCardView.dataSource = self
     }
@@ -99,5 +102,9 @@ extension CategoryRefinementViewController {
     func viewForEmptyCards() -> UIView? {
         return nil
     }
+    
+}
+
+extension UIPresentationController {
     
 }

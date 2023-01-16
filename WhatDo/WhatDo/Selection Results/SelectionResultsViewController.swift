@@ -19,11 +19,9 @@ class SelectionResultsViewController: UIViewController {
         return map
     }()
     
-    // Initialize view model class property
-    var coordinateViewModel = LocationManagerViewModel()
+    // Location Properties
     let setLongitude = LocationManagerViewModel.userLongitude
     let setLatitude = LocationManagerViewModel.userLatitude
-    /// Can 
     let radius = LocationManagerViewModel.radius
     
     
@@ -38,6 +36,7 @@ class SelectionResultsViewController: UIViewController {
         // Map
         view.insertSubview(map, at: 0)
         /// Long and Lat will automatically be set if user allows location services when app launches. If they deny, they will set if user allows location services when on LocationManager scene setting travel distance afteer selecting category, or when they enter a location that isn't their current location. May need to adjust network calls that take in optional lat and long to guard against coordinates being nil in the event user disallows location services at launch.
+        /// If coordinates have been set, use them
         if setLongitude != nil && setLatitude != nil {
             DispatchQueue.main.async {
                 let location = CLLocation(latitude: self.setLatitude!, longitude: self.setLongitude!)
@@ -45,6 +44,7 @@ class SelectionResultsViewController: UIViewController {
             }
         }
         else {
+            
         /// call weak self in closure to avoid memory leak
             LocationManagerViewModel.shared.getUserLocation { [weak self] location in
                 DispatchQueue.main.async {
