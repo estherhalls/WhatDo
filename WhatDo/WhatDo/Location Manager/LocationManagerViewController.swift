@@ -31,7 +31,6 @@ class LocationManagerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         // App Header
         if let titleImage = UIImage(named: "whatDoSmall") {
             headerView.configureImageViews(withImages: titleImage, subtitle: nil)
@@ -97,16 +96,24 @@ class LocationManagerViewController: UIViewController {
         present(secondAlert, animated: true)
     }
     
-    
     func updateUserLocation() {
         // Alert that allows user to use current location or set a location manually
         LocationManagerViewModel.shared.getUserLocation { [weak self] location in
             /// Unwrap [weak self]
             guard let strongSelf = self else {return}
             strongSelf.viewModel.setLocationCoordinates(with: location)
-            
         }
     }
+    
+    func navNextVC() {
+        let storyboard = UIStoryboard(name: "CategoryRefinement", bundle: nil)
+        if let vc = storyboard.instantiateViewController(withIdentifier: "categoryRefinement") as? CategoryRefinementViewController {
+            guard let category = self.sentCategory else { return }
+            vc.sentCategory = category
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
     // MARK: - Actions
     /// Radius in miles should be assigned to radius variable in model and converted to meters to use as parameter in network calls
     @IBAction func travelDistanceSliderValueChanged(_ sender: Any) {
@@ -132,99 +139,21 @@ class LocationManagerViewController: UIViewController {
     // MARK: - Navigation
     @IBAction func nextButtonTapped(_ sender: Any) {
         /// Check if longitude and latitude are set. If not, prompt the new alert controller for them to enter a location manually, which then sets the lat/long. Right now it is trying to navigate to next page before the coordinates are finished setting, and finding nil. The navigation needs to know the coordinate assignment completed before trying to move forward to next VC. The navigation needs to carry the category to following views, doesn't need to explicitly send the coordinates/travel radius info because those are global properties that are set and can be retrieved later when needed.
-        /// Tried setting Dispatch asyncAfter on navigation, but maybe we need a switch statement.
-        
-        // check if coordinates are not nil and segue first. Then do blockoperations if nil?
-        
-        //        let queue = OperationQueue()
-        //
-        //        if self.setLongitude != nil && self.setLatitude != nil {
-        //            navNextVC()
-        //        } else {
-        //            let setCoordOperation = BlockOperation {
-        //                self.showNewLocationAlert()
-        //            }
-        //
-        //            let navOperation = BlockOperation {
-        //                self.navNextVC()
-        //            }
-        //
-        //            navOperation.addDependency(setCoordOperation)
-        //
-        //            queue.addOperation(setCoordOperation)
-        //            queue.addOperation(navOperation)
-        //            queue.waitUntilAllOperationsAreFinished()
-        //            print("Take me there!")
-        //
-      checkForCoordinates()
-    }
-            
-    
-    
-    
-    //    func setNewLocation(completion: @MainActor @escaping () -> ()) {
-    //        /// Example dispatch to mimic behaviour
-    //         DispatchQueue.main.async {
-    //             Task.init(operation: <#T##() async -> _#>) {
-    //                 await completion()
-    //             }
-    //         }
-    //    }
-    //
-    var onTaskFinished:(() -> Void)?
-    
-    func checkForCoordinates() {
+ 
         if self.setLongitude != nil && self.setLatitude != nil {
             self.navNextVC()
             print("Take Me There!")
         } else {
-            setEmptyCoordinates {
-                print("\(self.setLatitude!), \(self.setLongitude!)")
-                self.afterCoordCheckFinished()
+            DispatchQueue.main.async {
+                self.showNewLocationAlert()
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                self.navNextVC()
+                print("Take Me There!")
             }
         }
     }
-    
-    func setEmptyCoordinates(completionHandler: @escaping () -> Void) {
-        // Store completion handler for later
-        onTaskFinished = completionHandler
-        
-        // Do task where you check for values in the coordinate properties
-            self.showNewLocationAlert()
-        }
-    
-    func afterCoordCheckFinished() {
-        onTaskFinished?() // Call completion handler
-        navNextVC()
-        print("Take Me There!")
-    }
-    
-    func navNextVC() {
-        let storyboard = UIStoryboard(name: "CategoryRefinement", bundle: nil)
-        if let vc = storyboard.instantiateViewController(withIdentifier: "categoryRefinement") as? CategoryRefinementViewController {
-            guard let category = self.sentCategory else { return }
-            vc.sentCategory = category
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-    }
-    
-    
-    /// Identify the critical section, then dispatch the critical section to a serial queue.
-    /// Critical = coordinates have been set before navigation
-    /// "Modifications to layout engine must not be perfomed from background thread after it has been accessed from main thread" - we are changing values of the coordinate properties
-    //    let concurrentQueue = DispatchQueue(label: "Concurrent Queue", attributes: .concurrent)
-    //
-    //    let navigateNextVC = BlockOperation {
-    //
-    //        let storyboard = UIStoryboard(name: "CategoryRefinement", bundle: nil)
-    //        if let vc = storyboard.instantiateViewController(withIdentifier: "categoryRefinement") as? CategoryRefinementViewController {
-    //            guard let category = sentCategory else { return }
-    //            vc.sentCategory = category
-    //            Thread.sleep(forTimeInterval: Double.random(in: 0...2))
-    //            self.navigationController?.pushViewController(vc, animated: true)
-    //        }
-    //        }
-    
+ 
 } // End of Class
 
 extension Double {

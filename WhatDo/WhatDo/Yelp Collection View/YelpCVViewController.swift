@@ -50,6 +50,8 @@ class YelpCVViewController: UIViewController, YelpCollectionViewDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        
         businessListVM = BusinessListVM(delegate: self)
         businessListVM.yelpSearch()
     }

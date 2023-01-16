@@ -42,17 +42,16 @@ class HomeViewController: UIViewController {
             categoryCollectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "categoryCell")
         }
         
-        // Request Location Services Upon App Launch
-        
-        // Alert that allows user to use current location or set a location manually
-        LocationManagerViewModel.shared.getUserLocation { [weak self] location in
-            /// Unwrap [weak self]
-            guard let strongSelf = self else {return}
-            strongSelf.viewModel.setLocationCoordinates(with: location)
-            
-        }
+//        // Request Location Services Upon App Launch
+//
+//        // Alert that allows user to use current location or set a location manually
+//        LocationManagerViewModel.shared.getUserLocation { [weak self] location in
+//            /// Unwrap [weak self]
+//            guard let strongSelf = self else {return}
+//            strongSelf.viewModel.setLocationCoordinates(with: location)
+//        }
     }
-}
+} // End of Class
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
