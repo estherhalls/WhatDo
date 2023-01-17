@@ -257,7 +257,6 @@
 			children = (
 				FF09C505296161CD00CEA9DB /* DetailView.storyboard */,
 				FF09C51729634D8900CEA9DB /* DetailViewVC.swift */,
-				FF09C50A2963464F00CEA9DB /* DetailViewVM.swift */,
 			);
 			path = "Detail View";
 			sourceTree = "<group>";
@@ -288,6 +287,7 @@
 			children = (
 				FF09C51A296369FC00CEA9DB /* BusinessListVM.swift */,
 				FF3FBFF329674AA800287660 /* YelpCollectionViewCellVM.swift */,
+				FF09C50A2963464F00CEA9DB /* DetailViewVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";

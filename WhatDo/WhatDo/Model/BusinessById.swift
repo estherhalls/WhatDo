@@ -20,7 +20,7 @@ struct Hours: Decodable {
         case hoursType = "hours_type"
         case isOpenNow = "is_open_now"
     }
-    let open: [String]?
+    let open: [Open]?
     let hoursType: String?
     let isOpenNow: String?
 }

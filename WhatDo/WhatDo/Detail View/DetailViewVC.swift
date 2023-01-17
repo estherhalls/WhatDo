@@ -26,22 +26,19 @@ class DetailViewVC: UIViewController {
             updateViews()
         }
     }
-   
-    
+    var businessById: BusinessById?
+    let apiService = APIService()
    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 //        view.insertSubview(mapView, at: 0)
         DispatchQueue.main.async {
-            
             self.addMapAnnotationLocation()
         }
+       
     }
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//        mapView.frame = view.bounds
-//    }
+  
     func addMapAnnotationLocation(){
         guard let business = sentData else {return}
         let coordinates = business.coordinates
@@ -57,11 +54,16 @@ class DetailViewVC: UIViewController {
     
         func updateViews(){
         loadViewIfNeeded()
-        
+            guard let business = sentData else { return }
+            let coordinates = business.coordinates
+            let latitude = coordinates.latitude
+            let longitude = coordinates.longitude
         // Need a fetchImage network call
-//        businessImage.image = business.imageUrl
-//        businessName.text = business.name
+            businessImage.image = UIImage(named: "\(sentData?.imageUrl)")
+            businessName.text = sentData?.name
+            
     }
+    
     
     @IBAction func callButtonTapped(_ sender: Any) {
     }
