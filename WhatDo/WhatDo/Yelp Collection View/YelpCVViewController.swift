@@ -26,9 +26,14 @@ class YelpCVViewController: UIViewController, YelpCollectionViewDelegate {
         "headerEvent",
         "headerCinema"
         ]
+    // Location Properties
+//    var locationVC = LocationManagerViewController()
+//    let setLongitude = LocationManagerViewModel.userLongitude
+//    let setLatitude = LocationManagerViewModel.userLatitude
     
     var businessListVM: BusinessListVM!
     var businessSearch: BusinessSearch?
+    
     var categories: [CDYelpCategory]?
     
     // MARK: - Lifecycle
@@ -51,9 +56,8 @@ class YelpCVViewController: UIViewController, YelpCollectionViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        
-        businessListVM = BusinessListVM(delegate: self)
-        businessListVM.yelpSearch()
+            businessListVM = BusinessListVM(delegate: self)
+            businessListVM.yelpSearch()
     }
     
     @IBAction func micButtonTapped(_ sender: Any) {

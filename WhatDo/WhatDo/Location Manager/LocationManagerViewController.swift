@@ -17,12 +17,13 @@ class LocationManagerViewController: UIViewController {
     @IBOutlet weak var travelRadiusMilesLabel: UILabel!
     
     // Initialize view model class property
-    var viewModel = LocationManagerViewModel()
+//    var viewModel = LocationManagerViewModel()
+    var viewModel = LocationManagerViewModel.shared
     
     // Location Properties
-    let setLongitude = LocationManagerViewModel.userLongitude
-    let setLatitude = LocationManagerViewModel.userLatitude
-    let radius = LocationManagerViewModel.radius
+//    let setLongitude = LocationManagerViewModel.userLongitude
+//    let setLatitude = LocationManagerViewModel.userLatitude
+//    let radius = LocationManagerViewModel.radius
     
     // Reciever Property - Selected Category Sent Data
     var sentCategory: String?
@@ -127,9 +128,9 @@ class LocationManagerViewController: UIViewController {
         let milesToMeters = miles.convert(from: .miles, to: .meters)
         
         let roundedMeters = Int(milesToMeters)
-        
-        LocationManagerViewModel.radius = "\(roundedMeters)"
-        print (LocationManagerViewModel.radius!)
+        self.viewModel.setUserRadius(with: roundedMeters)
+//        LocationManagerViewModel.shared.radius = "\(roundedMeters)"
+//        print (LocationManagerViewModel.radius!)
     }
     
     @IBAction func setLocationTapped(_ sender: Any) {
@@ -139,8 +140,9 @@ class LocationManagerViewController: UIViewController {
     // MARK: - Navigation
     @IBAction func nextButtonTapped(_ sender: Any) {
         /// Check if longitude and latitude are set. If not, prompt the new alert controller for them to enter a location manually, which then sets the lat/long. Right now it is trying to navigate to next page before the coordinates are finished setting, and finding nil. The navigation needs to know the coordinate assignment completed before trying to move forward to next VC. The navigation needs to carry the category to following views, doesn't need to explicitly send the coordinates/travel radius info because those are global properties that are set and can be retrieved later when needed.
- 
-        if self.setLongitude != nil && self.setLatitude != nil {
+        let longitude = LocationManagerViewModel.shared.userLongitude
+        let latitude = LocationManagerViewModel.shared.userLatitude
+        if longitude != nil && latitude != nil {
             self.navNextVC()
             print("Take Me There!")
         } else {

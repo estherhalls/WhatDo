@@ -28,7 +28,7 @@
 		EBD5726E296C7EA7000EF4A9 /* LocationManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD5726D296C7EA7000EF4A9 /* LocationManagerViewModel.swift */; };
 		EBD57270296C7EC0000EF4A9 /* LocationManager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD5726F296C7EC0000EF4A9 /* LocationManager.storyboard */; };
 		EBD57273296C965F000EF4A9 /* LocationManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD57272296C965F000EF4A9 /* LocationManagerViewController.swift */; };
-		EBE25BD92974EA4E00EBFE5B /* LocationAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE25BD82974EA4E00EBFE5B /* LocationAlerts.swift */; };
+		EBE25BDB297500FB00EBFE5B /* SetCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE25BDA297500FB00EBFE5B /* SetCoordinates.swift */; };
 		EBE840D12967898D00DC578E /* SelectionResults.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBE840D02967898D00DC578E /* SelectionResults.storyboard */; };
 		EBE840D3296789A800DC578E /* SelectionResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE840D2296789A800DC578E /* SelectionResultsViewController.swift */; };
 		EBE8F3FF2953D4E0001BC7B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE8F3FE2953D4E0001BC7B7 /* AppDelegate.swift */; };
@@ -90,7 +90,7 @@
 		EBD5726D296C7EA7000EF4A9 /* LocationManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerViewModel.swift; sourceTree = "<group>"; };
 		EBD5726F296C7EC0000EF4A9 /* LocationManager.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LocationManager.storyboard; sourceTree = "<group>"; };
 		EBD57272296C965F000EF4A9 /* LocationManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerViewController.swift; sourceTree = "<group>"; };
-		EBE25BD82974EA4E00EBFE5B /* LocationAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAlerts.swift; sourceTree = "<group>"; };
+		EBE25BDA297500FB00EBFE5B /* SetCoordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCoordinates.swift; sourceTree = "<group>"; };
 		EBE840D02967898D00DC578E /* SelectionResults.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectionResults.storyboard; sourceTree = "<group>"; };
 		EBE840D2296789A800DC578E /* SelectionResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionResultsViewController.swift; sourceTree = "<group>"; };
 		EBE8F3FB2953D4E0001BC7B7 /* WhatDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -201,7 +201,7 @@
 				EBD5726F296C7EC0000EF4A9 /* LocationManager.storyboard */,
 				EBD5726D296C7EA7000EF4A9 /* LocationManagerViewModel.swift */,
 				EBD57272296C965F000EF4A9 /* LocationManagerViewController.swift */,
-				EBE25BD82974EA4E00EBFE5B /* LocationAlerts.swift */,
+				EBE25BDA297500FB00EBFE5B /* SetCoordinates.swift */,
 			);
 			path = "Location Manager";
 			sourceTree = "<group>";
@@ -516,6 +516,7 @@
 				EB15767B29639540008BD904 /* RefinementCardViewModel.swift in Sources */,
 				EBA3FAFE295CC58E002AF566 /* CardViewContainer.swift in Sources */,
 				EBA3FB06295CD896002AF566 /* SwipeableViewGestures.swift in Sources */,
+				EBE25BDB297500FB00EBFE5B /* SetCoordinates.swift in Sources */,
 				EB15767D2963A32F008BD904 /* RefinementCard.swift in Sources */,
 				FFECE29F295E3E3300BC7C6F /* YelpCollectionViewCell.swift in Sources */,
 				FFECE2AD295F4A5E00BC7C6F /* HeaderCollectionReusableView.swift in Sources */,
@@ -540,7 +541,6 @@
 				FF09C50D2963468900CEA9DB /* BusinessSearch.swift in Sources */,
 				FF09C5122963472100CEA9DB /* NetworkError.swift in Sources */,
 				EBE8F4012953D4E0001BC7B7 /* SceneDelegate.swift in Sources */,
-				EBE25BD92974EA4E00EBFE5B /* LocationAlerts.swift in Sources */,
 				EBD57273296C965F000EF4A9 /* LocationManagerViewController.swift in Sources */,
 				EB15767929638067008BD904 /* CategoryRefinementViewModel.swift in Sources */,
 				EBA3FB08295CD8EE002AF566 /* SwipeableViewDelegate.swift in Sources */,
