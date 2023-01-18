@@ -122,15 +122,11 @@ class LocationManagerViewController: UIViewController {
         travelRadiusMilesLabel.text = "\(distanceLabel) Mi."
         
         let distanceValue = Double(round(travelDistanceSlider.value))
-        
         let miles = distanceValue
-        
         let milesToMeters = miles.convert(from: .miles, to: .meters)
-        
         let roundedMeters = Int(milesToMeters)
+        
         self.viewModel.setUserRadius(with: roundedMeters)
-//        LocationManagerViewModel.shared.radius = "\(roundedMeters)"
-//        print (LocationManagerViewModel.radius!)
     }
     
     @IBAction func setLocationTapped(_ sender: Any) {

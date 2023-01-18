@@ -17,15 +17,11 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     
     // Initialize view model class property
-//    var viewModel = LocationManagerViewModel()
     var viewModel = LocationManagerViewModel.shared
     
-    // Location Properties
+    // Location Properties - to access alert for manually setting location
     var locationVC = LocationManagerViewController()
-//    let setLongitude = LocationManagerViewModel.userLongitude
-//    let setLatitude = LocationManagerViewModel.userLatitude
-    
-    
+
     let categories = [
         "diningCategory",
         "drinkCategory",

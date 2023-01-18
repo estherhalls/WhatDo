@@ -27,9 +27,10 @@ class YelpCVViewController: UIViewController, YelpCollectionViewDelegate {
         "headerCinema"
         ]
     // Location Properties
-//    var locationVC = LocationManagerViewController()
-//    let setLongitude = LocationManagerViewModel.userLongitude
-//    let setLatitude = LocationManagerViewModel.userLatitude
+    var viewModel = LocationManagerViewModel.shared
+    var locationVC = LocationManagerViewController()
+    let longitude = LocationManagerViewModel.shared.userLongitude
+    let latitude = LocationManagerViewModel.shared.userLatitude
     
     var businessListVM: BusinessListVM!
     var businessSearch: BusinessSearch?
@@ -55,9 +56,18 @@ class YelpCVViewController: UIViewController, YelpCollectionViewDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        if longitude != nil && latitude != nil {
             businessListVM = BusinessListVM(delegate: self)
             businessListVM.yelpSearch()
+        } else {
+            DispatchQueue.main.async {
+                self.locationVC.showNewLocationAlert()
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                self.businessListVM = BusinessListVM(delegate: self)
+                self.businessListVM.yelpSearch()
+            }
+        }
     }
     
     @IBAction func micButtonTapped(_ sender: Any) {
