@@ -30,7 +30,7 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
         // If view controller is UIViewController as? YelpCVViewController (or any index greater than home/0) and global location paramaters are not set, return false and trigger alert controller -> set location -> trigger this function again? or another way to navigate forward
 //        self.navigationController?.pushViewController(demoThreeVC, animated: true) but the VC name is entered using dependency injection based on the index number being selected?
         print("Tab Index:", tabBarController.selectedIndex)
-        if tabBarController.selectedIndex > 0
+//        if tabBarController.selectedIndex > 0
 
     }
 
