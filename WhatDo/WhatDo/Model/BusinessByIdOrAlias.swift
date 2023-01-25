@@ -8,11 +8,8 @@
 import Foundation
 
 // TopLevelDictionary
-struct Response: Decodable {
-    let businessId: BusinessById
-}
-struct BusinessById: Decodable {
-    let businessHours: [Hours]?
+struct BusinessByIdOrAlias: Decodable {
+    let hours: [Hours]?
 }
 struct Hours: Decodable {
     enum CodingKeys: String, CodingKey {
@@ -22,7 +19,7 @@ struct Hours: Decodable {
     }
     let open: [Open]?
     let hoursType: String?
-    let isOpenNow: String?
+    let isOpenNow: Bool?
 }
 struct Open: Decodable {
     enum CodingKeys: String, CodingKey {
@@ -32,47 +29,47 @@ struct Open: Decodable {
         case day
     }
     let isOvernight: Bool?
-    let start: Int?
-    let end: Int?
+    let start: String?
+    let end: String?
     let day: Int?
 }
-struct SpecialHours: Decodable {
-    enum CodingKeys: String, CodingKey {
-        case specialHours = "special_hours"
-        case date
-        case isClosed = "is_closed"
-    }
-    let specialHours: [String]?
-    let date: String?
-    let isClosed: String?
-}
-
-struct Location: Decodable {
-enum CodingKeys: String, CodingKey {
-    case address1
-    case address2
-    case address3
-    case city
-    case zipCode = "zip_code"
-    case country
-    case state
-    case displayAddress = "display_address"
-}
-    let address1: String?
-    let address2: String?
-    let address3: String?
-    let city: String?
-    let zipCode: String?
-    let country: String?
-    let state: String?
-    var displayAddress = [String]()
-}
-struct CrossStreets: Decodable {
-    enum CodingKeys: String, CodingKey {
-        case crossStreets = "cross_streets"
-    }
-    let crossStreets: String?
-}
+//struct SpecialHours: Decodable {
+//    enum CodingKeys: String, CodingKey {
+//        case specialHours = "special_hours"
+//        case date
+//        case isClosed = "is_closed"
+//    }
+//    let specialHours: [String]?
+//    let date: String?
+//    let isClosed: String?
+//}
+//
+//struct Location: Decodable {
+//enum CodingKeys: String, CodingKey {
+//    case address1
+//    case address2
+//    case address3
+//    case city
+//    case zipCode = "zip_code"
+//    case country
+//    case state
+//    case displayAddress = "display_address"
+//}
+//    let address1: String?
+//    let address2: String?
+//    let address3: String?
+//    let city: String?
+//    let zipCode: String?
+//    let country: String?
+//    let state: String?
+//    var displayAddress = [String]()
+//}
+//struct CrossStreets: Decodable {
+//    enum CodingKeys: String, CodingKey {
+//        case crossStreets = "cross_streets"
+//    }
+//    let crossStreets: String?
+//}
 
 
 //{

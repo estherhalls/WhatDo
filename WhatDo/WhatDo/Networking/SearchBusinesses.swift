@@ -7,7 +7,7 @@
 
 import Foundation
 
-class URLCreation {
+class SearchBusinesses {
     // URL Creation and Call
     var baseURL = "https://api.yelp.com/v3/businesses"
     /// Radius is int in meters. 8000 meters is about 5 miles
@@ -37,10 +37,10 @@ class URLCreation {
         urlComponents?.queryItems = [searchQueryItem, latQueryItem, longQueryItem, radiusQueryItem]
         
         // Create final URL, unwrapped
-        let finalURL = urlComponents?.url
+        guard let finalURL = urlComponents?.url else { return }
         print(finalURL)
         
-        var yelpRequest = URLRequest(url:finalURL!)
+        var yelpRequest = URLRequest(url:finalURL)
         // Set request type
         yelpRequest.httpMethod = "GET"
         // Set content type
@@ -59,46 +59,6 @@ class URLCreation {
             }
         }
     }
-    func searchYelpBusinessHours(userLat: String, userLong: String, userRadius: String, completion: @escaping (Result<BusinessById, NetworkError>) -> Void) {
-        // Create URL object from baseURL
-        guard let baseURL = URL(string: baseURL) else {
-            completion(.failure(.noData))
-            return
-        }
-        // New URL with search component
-        let searchURL = baseURL.appendingPathComponent(searchComponent)
-        // Add URLComponents object to append query items
-        var urlComponents = URLComponents(url: searchURL, resolvingAgainstBaseURL: true)
-        // Create query items
-        var searchQueryItem = URLQueryItem(name: searchTermKey, value: searchTermValue)
-        var latQueryItem = URLQueryItem(name: latKey, value: userLat)
-        var longQueryItem = URLQueryItem(name: longKey, value: userLong)
-        var radiusQueryItem = URLQueryItem(name: radiusKey, value: userRadius)
-        // Add URLQueryItems to URLComponents struct
-        urlComponents?.queryItems = [searchQueryItem, latQueryItem, longQueryItem, radiusQueryItem]
-        
-        // Create final URL, unwrapped
-        let finalURL = urlComponents?.url
-        print(finalURL)
-        
-        var yelpRequest = URLRequest(url:finalURL!)
-        // Set request type
-        yelpRequest.httpMethod = "GET"
-        // Set content type
-        yelpRequest.setValue("Bearer O_XTcp-lDmzmsT7RCJjZol43-uCa2nwpK4BjDU1KdNO6MKsrqExwX3g8Niox5RP_wkTsXY3GZIZyEe4pb1xsIBzyaCfvIdPdv_djNnkCCp2YnedmUGm0spCo-eaYY3Yx", forHTTPHeaderField: "Authorization")
-        APIService().perform(yelpRequest) { result in
-            switch result {
-            case .failure(let error):
-                print(error)
-            case .success(let data):
-                do {
-                    let topLevelDictionary = try data.decode(type: Response.self)
-                    completion(.success(topLevelDictionary.businessId))
-                } catch {
-                    completion(.failure(.requestError(error)))
-                }
-            }
-        }
-    }
+
 }
 

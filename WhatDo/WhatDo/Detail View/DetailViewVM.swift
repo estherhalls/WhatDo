@@ -15,28 +15,24 @@ class DetailViewVM {
     let longitude = LocationManagerViewModel.userLongitude!
     let radius = "16000"
     
-    var businessById: BusinessById
-    var businessImage: String?
+    var businessById: BusinessByIdOrAlias
     var businessHours: [Hours] = []
     
-    init(businessById: BusinessById, imageString: String?, businessHoursArray: [Hours] = []) {
+    init(businessById: BusinessByIdOrAlias, businessHoursArray: [Hours] = []) {
         self.businessById = businessById
-        self.businessImage = imageString
         self.businessHours = businessHoursArray
     }
     func fetchHours() {
 
-            URLCreation().searchYelpBusinessHours(userLat: "\(latitude))", userLong: "\(longitude)", userRadius: radius) { result in
+        SearchByIdOrAlias().searchYelpBusinessHours(businessId: "\(businessById)") { result in
                 switch result {
                 case .success(let businesses):
                     // We need to inform the view controller that the data is ready
                     self.businessById = businesses
-                
                     print(businesses)
                 case .failure(let error):
                     print(error)
                 }
             }
-        
     }
 }

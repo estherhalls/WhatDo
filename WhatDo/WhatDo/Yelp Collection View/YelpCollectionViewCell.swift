@@ -39,6 +39,7 @@ class YelpCollectionViewCell: UICollectionViewCell {
         fetchImage(imageString: imageUrl)
     }
     func fetchImage(imageString: String) {
+        
         guard let imageUrl = URL(string: imageString) else { return }
         let request = URLRequest(url: imageUrl)
         APIService().perform(request) { result in

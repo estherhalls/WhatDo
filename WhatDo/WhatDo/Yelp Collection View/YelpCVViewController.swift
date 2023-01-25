@@ -26,7 +26,7 @@ class YelpCVViewController: UIViewController, YelpCollectionViewDelegate {
         "headerEvent",
         "headerCinema"
         ]
-    
+    let sections = ["This", "That"]
     var businessListVM: BusinessListVM!
     var businessSearch: BusinessSearch?
 //    var categories: [CDYelpCategory]?
@@ -94,8 +94,8 @@ extension YelpCVViewController: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        categoryHeaderLabel.text = section.sections
         return businessListVM.businessesArray.count
-//        return businessListVM.businesses.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -108,15 +108,13 @@ extension YelpCVViewController: UICollectionViewDataSource, UICollectionViewDele
         
         return cell
     }
-
-    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         // Check the kind of supplementary view here, it needs to match the kind in your cell registration. Then call collectionView.dequeueReusableSupplementaryView and the rest should be pretty familiar.
         guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCell", for: indexPath) as? HeaderCollectionReusableView else { return UICollectionReusableView() }
 
         //        let category = categoryHeaderImages[indexPath.section]
         //
-        //        cell.configure(with: category)
+//                cell.configure(with: category)
         //
         //        return cell
         //    }
@@ -135,6 +133,19 @@ extension YelpCVViewController: YelpCollectionViewCellDelegate {
         if let vc = storyboard.instantiateViewController(withIdentifier: "detailViewVC") as? DetailViewVC {
             guard let data = cell.business else {return}
             vc.sentData = data
+            // Initialize the view model of the detail screen
+//            DetailViewVM().businessHours
+            // Make network call
+            // fetch data to be populated before screen loads
+            SearchByIdOrAlias().searchYelpBusinessHours(businessId: data.id!) { result in
+                switch result {
+                case .success(let businessId):
+                    vc.hoursData = businessId
+                    print(businessId)
+                case .failure(let error):
+                    print(error)
+                }
+            }
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
