@@ -34,7 +34,7 @@ class BusinessListVM {
     
     func yelpSearch(){
 
-        URLCreation().searchYelpRestaurants(userLat: "\(String(describing: latitude))", userLong: "\(longitude)", userRadius: radius) { result in
+        SearchBusinesses().searchYelpRestaurants(userLat: "\(latitude)", userLong: "\(longitude)", userRadius: radius) { result in
             switch result {
             case .success(let businesses):
                 // We need to inform the view controller that the data is ready

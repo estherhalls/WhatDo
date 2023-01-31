@@ -7,7 +7,7 @@
 
 import Foundation
 
-class URLCreation {
+class SearchBusinesses {
     // URL Creation and Call
     var baseURL = "https://api.yelp.com/v3/businesses"
     /// Radius is int in meters. 8000 meters is about 5 miles
@@ -37,10 +37,10 @@ class URLCreation {
         urlComponents?.queryItems = [searchQueryItem, latQueryItem, longQueryItem, radiusQueryItem]
         
         // Create final URL, unwrapped
-        let finalURL = urlComponents?.url
+        guard let finalURL = urlComponents?.url else { return }
         print(finalURL)
         
-        var yelpRequest = URLRequest(url:finalURL!)
+        var yelpRequest = URLRequest(url:finalURL)
         // Set request type
         yelpRequest.httpMethod = "GET"
         // Set content type
@@ -59,5 +59,6 @@ class URLCreation {
             }
         }
     }
+
 }
 

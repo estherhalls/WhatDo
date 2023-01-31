@@ -12,7 +12,7 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var labelBackground: UIView!
     
-    var category: CDYelpCategory?
+//    var category: CDYelpCategory?
     
    
     
@@ -21,10 +21,10 @@ class HeaderCollectionReusableView: UICollectionReusableView {
         // Initialization code
     }
     func setupCategoryTitle(categoryTitle: String) {
-        headerLabel.text = "\(category)"
-        
+//        headerLabel.text = "\(category)"
+//        
 //        guard let categoryUrl = category?.self else { return }
-//        fetchSection(categorySection: categoryUrl)
+//        fetchSectionTitle(categorySection: category)
     }
     func fetchSectionTitle(categorySection: String) {
         guard let categoryUrl = URL(string: categorySection) else { return }
