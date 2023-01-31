@@ -26,7 +26,8 @@ class YelpCVViewController: UIViewController, YelpCollectionViewDelegate {
         "headerEvent",
         "headerCinema"
         ]
-    let sections = ["This", "That"]
+    let sectionHeaders = ["This", "That"]
+    
     var businessListVM: BusinessListVM!
     var businessSearch: BusinessSearch?
 //    var categories: [CDYelpCategory]?
@@ -123,9 +124,22 @@ extension YelpCVViewController: UICollectionViewDataSource, UICollectionViewDele
 //        cell.category
         return cell
     }
+//       func collectionView(_ collectionView: UICollectionView, titleForHeaderInSection section: Int) -> String? {
+//           guard sectionHeaders.indices ~= section else {
+//               print("No section title for this section")
+//               return nil
+//           }
+//
+//           return sectionHeaders[section]
+//       }
+    func collectionView(_ collectionView: UICollectionView, indexPathForIndexTitle title: String, at index: Int) -> IndexPath {
+        guard sectionHeaders.indices ~= index else {
+                   print("No section title for this section")
+                   return
+               }
+        return sectionHeaders[index]
+    }
 }
-
-
 extension YelpCVViewController: YelpCollectionViewCellDelegate {
     func cellTapped(cell: YelpCollectionViewCell) {
 //        print("Take me there!")

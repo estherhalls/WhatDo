@@ -8,7 +8,7 @@
 import Foundation
 
 // TopLevelDictionary
-struct BusinessByIdOrAlias: Decodable {
+struct BusinessByIdForHours: Decodable {
     let hours: [Hours]?
 }
 struct Hours: Decodable {

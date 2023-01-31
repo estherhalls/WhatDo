@@ -10,11 +10,8 @@ import Foundation
 struct SearchByIdOrAlias {
     
     var baseURL = "https://api.yelp.com/v3/businesses"
-
-//    let aliasComponent = "alias"
-  
     
-    func searchYelpBusinessHours(businessId: String, completion: @escaping (Result<BusinessByIdOrAlias, NetworkError>) -> Void) {
+    func searchYelpBusinessHours(businessId: String, completion: @escaping (Result<BusinessByIdForHours, NetworkError>) -> Void) {
         // Create URL object from baseURL
         guard let baseURL = URL(string: baseURL) else {
             completion(.failure(.noData))
@@ -23,8 +20,8 @@ struct SearchByIdOrAlias {
         // New URL with search component
         let idURL = baseURL.appendingPathComponent(businessId)
         
-        // Create final URL, unwrapped
-     let finalURL = idURL
+        // Create final URL
+        let finalURL = idURL
         print(finalURL)
         
         var yelpRequest = URLRequest(url:finalURL)
@@ -38,7 +35,7 @@ struct SearchByIdOrAlias {
                 print(error)
             case .success(let data):
                 do {
-                    let topLevelDictionary = try data.decode(type: BusinessByIdOrAlias.self)
+                    let topLevelDictionary = try data.decode(type: BusinessByIdForHours.self)
                     completion(.success(topLevelDictionary))
                 } catch {
                     completion(.failure(.requestError(error)))

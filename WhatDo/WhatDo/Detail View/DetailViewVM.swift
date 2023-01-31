@@ -15,10 +15,10 @@ class DetailViewVM {
     let longitude = LocationManagerViewModel.userLongitude!
     let radius = "16000"
     
-    var businessById: BusinessByIdOrAlias
+    var businessById: BusinessByIdForHours
     var businessHours: [Hours] = []
     
-    init(businessById: BusinessByIdOrAlias, businessHoursArray: [Hours] = []) {
+    init(businessById: BusinessByIdForHours, businessHoursArray: [Hours] = []) {
         self.businessById = businessById
         self.businessHours = businessHoursArray
     }
