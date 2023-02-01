@@ -9,7 +9,7 @@ import UIKit
 
 class YelpCVViewController: UIViewController, YelpCollectionViewDelegate {
     
-// MARK: - Outlets
+    // MARK: - Outlets
     @IBOutlet weak var headerView: HeaderLargeView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var labelBackground: UIView!
@@ -25,11 +25,10 @@ class YelpCVViewController: UIViewController, YelpCollectionViewDelegate {
         "headerDining",
         "headerEvent",
         "headerCinema"
-        ]
+    ]
     
     // Location Properties
     var viewModel = LocationManagerViewModel.shared
-    var locationVC = LocationManagerViewController()
     let longitude = LocationManagerViewModel.shared.userLongitude
     let latitude = LocationManagerViewModel.shared.userLatitude
     
@@ -37,7 +36,7 @@ class YelpCVViewController: UIViewController, YelpCollectionViewDelegate {
     
     var businessListVM: BusinessListVM!
     var businessSearch: BusinessSearch?
-//    var categories: [CDYelpCategory]?
+    //    var categories: [CDYelpCategory]?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -45,38 +44,28 @@ class YelpCVViewController: UIViewController, YelpCollectionViewDelegate {
         // Header
         if let titleImage = UIImage(named: "whatDoSmall") {
             headerView.configureImageViews(withImages: titleImage, subtitle: nil)
-        
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.register(UINib(nibName: "YelpCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "yelpCell")
-        setupCollectionViewLayout(collectionView: collectionView)
-        collectionView.register(UINib(nibName: "HeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerCell")
-        labelBackground.backgroundColor = .gray
-//        categoryHeaderImage.image = categoryHeaderImages
+            
+            collectionView.dataSource = self
+            collectionView.delegate = self
+            collectionView.register(UINib(nibName: "YelpCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "yelpCell")
+            setupCollectionViewLayout(collectionView: collectionView)
+            collectionView.register(UINib(nibName: "HeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerCell")
+            labelBackground.backgroundColor = .gray
+            //        categoryHeaderImage.image = categoryHeaderImages
         }
-         
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if longitude != nil && latitude != nil {
-            businessListVM = BusinessListVM(delegate: self)
-            businessListVM.yelpSearch()
-        } else {
-            DispatchQueue.main.async {
-                self.locationVC.showNewLocationAlert()
-            }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                self.businessListVM = BusinessListVM(delegate: self)
-                self.businessListVM.yelpSearch()
-            }
-        }
+        businessListVM = BusinessListVM(delegate: self)
+        businessListVM.yelpSearch()
     }
     
     @IBAction func micButtonTapped(_ sender: Any) {
     }
     @IBAction func filterButtonTapped(_ sender: Any) {
     }
-    
+    // MARK: - Methods
     func setupCollectionViewLayout(collectionView: UICollectionView) {
         // We want the item to take up as much space as it can.
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
@@ -97,7 +86,39 @@ class YelpCVViewController: UIViewController, YelpCollectionViewDelegate {
         let layout = UICollectionViewCompositionalLayout(section: section )
         collectionView.collectionViewLayout = layout
     }
-}
+    
+    func showNewLocationAlert() {
+        let secondAlert = UIAlertController(title: "New Starting Location", message: "Enter a city name or street address below.", preferredStyle: .alert)
+        secondAlert.addTextField { textField in
+            textField.placeholder = "New Location"
+        }
+        
+        let dismissAction = UIAlertAction(title: "Back To Home", style: .cancel) { _ in
+            // Navigate back to Home if declining to enter location
+            let storyboard = UIStoryboard(name: "Home", bundle: nil)
+            let homeVC = storyboard.instantiateViewController(withIdentifier: "homeNav")
+            /// This is to get the SceneDelegate object from your view controller
+            /// then call the change root view controller function to change to main tab bar
+            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(homeVC)
+        }
+        
+        let setLocationAction = UIAlertAction(title: "Set Location", style: .default) { _ in
+            guard let contentTextField = secondAlert.textFields?.first,
+                  let locationName = contentTextField.text else {return}
+            self.viewModel.setLocationManually(locationName) { [weak self] location in
+                /// Unwrap [weak self]
+                guard let strongSelf = self else { return }
+                guard let newLocation = location else { return }
+                strongSelf.viewModel.setLocationCoordinates(with: newLocation)
+            }
+        }
+        secondAlert.addAction(dismissAction)
+        secondAlert.addAction(setLocationAction)
+        present(secondAlert, animated: true)
+    }
+    
+} // End of Class
+
 extension YelpCVViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func businessesLoadedSuccessfully() {
@@ -108,17 +129,17 @@ extension YelpCVViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return businessListVM.businessesArray[section].count
-//        return businessListVM.businesses.count
+        //        return businessListVM.businesses.count
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        categoryHeaderLabel.text = section.sections
+        //        categoryHeaderLabel.text = section.sections
         return businessListVM.businessesArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "yelpCell", for: indexPath) as! YelpCollectionViewCell
-            
+        
         let business = businessListVM.businesses[indexPath.row]
         cell.business = business
         cell.delegate = self
@@ -129,43 +150,43 @@ extension YelpCVViewController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         // Check the kind of supplementary view here, it needs to match the kind in your cell registration. Then call collectionView.dequeueReusableSupplementaryView and the rest should be pretty familiar.
         guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCell", for: indexPath) as? HeaderCollectionReusableView else { return UICollectionReusableView() }
-
+        
         //        let category = categoryHeaderImages[indexPath.section]
         //
-//                cell.configure(with: category)
+        //                cell.configure(with: category)
         //
         //        return cell
         //    }
-
-//        let category = businessListVM.businessesArray[indexPath.section]
-//        cell.category
+        
+        //        let category = businessListVM.businessesArray[indexPath.section]
+        //        cell.category
         return cell
     }
-//       func collectionView(_ collectionView: UICollectionView, titleForHeaderInSection section: Int) -> String? {
-//           guard sectionHeaders.indices ~= section else {
-//               print("No section title for this section")
-//               return nil
-//           }
-//
-//           return sectionHeaders[section]
-//       }
-//    func collectionView(_ collectionView: UICollectionView, indexPathForIndexTitle title: String, at index: Int) -> IndexPath {
-//        guard sectionHeaders.indices ~= index else {
-//                   print("No section title for this section")
-//                   return
-//               }
-//        return sectionHeaders[index]
-//    }
+    //       func collectionView(_ collectionView: UICollectionView, titleForHeaderInSection section: Int) -> String? {
+    //           guard sectionHeaders.indices ~= section else {
+    //               print("No section title for this section")
+    //               return nil
+    //           }
+    //
+    //           return sectionHeaders[section]
+    //       }
+    //    func collectionView(_ collectionView: UICollectionView, indexPathForIndexTitle title: String, at index: Int) -> IndexPath {
+    //        guard sectionHeaders.indices ~= index else {
+    //                   print("No section title for this section")
+    //                   return
+    //               }
+    //        return sectionHeaders[index]
+    //    }
 }
 extension YelpCVViewController: YelpCollectionViewCellDelegate {
     func cellTapped(cell: YelpCollectionViewCell) {
-//        print("Take me there!")
+        //        print("Take me there!")
         let storyboard = UIStoryboard(name: "DetailView", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: "detailViewVC") as? DetailViewVC {
             guard let data = cell.business else {return}
             vc.sentData = data
             // Initialize the view model of the detail screen
-//            DetailViewVM().businessHours
+            //            DetailViewVM().businessHours
             // Make network call
             // fetch data to be populated before screen loads
             SearchByIdOrAlias().searchYelpBusinessHours(businessId: data.id!) { result in

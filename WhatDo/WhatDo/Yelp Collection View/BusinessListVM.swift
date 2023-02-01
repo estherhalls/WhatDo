@@ -15,8 +15,8 @@ class BusinessListVM {
     // Initialize view model class property
     var viewModel = LocationManagerViewModel.shared
     var locationVC = LocationManagerViewController()
-    let latitude = LocationManagerViewModel.shared.userLatitude
-    let longitude = LocationManagerViewModel.shared.userLongitude
+    let latitude = LocationManagerViewModel.shared.userLatitude ?? 37.77
+    let longitude = LocationManagerViewModel.shared.userLongitude ?? 122.42
     let radius = "16000"
     
     var businessesArray: [[BusinessSearch]] = [[]]
@@ -43,7 +43,7 @@ class BusinessListVM {
                 
                 self.businessesArray = [nearBy, popularRating]
                 self.delegate?.businessesLoadedSuccessfully()
-                print(businesses)
+                print(self.latitude, self.longitude)
             case .failure(let error):
                 print(error)
             }

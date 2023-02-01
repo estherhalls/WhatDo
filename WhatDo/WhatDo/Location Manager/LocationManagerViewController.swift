@@ -16,6 +16,7 @@ class LocationManagerViewController: UIViewController {
     @IBOutlet weak var travelDistanceSlider: UISlider!
     @IBOutlet weak var travelRadiusMilesLabel: UILabel!
     
+    // MARK: - Properties
     // Initialize view model class property
     var viewModel = LocationManagerViewModel.shared
     
@@ -78,11 +79,8 @@ class LocationManagerViewController: UIViewController {
                   let locationName = contentTextField.text else {return}
             self.viewModel.setLocationManually(locationName) { [weak self] location in
                 /// Unwrap [weak self]
-                guard let strongSelf = self else {return}
-                guard let newLocation = location else {
-                    self?.updateUserLocation()
-                    return
-                }
+                guard let strongSelf = self else { return }
+                guard let newLocation = location else { return }
                 strongSelf.viewModel.setLocationCoordinates(with: newLocation)
             }
         }

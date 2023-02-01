@@ -19,9 +19,6 @@ class HomeViewController: UIViewController {
     // Initialize view model class property
     var viewModel = LocationManagerViewModel.shared
     
-    // Location Properties - to access alert for manually setting location
-    var locationVC = LocationManagerViewController()
-    
     let categories = [
         "diningCategory",
         "drinkCategory",
@@ -39,9 +36,7 @@ class HomeViewController: UIViewController {
             /// Unwrap [weak self]
             guard let strongSelf = self else {return}
             strongSelf.viewModel.setLocationCoordinates(with: location)
-            
-            
-            // Alert that allows user to use current location or set a location manually
+
         }
         
         // Header
