@@ -161,6 +161,7 @@ class SwipeableViewGestures: UIView {
         return retPoint
     }
     
+    // Puts card back in starting position if the user didn't swipe far enough to flick off the screen
     private func resetCardViewPosition() {
         removeAnimations()
         
@@ -189,7 +190,7 @@ class SwipeableViewGestures: UIView {
     }
     
     // MARK: - Tap Gesture Recognizer
-    
+    /// for if we want to add buttons/actions to the cards that are being swiped
     @objc private func tapRecognized(_ recognizer: UITapGestureRecognizer) {
         delegate?.didTap(view: self)
     }

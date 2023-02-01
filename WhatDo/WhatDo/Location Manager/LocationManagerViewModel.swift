@@ -17,9 +17,10 @@ class LocationManagerViewModel: NSObject, CLLocationManagerDelegate {
     let manager = CLLocationManager()
     
     // User's current or set location to be used in network calls. CLLocation must be converted to lat/long which are input as individual String parameters in network calls
-    static var userLatitude: Double?
-    static var userLongitude: Double?
-    static var radius: String?
+    /// Optional because these are not set until user allows location services or enters manual location
+    private (set) var userLatitude: Double?
+    private (set) var userLongitude: Double?
+    private (set) var radius: Int?
     
     // Hold completion handler as global
     var completion: ((CLLocation) -> Void)?
@@ -31,10 +32,16 @@ class LocationManagerViewModel: NSObject, CLLocationManagerDelegate {
         manager.startUpdatingLocation()
     }
     
-    public func setLocationCoordinates(with location: CLLocation) {
-        LocationManagerViewModel.userLatitude = location.coordinate.latitude
-        LocationManagerViewModel.userLongitude = location.coordinate.longitude
-        print(LocationManagerViewModel.userLatitude!, LocationManagerViewModel.userLongitude!)
+    func setUserRadius(with roundedRadius: Int){
+        radius = roundedRadius
+        print(radius!)
+    }
+    
+    // How can I call this function in the getUserLocation and setLocationManually functions while inserting the location?
+   public func setLocationCoordinates(with location: CLLocation) {
+        userLatitude = location.coordinate.latitude
+        userLongitude = location.coordinate.longitude
+        print(userLatitude!, userLongitude!)
     }
     
     // Reverse Geocode the user input new location name into CLLocation, then call setLocationCoordinates to convert to the Lat/Long that we can add user location as parameter to network calls

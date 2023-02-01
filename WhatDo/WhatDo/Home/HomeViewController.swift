@@ -17,7 +17,10 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     
     // Initialize view model class property
-    var viewModel = LocationManagerViewModel()
+    var viewModel = LocationManagerViewModel.shared
+    
+    // Location Properties - to access alert for manually setting location
+    var locationVC = LocationManagerViewController()
     
     let categories = [
         "diningCategory",
@@ -31,6 +34,16 @@ class HomeViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Request Location Services Upon App Launch
+        LocationManagerViewModel.shared.getUserLocation { [weak self] location in
+            /// Unwrap [weak self]
+            guard let strongSelf = self else {return}
+            strongSelf.viewModel.setLocationCoordinates(with: location)
+            
+            
+            // Alert that allows user to use current location or set a location manually
+        }
+        
         // Header
         let subtitleImage = UIImage(named: "subtitle")
         if let titleImage = UIImage(named: "whatDoLarge") {
@@ -41,18 +54,9 @@ class HomeViewController: UIViewController {
             
             categoryCollectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "categoryCell")
         }
-        
-        // Request Location Services Upon App Launch
-        
-        // Alert that allows user to use current location or set a location manually
-        LocationManagerViewModel.shared.getUserLocation { [weak self] location in
-            /// Unwrap [weak self]
-            guard let strongSelf = self else {return}
-            strongSelf.viewModel.setLocationCoordinates(with: location)
-            
-        }
     }
-}
+    
+} // End of Class
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -82,14 +86,12 @@ extension HomeViewController: CollectionViewCellDelegate {
             vc.sentCategory = category
             self.navigationController?.pushViewController(vc, animated: true)
         }
-    
+        
         print("Take me there!")
     }
     
     
     
 }
-
-
 
 

@@ -11,8 +11,8 @@ import UIKit
 class DetailViewVM {
 
     var viewModel = LocationManagerViewModel()
-    let latitude = LocationManagerViewModel.userLatitude!
-    let longitude = LocationManagerViewModel.userLongitude!
+    let latitude = LocationManagerViewModel.shared.userLatitude!
+    let longitude = LocationManagerViewModel.shared.userLongitude!
     let radius = "16000"
     
     var businessById: BusinessByIdForHours
