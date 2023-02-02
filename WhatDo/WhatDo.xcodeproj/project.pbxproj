@@ -16,6 +16,7 @@
 		EB1576802963A60D008BD904 /* RefinementCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB15767F2963A60D008BD904 /* RefinementCard.xib */; };
 		EB580DB3298B79E800DE3953 /* UnitConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB580DB2298B79E800DE3953 /* UnitConversion.swift */; };
 		EB580DB5298B7DFC00DE3953 /* SectionCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB580DB4298B7DFC00DE3953 /* SectionCollectionReusableView.xib */; };
+		EB580DB9298B818A00DE3953 /* SectionCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB580DB8298B818900DE3953 /* SectionCollectionReusableView.swift */; };
 		EB7B68B6298B2C9A0086FB05 /* CategoryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB7B68B5298B2C9A0086FB05 /* CategoryHeaderView.xib */; };
 		EB7B68B8298B2D7E0086FB05 /* CategoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7B68B7298B2D7E0086FB05 /* CategoryHeaderView.swift */; };
 		EBA3FAF9295CBC70002AF566 /* CategoryRefinement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBA3FAF8295CBC70002AF566 /* CategoryRefinement.storyboard */; };
@@ -80,6 +81,7 @@
 		EB15767F2963A60D008BD904 /* RefinementCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RefinementCard.xib; sourceTree = "<group>"; };
 		EB580DB2298B79E800DE3953 /* UnitConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitConversion.swift; sourceTree = "<group>"; };
 		EB580DB4298B7DFC00DE3953 /* SectionCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionCollectionReusableView.xib; sourceTree = "<group>"; };
+		EB580DB8298B818900DE3953 /* SectionCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionCollectionReusableView.swift; sourceTree = "<group>"; };
 		EB7B68B5298B2C9A0086FB05 /* CategoryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryHeaderView.xib; sourceTree = "<group>"; };
 		EB7B68B7298B2D7E0086FB05 /* CategoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryHeaderView.swift; sourceTree = "<group>"; };
 		EBA3FAF8295CBC70002AF566 /* CategoryRefinement.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoryRefinement.storyboard; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 				FF3FBFF329674AA800287660 /* YelpCollectionViewCellVM.swift */,
 				FFECE29B295E371100BC7C6F /* YelpCVViewController.swift */,
 				FFECE29D295E3E3300BC7C6F /* YelpCollectionViewCell.swift */,
+				EB580DB8298B818900DE3953 /* SectionCollectionReusableView.swift */,
 			);
 			path = "Yelp Collection View";
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				EBE8F4012953D4E0001BC7B7 /* SceneDelegate.swift in Sources */,
 				EBD57273296C965F000EF4A9 /* LocationManagerViewController.swift in Sources */,
 				FFECBEED2979DCFC0063CC2D /* SearchByIdOrAlias.swift in Sources */,
+				EB580DB9298B818A00DE3953 /* SectionCollectionReusableView.swift in Sources */,
 				EB15767929638067008BD904 /* CategoryRefinementViewModel.swift in Sources */,
 				EBA3FB08295CD8EE002AF566 /* SwipeableViewDelegate.swift in Sources */,
 				EB7B68B8298B2D7E0086FB05 /* CategoryHeaderView.swift in Sources */,

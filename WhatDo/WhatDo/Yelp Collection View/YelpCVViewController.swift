@@ -50,6 +50,7 @@ class YelpCVViewController: UIViewController, YelpCollectionViewDelegate {
             collectionView.delegate = self
             collectionView.register(UINib(nibName: "YelpCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "yelpCell")
             setupCollectionViewLayout(collectionView: collectionView)
+            collectionView.register(UINib(nibName: "SectionCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerCell")
         }
         
         if let categoryImage = UIImage(named: "headerDining") {
@@ -87,7 +88,7 @@ class YelpCVViewController: UIViewController, YelpCollectionViewDelegate {
         // This section represents one full swimlane.
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
-        let headerItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(44))
+        let headerItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(30))
         let headerItem = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerItemSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
         section.boundarySupplementaryItems = [headerItem]
         let layout = UICollectionViewCompositionalLayout(section: section )
@@ -169,7 +170,7 @@ extension YelpCVViewController: UICollectionViewDataSource, UICollectionViewDele
     }
         func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
             // Check the kind of supplementary view here, it needs to match the kind in your cell registration. Then call collectionView.dequeueReusableSupplementaryView and the rest should be pretty familiar.
-            guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCell", for: indexPath) as? HeaderCollectionReusableView else { return UICollectionReusableView() }
+            guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCell", for: indexPath) as? SectionCollectionReusableView else { return UICollectionReusableView() }
     
             //        let category = categoryHeaderImages[indexPath.section]
             //
