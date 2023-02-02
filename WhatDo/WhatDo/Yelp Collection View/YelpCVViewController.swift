@@ -130,15 +130,10 @@ class YelpCVViewController: UIViewController, YelpCollectionViewDelegate {
         
         guard let location = self.viewModel.userLocation else { return }
 
-            self.viewModel.getPlace(for: location) { placemark in
-                guard let placemark = placemark else { return }
-                var output = ""
-                if let city = placemark.locality {
-                    output = output + "\(city)"
-                }
-                print(output)
-                self.locationLabel.text = output.uppercased()
-            }
+        LocationManagerViewModel.shared.resolveLocationName(with: location) { [weak self] locationName in
+            guard let locationName = locationName else {return}
+            self?.locationLabel.text = locationName.uppercased()
+        }
         
     }
     
