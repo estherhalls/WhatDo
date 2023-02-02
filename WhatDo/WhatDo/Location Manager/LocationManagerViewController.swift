@@ -67,8 +67,8 @@ class LocationManagerViewController: UIViewController {
         
         let dismissAction = UIAlertAction(title: "Back To Home", style: .cancel) { _ in
             // Navigate back to Home if declining to enter location
-            let storyboard = UIStoryboard(name: "Home", bundle: nil)
-            let homeVC = storyboard.instantiateViewController(withIdentifier: "homeNav")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let homeVC = storyboard.instantiateViewController(withIdentifier: "tabBar")
             /// This is to get the SceneDelegate object from your view controller
             /// then call the change root view controller function to change to main tab bar
             (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(homeVC)
