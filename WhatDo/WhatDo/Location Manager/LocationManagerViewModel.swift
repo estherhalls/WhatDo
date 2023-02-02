@@ -22,6 +22,12 @@ class LocationManagerViewModel: NSObject, CLLocationManagerDelegate {
     private (set) var userLongitude: Double?
     private (set) var radius: Int?
     
+    public var userLocation: CLLocation? {
+        let latitude = self.userLatitude ?? 37.77
+        let longitude = self.userLongitude ?? 122.42
+        return CLLocation(latitude: latitude, longitude: longitude)
+    }
+        
     // Hold completion handler as global
     var completion: ((CLLocation) -> Void)?
     
@@ -58,8 +64,31 @@ class LocationManagerViewModel: NSObject, CLLocationManagerDelegate {
             return completion(nil)
         }
     }
- 
+
     // Reverse Geocode the user's location to return the name of it that we can add to a label, etc.
+    
+    public func getPlace(for location: CLLocation,
+                    completion: @escaping (CLPlacemark?) -> Void) {
+          
+          let geocoder = CLGeocoder()
+          geocoder.reverseGeocodeLocation(location) { placemarks, error in
+              
+              guard error == nil else {
+                  print("*** Error in \(#function): \(error!.localizedDescription)")
+                  completion(nil)
+                  return
+              }
+              
+              guard let placemark = placemarks?[0] else {
+                  print("*** Error in \(#function): placemark is nil")
+                  completion(nil)
+                  return
+              }
+              
+              completion(placemark)
+          }
+      }
+    
     public func resolveLocationName(with location: CLLocation, completion: @escaping ((String?) -> Void)) {
         let geocoder = CLGeocoder()
         geocoder.reverseGeocodeLocation(location, preferredLocale: .current) { placemarks, error in
@@ -71,7 +100,7 @@ class LocationManagerViewModel: NSObject, CLLocationManagerDelegate {
             print (place)
             
             var name = ""
-            
+
             if let locality = place.locality {
                 name += locality
             }
@@ -82,6 +111,7 @@ class LocationManagerViewModel: NSObject, CLLocationManagerDelegate {
             completion(name)
         }
     }
+
     
     // implementing CLLocationManagerDelegate - delegate is assigned in getUserLocation function, and this will automatically trigger when the condition occurs
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

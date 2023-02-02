@@ -92,7 +92,7 @@
         <!--Home-->
         <scene sceneID="C5P-gY-8Ex">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="gAi-s8-yOA" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="homeNav" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="gAi-s8-yOA" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="brain.head.profile" catalog="system" id="ncE-Md-s3L"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DeZ-18-dNE">
