@@ -17,6 +17,7 @@
 		EB580DB3298B79E800DE3953 /* UnitConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB580DB2298B79E800DE3953 /* UnitConversion.swift */; };
 		EB580DB5298B7DFC00DE3953 /* SectionCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB580DB4298B7DFC00DE3953 /* SectionCollectionReusableView.xib */; };
 		EB580DB9298B818A00DE3953 /* SectionCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB580DB8298B818900DE3953 /* SectionCollectionReusableView.swift */; };
+		EB6F39AE298C474B006D3856 /* SwipeableCardsPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6F39AD298C474B006D3856 /* SwipeableCardsPresentationController.swift */; };
 		EB7B68B6298B2C9A0086FB05 /* CategoryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB7B68B5298B2C9A0086FB05 /* CategoryHeaderView.xib */; };
 		EB7B68B8298B2D7E0086FB05 /* CategoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7B68B7298B2D7E0086FB05 /* CategoryHeaderView.swift */; };
 		EBA3FAF9295CBC70002AF566 /* CategoryRefinement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBA3FAF8295CBC70002AF566 /* CategoryRefinement.storyboard */; };
@@ -82,6 +83,7 @@
 		EB580DB2298B79E800DE3953 /* UnitConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitConversion.swift; sourceTree = "<group>"; };
 		EB580DB4298B7DFC00DE3953 /* SectionCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionCollectionReusableView.xib; sourceTree = "<group>"; };
 		EB580DB8298B818900DE3953 /* SectionCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionCollectionReusableView.swift; sourceTree = "<group>"; };
+		EB6F39AD298C474B006D3856 /* SwipeableCardsPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableCardsPresentationController.swift; sourceTree = "<group>"; };
 		EB7B68B5298B2C9A0086FB05 /* CategoryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryHeaderView.xib; sourceTree = "<group>"; };
 		EB7B68B7298B2D7E0086FB05 /* CategoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryHeaderView.swift; sourceTree = "<group>"; };
 		EBA3FAF8295CBC70002AF566 /* CategoryRefinement.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoryRefinement.storyboard; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				EBA3FB07295CD8EE002AF566 /* SwipeableViewDelegate.swift */,
 				EBA3FB09295CDD56002AF566 /* UIView.swift */,
 				EBA3FB0B295CE2A8002AF566 /* SwipeDirection.swift */,
+				EB6F39AD298C474B006D3856 /* SwipeableCardsPresentationController.swift */,
 			);
 			path = "Swipeable Cards";
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 				EBF827DA295AF1350042DA9B /* TabSearchViewController.swift in Sources */,
 				EBD5726A29679341000EF4A9 /* TabBarViewController.swift in Sources */,
 				FF09C50B2963464F00CEA9DB /* DetailViewVM.swift in Sources */,
+				EB6F39AE298C474B006D3856 /* SwipeableCardsPresentationController.swift in Sources */,
 				FFECE29C295E371100BC7C6F /* YelpCVViewController.swift in Sources */,
 				FF09C51D29638B0F00CEA9DB /* BusinessByIdForHours.swift in Sources */,
 				FF09C5162963478D00CEA9DB /* SearchBusinesses.swift in Sources */,

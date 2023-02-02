@@ -7,8 +7,8 @@
 
 import UIKit
 
-class CategoryRefinementViewController: UIViewController, CardViewDataSource {
-    
+class CategoryRefinementViewController: UIViewController, CardViewDataSource, CardViewContainerDelegate {
+ 
     // MARK: - Outlets
     @IBOutlet var backgroundGradient: UIView!
     @IBOutlet weak var headerView: HeaderLargeView!
@@ -40,6 +40,7 @@ class CategoryRefinementViewController: UIViewController, CardViewDataSource {
         
         // Swipeable cards will need view model data sources for the questions for each category.
         swipeableCardView.dataSource = self
+        swipeableCardView.navDelegate = self
     }
     
     // Individual Category Card Data
@@ -81,7 +82,7 @@ class CategoryRefinementViewController: UIViewController, CardViewDataSource {
         let resultsVC = storyboard.instantiateViewController(withIdentifier: "selectionResultsVC")
         self.navigationController?.pushViewController(resultsVC, animated: true)
     }
-
+    
 }
 // MARK: - Swipeable Card View Data Source
 
@@ -103,10 +104,23 @@ extension CategoryRefinementViewController {
         return nil
     }
     
+    func navigateToNextView() {
+        /// Display the results view
+        let storyboard = UIStoryboard(name: "SelectionResults", bundle: nil)
+        let resultsVC = storyboard.instantiateViewController(withIdentifier: "selectionResultsVC")
+        self.navigationController?.pushViewController(resultsVC, animated: true)
+    }
+    
+    func presentNext() {
+//        let currentIndex = 0
+//        if currentIndex == cardData.count - 1 {
+//            /// Display the results view
+//            let storyboard = UIStoryboard(name: "SelectionResults", bundle: nil)
+//            let resultsVC = storyboard.instantiateViewController(withIdentifier: "selectionResultsVC")
+//            self.navigationController?.pushViewController(resultsVC, animated: true)
+//        }
+    }
 }
 
-extension UIPresentationController {
-    
-}
 
 

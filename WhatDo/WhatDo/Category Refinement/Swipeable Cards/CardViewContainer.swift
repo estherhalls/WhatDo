@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol CardViewContainerDelegate: AnyObject {
+    func navigateToNextView()
+}
+
 /// The swipeable card views are held within this container view on our storyboards. This container is responsible for organizing the cards inside of it and works kind of like a collection view.
 /// Each Category will require its own container view and unique information for the cards, but the card xib itself should be able to be reused.
 /// Category Refinement View > Card Container > Swipeable Cards
@@ -17,6 +21,7 @@ import UIKit
 class CardViewContainer: UIView, SwipeableViewDelegate {
     
     var delegate: CardViewDelegate?
+    weak var navDelegate: CardViewContainerDelegate?
     
     var vc = CategoryRefinementViewController()
     
@@ -35,6 +40,8 @@ class CardViewContainer: UIView, SwipeableViewDelegate {
     private var remainingCards: Int = 0
     
     static let numberOfVisibleCards: Int = 3
+    
+   private var timesSwiped = 0
     
     // Container:
     static let horizontalInset: CGFloat = 12.0
@@ -104,7 +111,7 @@ class CardViewContainer: UIView, SwipeableViewDelegate {
 }
 // MARK: - SwipeeableViewDelegate
 extension CardViewContainer {
-    
+
     func didTap(view: SwipeableViewGestures) {
         if let cardView = view as? SwipeableCardView,
            let index = cardViews.firstIndex(of: cardView) {
@@ -118,6 +125,9 @@ extension CardViewContainer {
     
     //
     func didEndSwipe(onView view: SwipeableViewGestures) {
+        
+        timesSwiped += 1
+        
         guard let dataSource = dataSource else {
             return
         }
@@ -131,8 +141,13 @@ extension CardViewContainer {
             
             /// Add new card as subview
             addCardView(cardView: dataSource.card(forQuestionAtIndex: newIndex), atIndex: 2)
+            
+            }
+     /// Navigate to results page when user has swiped through all cards in that category
+        if timesSwiped == dataSource.numberOfCards() {
+            navDelegate?.navigateToNextView()
         }
-        
+
         // Animate cards from back of the line to front
         /// Update all existing card frames based on new indices, animate frame change to reveal new card from underneath the stack of existing cards
         /// * New subview inserted at origin 0 needs to appear at the back of the line from where user is swiping rather than its default in the front. To reverse the array order of the card indices shown, .reversed() is added to the array of card views
