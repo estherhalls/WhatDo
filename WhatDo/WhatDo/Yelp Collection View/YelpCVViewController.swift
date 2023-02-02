@@ -167,21 +167,21 @@ extension YelpCVViewController: UICollectionViewDataSource, UICollectionViewDele
         
         return cell
     }
-    //    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-    //        // Check the kind of supplementary view here, it needs to match the kind in your cell registration. Then call collectionView.dequeueReusableSupplementaryView and the rest should be pretty familiar.
-    //        guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCell", for: indexPath) as? HeaderCollectionReusableView else { return UICollectionReusableView() }
-    //
-    //        //        let category = categoryHeaderImages[indexPath.section]
-    //        //
-    //        //                cell.configure(with: category)
-    //        //
-    //        //        return cell
-    //        //    }
-    //
-    //        //        let category = businessListVM.businessesArray[indexPath.section]
-    //        //        cell.category
-    //        return cell
-    //    }
+        func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+            // Check the kind of supplementary view here, it needs to match the kind in your cell registration. Then call collectionView.dequeueReusableSupplementaryView and the rest should be pretty familiar.
+            guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCell", for: indexPath) as? HeaderCollectionReusableView else { return UICollectionReusableView() }
+    
+            //        let category = categoryHeaderImages[indexPath.section]
+            //
+            //                cell.configure(with: category)
+            //
+            //        return cell
+            //    }
+    
+            //        let category = businessListVM.businessesArray[indexPath.section]
+            //        cell.category
+            return cell
+        }
     //           func collectionView(_ collectionView: UICollectionView, titleForHeaderInSection section: Int) -> String? {
     //               guard sectionHeaders.indices ~= section else {
     //                   print("No section title for this section")
