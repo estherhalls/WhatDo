@@ -50,7 +50,7 @@ class YelpCVViewController: UIViewController, YelpCollectionViewDelegate {
             setupCollectionViewLayout(collectionView: collectionView)
         }
 
-        if let categoryImage = UIImage(named: "diningHeader") {
+        if let categoryImage = UIImage(named: "headerDining") {
             categoryHeaderView.configureCategoryHeader(with: "dining", image: categoryImage)
         }
     }
@@ -61,10 +61,12 @@ class YelpCVViewController: UIViewController, YelpCollectionViewDelegate {
         businessListVM.yelpSearch()
     }
     
+    // MARK: - Actions
     @IBAction func micButtonTapped(_ sender: Any) {
     }
     @IBAction func filterButtonTapped(_ sender: Any) {
     }
+    
     // MARK: - Methods
     func setupCollectionViewLayout(collectionView: UICollectionView) {
         // We want the item to take up as much space as it can.

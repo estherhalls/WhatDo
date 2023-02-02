@@ -23,8 +23,8 @@
                                     <constraint firstAttribute="height" constant="125" id="thU-z4-6zQ"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" restorationIdentifier="yelpCell" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iv7-BB-SIp">
-                                <rect key="frame" x="0.0" y="298" width="393" height="471"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="yelpCell" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iv7-BB-SIp">
+                                <rect key="frame" x="0.0" y="265" width="393" height="504"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="F2D-IP-byi">
                                     <size key="itemSize" width="128" height="128"/>
@@ -34,9 +34,12 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <view opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QiR-qx-iMC" customClass="CategoryHeaderView" customModule="WhatDo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="148" width="393" height="115"/>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QiR-qx-iMC" customClass="CategoryHeaderView" customModule="WhatDo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="145" width="393" height="100"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="pJw-Tq-m0Y"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -44,10 +47,12 @@
                         <constraints>
                             <constraint firstItem="z1R-nc-U3H" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="2ni-sb-Pjf"/>
                             <constraint firstItem="z1R-nc-U3H" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="E9S-nD-nxN"/>
+                            <constraint firstItem="QiR-qx-iMC" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="KJG-G1-oZI"/>
                             <constraint firstItem="z1R-nc-U3H" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="PKD-43-qhd"/>
                             <constraint firstItem="QiR-qx-iMC" firstAttribute="top" secondItem="z1R-nc-U3H" secondAttribute="bottom" constant="20" id="R5N-VU-pKd"/>
                             <constraint firstItem="iv7-BB-SIp" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="Ta0-5U-vsx"/>
                             <constraint firstItem="iv7-BB-SIp" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="pQc-98-1qQ"/>
+                            <constraint firstItem="QiR-qx-iMC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="q7a-F0-FgS"/>
                             <constraint firstItem="iv7-BB-SIp" firstAttribute="top" secondItem="QiR-qx-iMC" secondAttribute="bottom" constant="20" id="q9S-BO-Efv"/>
                             <constraint firstItem="iv7-BB-SIp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="zck-8X-OiG"/>
                         </constraints>
