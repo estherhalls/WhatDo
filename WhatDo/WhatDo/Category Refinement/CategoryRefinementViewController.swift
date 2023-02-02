@@ -104,21 +104,12 @@ extension CategoryRefinementViewController {
         return nil
     }
     
+    // Will eventually want to pass the completed api call with this
     func navigateToNextView() {
         /// Display the results view
         let storyboard = UIStoryboard(name: "SelectionResults", bundle: nil)
         let resultsVC = storyboard.instantiateViewController(withIdentifier: "selectionResultsVC")
         self.navigationController?.pushViewController(resultsVC, animated: true)
-    }
-    
-    func presentNext() {
-//        let currentIndex = 0
-//        if currentIndex == cardData.count - 1 {
-//            /// Display the results view
-//            let storyboard = UIStoryboard(name: "SelectionResults", bundle: nil)
-//            let resultsVC = storyboard.instantiateViewController(withIdentifier: "selectionResultsVC")
-//            self.navigationController?.pushViewController(resultsVC, animated: true)
-//        }
     }
 }
 
