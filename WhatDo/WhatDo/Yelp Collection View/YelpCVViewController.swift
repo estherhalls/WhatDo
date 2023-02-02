@@ -12,9 +12,7 @@ class YelpCVViewController: UIViewController, YelpCollectionViewDelegate {
     // MARK: - Outlets
     @IBOutlet weak var headerView: HeaderLargeView!
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var labelBackground: UIView!
-    @IBOutlet weak var categoryHeaderLabel: UILabel!
-    @IBOutlet weak var categoryHeaderImage: UIImageView!
+    @IBOutlet weak var categoryHeaderView: CategoryHeaderView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var micButton: UIButton!
     @IBOutlet weak var filterButton: UIButton!
@@ -41,20 +39,22 @@ class YelpCVViewController: UIViewController, YelpCollectionViewDelegate {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Header
         if let titleImage = UIImage(named: "whatDoSmall") {
             headerView.configureImageViews(withImages: titleImage, subtitle: nil)
-            
+       
             collectionView.dataSource = self
             collectionView.delegate = self
             collectionView.register(UINib(nibName: "YelpCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "yelpCell")
             setupCollectionViewLayout(collectionView: collectionView)
-            collectionView.register(UINib(nibName: "HeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerCell")
-            labelBackground.backgroundColor = .gray
-            //        categoryHeaderImage.image = categoryHeaderImages
         }
-        
+
+        if let categoryImage = UIImage(named: "diningHeader") {
+            categoryHeaderView.configureCategoryHeader(with: "dining", image: categoryImage)
+        }
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         businessListVM = BusinessListVM(delegate: self)
@@ -147,36 +147,36 @@ extension YelpCVViewController: UICollectionViewDataSource, UICollectionViewDele
         
         return cell
     }
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        // Check the kind of supplementary view here, it needs to match the kind in your cell registration. Then call collectionView.dequeueReusableSupplementaryView and the rest should be pretty familiar.
-        guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCell", for: indexPath) as? HeaderCollectionReusableView else { return UICollectionReusableView() }
-        
-        //        let category = categoryHeaderImages[indexPath.section]
-        //
-        //                cell.configure(with: category)
-        //
-        //        return cell
-        //    }
-        
-        //        let category = businessListVM.businessesArray[indexPath.section]
-        //        cell.category
-        return cell
-    }
-    //       func collectionView(_ collectionView: UICollectionView, titleForHeaderInSection section: Int) -> String? {
-    //           guard sectionHeaders.indices ~= section else {
-    //               print("No section title for this section")
-    //               return nil
-    //           }
-    //
-    //           return sectionHeaders[section]
-    //       }
-    //    func collectionView(_ collectionView: UICollectionView, indexPathForIndexTitle title: String, at index: Int) -> IndexPath {
-    //        guard sectionHeaders.indices ~= index else {
-    //                   print("No section title for this section")
-    //                   return
-    //               }
-    //        return sectionHeaders[index]
-    //    }
+//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+//        // Check the kind of supplementary view here, it needs to match the kind in your cell registration. Then call collectionView.dequeueReusableSupplementaryView and the rest should be pretty familiar.
+//        guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCell", for: indexPath) as? HeaderCollectionReusableView else { return UICollectionReusableView() }
+//
+//        //        let category = categoryHeaderImages[indexPath.section]
+//        //
+//        //                cell.configure(with: category)
+//        //
+//        //        return cell
+//        //    }
+//
+//        //        let category = businessListVM.businessesArray[indexPath.section]
+//        //        cell.category
+//        return cell
+//    }
+//           func collectionView(_ collectionView: UICollectionView, titleForHeaderInSection section: Int) -> String? {
+//               guard sectionHeaders.indices ~= section else {
+//                   print("No section title for this section")
+//                   return nil
+//               }
+//
+//               return sectionHeaders[section]
+//           }
+//        func collectionView(_ collectionView: UICollectionView, indexPathForIndexTitle title: String, at index: Int) -> IndexPath {
+//            guard sectionHeaders.indices ~= index else {
+//                       print("No section title for this section")
+//                       return
+//                   }
+//            return sectionHeaders[index]
+//        }
 }
 extension YelpCVViewController: YelpCollectionViewCellDelegate {
     func cellTapped(cell: YelpCollectionViewCell) {

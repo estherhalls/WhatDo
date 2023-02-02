@@ -14,6 +14,8 @@
 		EB15767B29639540008BD904 /* RefinementCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB15767A29639540008BD904 /* RefinementCardViewModel.swift */; };
 		EB15767D2963A32F008BD904 /* RefinementCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB15767C2963A32F008BD904 /* RefinementCard.swift */; };
 		EB1576802963A60D008BD904 /* RefinementCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB15767F2963A60D008BD904 /* RefinementCard.xib */; };
+		EB7B68B6298B2C9A0086FB05 /* CategoryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB7B68B5298B2C9A0086FB05 /* CategoryHeaderView.xib */; };
+		EB7B68B8298B2D7E0086FB05 /* CategoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7B68B7298B2D7E0086FB05 /* CategoryHeaderView.swift */; };
 		EBA3FAF9295CBC70002AF566 /* CategoryRefinement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBA3FAF8295CBC70002AF566 /* CategoryRefinement.storyboard */; };
 		EBA3FAFC295CC41F002AF566 /* SwipeableCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBA3FAFB295CC41F002AF566 /* SwipeableCardView.xib */; };
 		EBA3FAFE295CC58E002AF566 /* CardViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA3FAFD295CC58E002AF566 /* CardViewContainer.swift */; };
@@ -57,8 +59,6 @@
 		FFECE29C295E371100BC7C6F /* YelpCVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFECE29B295E371100BC7C6F /* YelpCVViewController.swift */; };
 		FFECE29F295E3E3300BC7C6F /* YelpCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFECE29D295E3E3300BC7C6F /* YelpCollectionViewCell.swift */; };
 		FFECE2A0295E3E3300BC7C6F /* YelpCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFECE29E295E3E3300BC7C6F /* YelpCollectionViewCell.xib */; };
-		FFECE2AD295F4A5E00BC7C6F /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFECE2AB295F4A5E00BC7C6F /* HeaderCollectionReusableView.swift */; };
-		FFECE2AE295F4A5E00BC7C6F /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFECE2AC295F4A5E00BC7C6F /* HeaderCollectionReusableView.xib */; };
 		FFFB9357295B5A6100191939 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFFB9355295B5A6100191939 /* Home.storyboard */; };
 		FFFB935A295B5ACE00191939 /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFFB9359295B5ACE00191939 /* Activity.storyboard */; };
 		FFFB9361295B5B2400191939 /* Events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFFB9360295B5B2400191939 /* Events.storyboard */; };
@@ -76,6 +76,8 @@
 		EB15767A29639540008BD904 /* RefinementCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefinementCardViewModel.swift; sourceTree = "<group>"; };
 		EB15767C2963A32F008BD904 /* RefinementCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefinementCard.swift; sourceTree = "<group>"; };
 		EB15767F2963A60D008BD904 /* RefinementCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RefinementCard.xib; sourceTree = "<group>"; };
+		EB7B68B5298B2C9A0086FB05 /* CategoryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryHeaderView.xib; sourceTree = "<group>"; };
+		EB7B68B7298B2D7E0086FB05 /* CategoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryHeaderView.swift; sourceTree = "<group>"; };
 		EBA3FAF8295CBC70002AF566 /* CategoryRefinement.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoryRefinement.storyboard; sourceTree = "<group>"; };
 		EBA3FAFB295CC41F002AF566 /* SwipeableCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwipeableCardView.xib; sourceTree = "<group>"; };
 		EBA3FAFD295CC58E002AF566 /* CardViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewContainer.swift; sourceTree = "<group>"; };
@@ -120,8 +122,6 @@
 		FFECE29B295E371100BC7C6F /* YelpCVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpCVViewController.swift; sourceTree = "<group>"; };
 		FFECE29D295E3E3300BC7C6F /* YelpCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpCollectionViewCell.swift; sourceTree = "<group>"; };
 		FFECE29E295E3E3300BC7C6F /* YelpCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YelpCollectionViewCell.xib; sourceTree = "<group>"; };
-		FFECE2AB295F4A5E00BC7C6F /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
-		FFECE2AC295F4A5E00BC7C6F /* HeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HeaderCollectionReusableView.xib; path = ../HeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		FFFB9356295B5A6100191939 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = WhatDo/Storyboards/Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		FFFB9359295B5ACE00191939 /* Activity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
 		FFFB9360295B5B2400191939 /* Events.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Events.storyboard; sourceTree = "<group>"; };
@@ -287,9 +287,9 @@
 		FF9939F82965E60A001FF52C /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				FFECE2AC295F4A5E00BC7C6F /* HeaderCollectionReusableView.xib */,
 				FFECE299295E367C00BC7C6F /* YelpCVStoryboard.storyboard */,
 				FFECE29E295E3E3300BC7C6F /* YelpCollectionViewCell.xib */,
+				EB7B68B5298B2C9A0086FB05 /* CategoryHeaderView.xib */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -319,7 +319,7 @@
 				FF3FBFF329674AA800287660 /* YelpCollectionViewCellVM.swift */,
 				FFECE29B295E371100BC7C6F /* YelpCVViewController.swift */,
 				FFECE29D295E3E3300BC7C6F /* YelpCollectionViewCell.swift */,
-				FFECE2AB295F4A5E00BC7C6F /* HeaderCollectionReusableView.swift */,
+				EB7B68B7298B2D7E0086FB05 /* CategoryHeaderView.swift */,
 			);
 			path = "Yelp Collection View";
 			sourceTree = "<group>";
@@ -455,7 +455,7 @@
 				FFECE2A0295E3E3300BC7C6F /* YelpCollectionViewCell.xib in Resources */,
 				FFECE29A295E367C00BC7C6F /* YelpCVStoryboard.storyboard in Resources */,
 				EBE840D12967898D00DC578E /* SelectionResults.storyboard in Resources */,
-				FFECE2AE295F4A5E00BC7C6F /* HeaderCollectionReusableView.xib in Resources */,
+				EB7B68B6298B2C9A0086FB05 /* CategoryHeaderView.xib in Resources */,
 				FFFB9361295B5B2400191939 /* Events.storyboard in Resources */,
 				EBE8F4082953D4E2001BC7B7 /* Assets.xcassets in Resources */,
 				EBE8F4062953D4E0001BC7B7 /* Main.storyboard in Resources */,
@@ -519,7 +519,6 @@
 				EBA3FB06295CD896002AF566 /* SwipeableViewGestures.swift in Sources */,
 				EB15767D2963A32F008BD904 /* RefinementCard.swift in Sources */,
 				FFECE29F295E3E3300BC7C6F /* YelpCollectionViewCell.swift in Sources */,
-				FFECE2AD295F4A5E00BC7C6F /* HeaderCollectionReusableView.swift in Sources */,
 				EB0B360E295AB31D00BD4713 /* HomeViewController.swift in Sources */,
 				EBA3FB04295CD1E9002AF566 /* CardViewDelegate.swift in Sources */,
 				EBA3FB0A295CDD56002AF566 /* UIView.swift in Sources */,
@@ -545,6 +544,7 @@
 				FFECBEED2979DCFC0063CC2D /* SearchByIdOrAlias.swift in Sources */,
 				EB15767929638067008BD904 /* CategoryRefinementViewModel.swift in Sources */,
 				EBA3FB08295CD8EE002AF566 /* SwipeableViewDelegate.swift in Sources */,
+				EB7B68B8298B2D7E0086FB05 /* CategoryHeaderView.swift in Sources */,
 				EBD5726E296C7EA7000EF4A9 /* LocationManagerViewModel.swift in Sources */,
 				EB0B3608295A995700BD4713 /* HeaderLargeView.swift in Sources */,
 				EBA3FB00295CC9B1002AF566 /* CardViewDataSource.swift in Sources */,

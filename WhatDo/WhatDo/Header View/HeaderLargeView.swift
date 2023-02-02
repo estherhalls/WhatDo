@@ -45,16 +45,9 @@ class HeaderLargeView: UIView {
         return view
     }
     
-//    func configureImageViews(withImages logo: UIImage, title: UIImage, subtitle: UIImage?) {
-//        sfSymbolImage.image = logo
-//        titleLogoImage.image = title
-//        subtitleLogoImage?.image = subtitle
-//    }
     func configureImageViews(withImages title: UIImage, subtitle: UIImage?) {
         titleLogoImage.image = title
         subtitleLogoImage?.image = subtitle
     }
-    
-    
 
 } // End of Class

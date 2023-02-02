@@ -14,7 +14,6 @@ class BusinessListVM {
     
     // Initialize view model class property
     var viewModel = LocationManagerViewModel.shared
-    var locationVC = LocationManagerViewController()
     let latitude = LocationManagerViewModel.shared.userLatitude ?? 37.77
     let longitude = LocationManagerViewModel.shared.userLongitude ?? 122.42
     let radius = "16000"
