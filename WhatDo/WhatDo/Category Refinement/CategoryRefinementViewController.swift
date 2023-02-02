@@ -7,8 +7,8 @@
 
 import UIKit
 
-class CategoryRefinementViewController: UIViewController, CardViewDataSource {
-    
+class CategoryRefinementViewController: UIViewController, CardViewDataSource, CardViewContainerDelegate {
+ 
     // MARK: - Outlets
     @IBOutlet var backgroundGradient: UIView!
     @IBOutlet weak var headerView: HeaderLargeView!
@@ -35,8 +35,12 @@ class CategoryRefinementViewController: UIViewController, CardViewDataSource {
         if let titleImage = UIImage(named: "whatDoSmall") {
             headerView.configureImageViews(withImages: titleImage, subtitle: nil)
         }
+        
+        // Check that Coordinate and travel radius properties have been set. If not, prompt user to input location or kick them back to home screen.
+        
         // Swipeable cards will need view model data sources for the questions for each category.
         swipeableCardView.dataSource = self
+        swipeableCardView.navDelegate = self
     }
     
     // Individual Category Card Data
@@ -77,12 +81,8 @@ class CategoryRefinementViewController: UIViewController, CardViewDataSource {
         let storyboard = UIStoryboard(name: "SelectionResults", bundle: nil)
         let resultsVC = storyboard.instantiateViewController(withIdentifier: "selectionResultsVC")
         self.navigationController?.pushViewController(resultsVC, animated: true)
-        /// This is to get the SceneDelegate object from your view controller
-        /// then call the change root view controller function to change to main tab bar
-        /// Use this rather than PresentVC function to clear memory and show home as root controller instead of card on top
-//        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(resultsVC)
     }
-
+    
 }
 // MARK: - Swipeable Card View Data Source
 
@@ -103,5 +103,15 @@ extension CategoryRefinementViewController {
     func viewForEmptyCards() -> UIView? {
         return nil
     }
+    
+    // Will eventually want to pass the completed api call with this
+    func navigateToNextView() {
+        /// Display the results view
+        let storyboard = UIStoryboard(name: "SelectionResults", bundle: nil)
+        let resultsVC = storyboard.instantiateViewController(withIdentifier: "selectionResultsVC")
+        self.navigationController?.pushViewController(resultsVC, animated: true)
+    }
 }
+
+
 

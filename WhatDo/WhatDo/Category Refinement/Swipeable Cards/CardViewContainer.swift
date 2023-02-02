@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol CardViewContainerDelegate: AnyObject {
+    func navigateToNextView()
+}
+
 /// The swipeable card views are held within this container view on our storyboards. This container is responsible for organizing the cards inside of it and works kind of like a collection view.
 /// Each Category will require its own container view and unique information for the cards, but the card xib itself should be able to be reused.
 /// Category Refinement View > Card Container > Swipeable Cards
@@ -17,6 +21,9 @@ import UIKit
 class CardViewContainer: UIView, SwipeableViewDelegate {
     
     var delegate: CardViewDelegate?
+    weak var navDelegate: CardViewContainerDelegate?
+    
+    var vc = CategoryRefinementViewController()
     
     var dataSource: CardViewDataSource? {
         didSet {
@@ -33,6 +40,8 @@ class CardViewContainer: UIView, SwipeableViewDelegate {
     private var remainingCards: Int = 0
     
     static let numberOfVisibleCards: Int = 3
+    
+   private var timesSwiped = 0
     
     // Container:
     static let horizontalInset: CGFloat = 12.0
@@ -70,12 +79,15 @@ class CardViewContainer: UIView, SwipeableViewDelegate {
     
     private func addCardView(cardView: SwipeableCardView, atIndex index: Int) {
         cardView.delegate = self
+        cardView.center = self.center
         setFrame(forCardView: cardView, atIndex: index)
         cardViews.append(cardView)
+        /// Insert at index 0 for the newest cards to appear in the back (since we are only showing three at a time and there may be more in the array queue
         insertSubview(cardView, at: 0)
         remainingCards -= 1
     }
     
+    // Prepare for container to be filled with new cards upon loading
     private func removeAllCardViews() {
         for cardView in visibleCardViews {
             cardView.removeFromSuperview()
@@ -99,7 +111,7 @@ class CardViewContainer: UIView, SwipeableViewDelegate {
 }
 // MARK: - SwipeeableViewDelegate
 extension CardViewContainer {
-    
+
     func didTap(view: SwipeableViewGestures) {
         if let cardView = view as? SwipeableCardView,
            let index = cardViews.firstIndex(of: cardView) {
@@ -113,13 +125,16 @@ extension CardViewContainer {
     
     //
     func didEndSwipe(onView view: SwipeableViewGestures) {
+        
+        timesSwiped += 1
+        
         guard let dataSource = dataSource else {
             return
         }
         // Remove swiped card
         view.removeFromSuperview()
         
-        // Only add a new card if there are cards remaining
+        // Only add a new card if there are cards remaining in queue outside of visible cards
         if remainingCards > 0 {
             /// Calculate new card's index
             let newIndex = dataSource.numberOfCards() - remainingCards
@@ -127,16 +142,34 @@ extension CardViewContainer {
             /// Add new card as subview
             addCardView(cardView: dataSource.card(forQuestionAtIndex: newIndex), atIndex: 2)
             
-            /// Update all existing card frames based on new indices, animate frame change to reveal new card from underneath the stack of existing cards
-            /// * New subview inserted at origin 0 needs to appear at the back of the line from where user is swiping rather than its default in the front. To reverse the array order of the card indices shown, .reversed() is added to the array of card views
-            /// * Now the subview at origin 0 is farthest back in the hierarchy even though the card indeex associated with that view is 2 (the highest index)
-            for (cardIndex, cardView) in visibleCardViews.reversed().enumerated() {
-                UIView.animate(withDuration: 0.2) {
-                    cardView.center = self.center
-                    self.setFrame(forCardView: cardView, atIndex: cardIndex)
-                    self.layoutIfNeeded()
-                }
+            }
+     /// Navigate to results page when user has swiped through all cards in that category
+        if timesSwiped == dataSource.numberOfCards() {
+            navDelegate?.navigateToNextView()
+        }
+
+        // Animate cards from back of the line to front
+        /// Update all existing card frames based on new indices, animate frame change to reveal new card from underneath the stack of existing cards
+        /// * New subview inserted at origin 0 needs to appear at the back of the line from where user is swiping rather than its default in the front. To reverse the array order of the card indices shown, .reversed() is added to the array of card views
+        /// * Now the subview at origin 0 is farthest back in the hierarchy even though the card indeex associated with that view is 2 (the highest index)
+        for (cardIndex, cardView) in visibleCardViews.reversed().enumerated() {
+            UIView.animate(withDuration: 0.2) {
+                cardView.center = self.center
+                self.setFrame(forCardView: cardView, atIndex: cardIndex)
+                self.layoutIfNeeded()
+                
+//                                if cardIndex == 0  {
+//                                    // Display the results view
+//                                            let storyboard = UIStoryboard(name: "SelectionResults", bundle: nil)
+//                                            let resultsVC = storyboard.instantiateViewController(withIdentifier: "selectionResultsVC")
+//                //                    self.vc.navigationController?.pushViewController(resultsVC, animated: true)
+//                                    /// This is to get the SceneDelegate object from your view controller
+//                                    /// then call the change root view controller function to change to main tab bar
+//                                    /// Use this rather than PresentVC function to clear memory and show home as root controller instead of card on top
+//                                    (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(resultsVC)
+//                            }
             }
         }
     }
+    
 }

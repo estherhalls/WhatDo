@@ -57,6 +57,19 @@ class DetailViewVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Create Gradient Layer to Overlap the Business Image and Make Text More Readable
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = businessImage.bounds
+        gradientLayer.colors = [UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 0.00).cgColor, UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.80).cgColor]
+        /// Rasterize this static layer to improve performance
+        gradientLayer.shouldRasterize = true
+        businessImage.layer.insertSublayer(gradientLayer, at: 1)
+        // Header
+        if let titleImage = UIImage(named: "whatDoSmall") {
+            headerView.configureImageViews(withImages: titleImage, subtitle: nil)
+        }
+            
         DispatchQueue.main.async {
             self.addMapAnnotationLocation()
             //            self.updateViews()

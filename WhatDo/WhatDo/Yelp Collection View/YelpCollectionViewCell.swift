@@ -22,17 +22,17 @@ class YelpCollectionViewCell: UICollectionViewCell {
     static let identifier = "yelpCell"
     var business: BusinessSearch?
     var cellViewModel = YelpCollectionViewCellVM()
+    let unitConversion = UnitConversion()
     
     weak var delegate: YelpCollectionViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
+    
     func setupBusinessCell(business: BusinessSearch) {
-        
         titleLabel.text = business.name
-        let distance = cellViewModel.convertMetersToMiles(distance: business.distance!)
+        let distance = unitConversion.metersToMiles(meters: business.distance!)
         print(distance)
         subtitleLabel.text =  "Miles: \(distance)"
         guard let imageUrl = business.imageUrl else { return }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HeaderCollectionReusableView: UICollectionReusableView {
+class SectionCollectionReusableView: UICollectionReusableView {
     
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var labelBackground: UIView!

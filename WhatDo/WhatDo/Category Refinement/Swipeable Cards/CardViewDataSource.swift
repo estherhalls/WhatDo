@@ -20,5 +20,5 @@ protocol CardViewDataSource: AnyObject {
     // Provides a view to be displayed underneath all of the cards when they have all been swiped away
     /// - Returns: view to be displayed underneath all cars
     func viewForEmptyCards() -> UIView?
-    
+
 }
