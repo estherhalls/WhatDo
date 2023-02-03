@@ -19,7 +19,7 @@ class HomeViewController: UIViewController {
     // Initialize view model class property
     var viewModel = LocationManagerViewModel.shared
     
-    let categoryData = CategoryViewModel.shared
+    let categoryData = CategoryViewModel()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -59,7 +59,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         cell.delegate = self
         cell.configure(with: category)
-        
         return cell
     }
 }
@@ -67,7 +66,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 extension HomeViewController: CollectionViewCellDelegate {
     
     func categoryCellTapped(cell: CollectionViewCell) {
-        
         let storyboard = UIStoryboard(name: "LocationManager", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: "locationVC") as? LocationManagerViewController {
             guard let category = cell.category else {return}
@@ -75,11 +73,8 @@ extension HomeViewController: CollectionViewCellDelegate {
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
-        print("Take me there!")
+        print("Take me there!, \(cell.category)")
     }
-    
-    
-    
 }
 
 

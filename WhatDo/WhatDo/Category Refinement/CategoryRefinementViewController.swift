@@ -15,13 +15,14 @@ class CategoryRefinementViewController: UIViewController, CardViewDataSource, Ca
     @IBOutlet weak var swipeableCardView: CardViewContainer!
     
     // Reciever Property - Selected Category Sent Data
-    let cardData: [RefinementCardViewModel] = []
+//    let cardData: [RefinementCardViewModel] = []
     var sentCategory: Category? {
         didSet {
             guard let category = sentCategory else { return }
-            let cardData = category.refinementQuestions
+            category.refinementQuestions = cardData
         }
     }
+    var cardData: [RefinementCardViewModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()

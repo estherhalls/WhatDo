@@ -47,7 +47,7 @@ class CollectionViewCell: UICollectionViewCell {
     @IBAction func categoryButtonTapped(_ sender: AnyObject) {
         delegate?.categoryCellTapped(cell: self)
 //        self.inputViewController?.performSegue(withIdentifier: CollectionViewCell.identifier, sender: AnyObject.self)
-//        print("Take me there!")
+//        print("Take me there!, \(self.category)")
 
     }
 }
