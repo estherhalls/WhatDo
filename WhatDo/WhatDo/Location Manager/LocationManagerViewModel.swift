@@ -18,9 +18,9 @@ class LocationManagerViewModel: NSObject, CLLocationManagerDelegate {
     
     // User's current or set location to be used in network calls. CLLocation must be converted to lat/long which are input as individual String parameters in network calls
     /// Optional because these are not set until user allows location services or enters manual location
-    private (set) var userLatitude: Double?
-    private (set) var userLongitude: Double?
-    private (set) var radius: Int?
+    private(set) var userLatitude: Double?
+    private(set) var userLongitude: Double?
+    private(set) var radius: Int?
     
     public var userLocation: CLLocation? {
         let latitude = self.userLatitude ?? 37.77

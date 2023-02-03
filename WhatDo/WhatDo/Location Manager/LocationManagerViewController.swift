@@ -21,7 +21,7 @@ class LocationManagerViewController: UIViewController {
     var viewModel = LocationManagerViewModel.shared
     
     // Reciever Property - Selected Category Sent Data
-    var sentCategory: String?
+    var sentCategory: Category?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {

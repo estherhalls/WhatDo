@@ -15,7 +15,13 @@ class CategoryRefinementViewController: UIViewController, CardViewDataSource, Ca
     @IBOutlet weak var swipeableCardView: CardViewContainer!
     
     // Reciever Property - Selected Category Sent Data
-    var sentCategory: String?
+    let cardData: [RefinementCardViewModel] = []
+    var sentCategory: Category? {
+        didSet {
+            guard let category = sentCategory else { return }
+            let cardData = category.refinementQuestions
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,36 +48,43 @@ class CategoryRefinementViewController: UIViewController, CardViewDataSource, Ca
         swipeableCardView.dataSource = self
         swipeableCardView.navDelegate = self
     }
-    
-    // Individual Category Card Data
-    let categoryArray = CategoryRefinementViewModel()
-    var cardData: [RefinementCardViewModel] {
-        // Switch statement instead of if? Cleaner?
-        if sentCategory == "diningCategory" {
-            return categoryArray.diningCategory
-        }
+    func updateViews() {
         
-        if sentCategory == "drinkCategory" {
-            return categoryArray.drinksCategory
-        }
-        
-        if sentCategory == "cinemaCategory" {
-            return categoryArray.cinemaCategory
-        }
-        
-        if sentCategory == "eventCategory" {
-            return categoryArray.eventsCategory
-        }
-        
-        if sentCategory == "activityCategory" {
-            return categoryArray.activitiesCategory
-        }
-        
-        if sentCategory == "nightOutCategory" {
-            return categoryArray.nightOutCategory
-        }
-        return []
     }
+    // Individual Category Card Data
+//    let categoryArray = CategoryRefinementViewModel()
+//    var cardData: [RefinementCardViewModel] {
+//        didSet {
+//            guard let category = sentCategory else { return }
+//            category.refinementQuestions
+//        }
+//    }
+//        // Switch statement instead of if? Cleaner?
+//        if sentCategory == "diningCategory" {
+//            return categoryArray.diningCategory
+//        }
+//
+//        if sentCategory == "drinkCategory" {
+//            return categoryArray.drinksCategory
+//        }
+//
+//        if sentCategory == "cinemaCategory" {
+//            return categoryArray.cinemaCategory
+//        }
+//
+//        if sentCategory == "eventCategory" {
+//            return categoryArray.eventsCategory
+//        }
+//
+//        if sentCategory == "activityCategory" {
+//            return categoryArray.activitiesCategory
+//        }
+//
+//        if sentCategory == "nightOutCategory" {
+//            return categoryArray.nightOutCategory
+//        }
+//        return []
+//    }
     
     // MARK: - Navigation
     @IBAction func rouletteButtonTapped(_ sender: Any) {

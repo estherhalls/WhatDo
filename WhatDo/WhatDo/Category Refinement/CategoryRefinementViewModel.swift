@@ -11,7 +11,7 @@ struct CategoryRefinementViewModel {
     
     // Card Data by Category
     var diningCategory: [RefinementCardViewModel] {
-        var sfSymbol = Categories().dining.sfSymbol
+        var sfSymbol = CategoryViewModel().dining.sfSymbol
         
         let questionOne = RefinementCardViewModel(leftLabel: "Fine Dining But with more text this time", rightLabel: "Casual Dining", sfSymbol: sfSymbol)
         let questionTwo = RefinementCardViewModel(leftLabel: "Card2: A", rightLabel: "Card2: B", sfSymbol: sfSymbol)
@@ -22,7 +22,7 @@ struct CategoryRefinementViewModel {
     }
     
     var drinksCategory: [RefinementCardViewModel]{
-        var sfSymbol = Categories().drinks.sfSymbol
+        var sfSymbol = CategoryViewModel().drinks.sfSymbol
         
         let questionOne = RefinementCardViewModel(leftLabel: "Coffee/Tea", rightLabel: "Boozy Bevs", sfSymbol: sfSymbol)
         let questionTwo = RefinementCardViewModel(leftLabel: "Card2: A", rightLabel: "Card2: B", sfSymbol: sfSymbol)
@@ -33,7 +33,7 @@ struct CategoryRefinementViewModel {
     }
     
     var cinemaCategory: [RefinementCardViewModel]{
-        var sfSymbol = Categories().cinema.sfSymbol
+        var sfSymbol = CategoryViewModel().cinema.sfSymbol
         
         let questionOne = RefinementCardViewModel(leftLabel: "Going Out", rightLabel: "Staying In", sfSymbol: sfSymbol)
         let questionTwo = RefinementCardViewModel(leftLabel: "Card2: A", rightLabel: "Card2: B", sfSymbol: sfSymbol)
@@ -44,7 +44,7 @@ struct CategoryRefinementViewModel {
     }
     
     var eventsCategory: [RefinementCardViewModel]{
-        var sfSymbol = Categories().events.sfSymbol
+        var sfSymbol = CategoryViewModel().events.sfSymbol
         
         let questionOne = RefinementCardViewModel(leftLabel: "Concerts", rightLabel: "Art Festivals", sfSymbol: sfSymbol)
         let questionTwo = RefinementCardViewModel(leftLabel: "Card2: A", rightLabel: "Card2: B", sfSymbol: sfSymbol)
@@ -55,7 +55,7 @@ struct CategoryRefinementViewModel {
     }
     
     var activitiesCategory: [RefinementCardViewModel]{
-        var sfSymbol = Categories().activities.sfSymbol
+        var sfSymbol = CategoryViewModel().activities.sfSymbol
         
         let questionOne = RefinementCardViewModel(leftLabel: "High Energy", rightLabel: "Low Energy", sfSymbol: sfSymbol)
         let questionTwo = RefinementCardViewModel(leftLabel: "Card2: A", rightLabel: "Card2: B", sfSymbol: sfSymbol)
@@ -66,9 +66,9 @@ struct CategoryRefinementViewModel {
     }
     
     var nightOutCategory: [RefinementCardViewModel]{
-        var sfSymbol = Categories().nightOut.sfSymbol
-        var sfSymbol2 = Categories().nightOut.sfSymbol2
-        var sfSymbol3 = Categories().nightOut.sfSymbol3
+        var sfSymbol = CategoryViewModel().nightOut.sfSymbol
+        var sfSymbol2 = CategoryViewModel().nightOut.sfSymbol2
+        var sfSymbol3 = CategoryViewModel().nightOut.sfSymbol3
         
         let questionOne = RefinementCardViewModel(leftLabel: "Casual", rightLabel: "Feeling Fancy", sfSymbol: sfSymbol, sfSymbol2: sfSymbol2, sfSymbol3: sfSymbol3)
         let questionTwo = RefinementCardViewModel(leftLabel: "Card2: A", rightLabel: "Card2: B", sfSymbol: sfSymbol, sfSymbol2: sfSymbol2, sfSymbol3: sfSymbol3)

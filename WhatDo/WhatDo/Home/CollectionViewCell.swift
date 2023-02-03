@@ -20,7 +20,7 @@ class CollectionViewCell: UICollectionViewCell {
     static let identifier = "categoryCell"
     weak var delegate: CollectionViewCellDelegate?
     
-    var category: String?
+    var category: Category?
     
     /// RGBA for our app red color hex #CC290C (#20441121 for 8-digit RGBA hex)
     let whatDoRed: UIColor = UIColor(red: 0.80, green: 0.16, blue: 0.05, alpha: 1.00)
@@ -29,12 +29,11 @@ class CollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
     }
                               
-    public func configure(with category: String) {
-        self.category = category
-        let image = UIImage(named: category)
+    public func configure(with category: Category) {
+        let image = UIImage(named: category.imageName)
         categoryImage.image = image
         categoryImage.clipsToBounds = true
-        categoryLabel.text = category
+        categoryLabel.text = category.name
         self.layer.cornerRadius = 50
         self.layer.masksToBounds = true
         self.layer.borderWidth = 2.0

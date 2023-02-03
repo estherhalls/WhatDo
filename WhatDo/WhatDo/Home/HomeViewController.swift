@@ -19,14 +19,7 @@ class HomeViewController: UIViewController {
     // Initialize view model class property
     var viewModel = LocationManagerViewModel.shared
     
-    let categories = [
-        "diningCategory",
-        "drinkCategory",
-        "cinemaCategory",
-        "eventCategory",
-        "activityCategory",
-        "nightOutCategory"
-    ]
+    let categoryData = CategoryViewModel.shared
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -56,13 +49,13 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categories.count
+        return categoryData.categories.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // Return the cell by dequeueing it
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifier, for: indexPath) as! CollectionViewCell
         
-        let category = categories[indexPath.row]
+        let category = categoryData.categories[indexPath.row]
         
         cell.delegate = self
         cell.configure(with: category)
