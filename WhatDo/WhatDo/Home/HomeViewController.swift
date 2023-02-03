@@ -18,8 +18,7 @@ class HomeViewController: UIViewController {
     // MARK: - Properties
     // Initialize view model class property
     var viewModel = LocationManagerViewModel.shared
-    
-    let categoryData = CategoryViewModel()
+    let categoryData = CategoryViewModel.shared
  
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -47,9 +46,10 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let category = categoryData.categoryArray
-        return category.count
+       
+        return categoryData.categoryArray.count
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // Return the cell by dequeueing it
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifier, for: indexPath) as! CollectionViewCell
@@ -59,6 +59,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.delegate = self
         cell.configure(with: category)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
+        let data = categoryData.categoryArray[indexPath.row]
+        let vc = LocationManagerViewController()
+        vc.sentCategory = data
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -72,7 +80,7 @@ extension HomeViewController: CollectionViewCellDelegate {
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
-        print("Take me there!")
+        print("Delegate message")
     }
 }
 
