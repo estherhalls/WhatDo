@@ -15,6 +15,7 @@ class CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var categoryButton: UIButton!
     @IBOutlet weak var categoryImage: UIImageView!
+    @IBOutlet weak var categoryLabel: UILabel!
     
     static let identifier = "categoryCell"
     weak var delegate: CollectionViewCellDelegate?
@@ -28,11 +29,12 @@ class CollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
     }
                               
-    public func configure(with image: String) {
-        self.category = image
-        let image = UIImage(named: image)
+    public func configure(with category: String) {
+        self.category = category
+        let image = UIImage(named: category)
         categoryImage.image = image
         categoryImage.clipsToBounds = true
+        categoryLabel.text = category
         self.layer.cornerRadius = 50
         self.layer.masksToBounds = true
         self.layer.borderWidth = 2.0
