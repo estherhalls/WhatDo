@@ -34,10 +34,7 @@ class YelpCVViewController: UIViewController, YelpCollectionViewDelegate {
     
     var businessListVM: BusinessListVM!
     var businessSearch: BusinessSearch?
-<<<<<<< HEAD
-=======
 
->>>>>>> feature/diningCardData
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -157,7 +154,7 @@ extension YelpCVViewController: UICollectionViewDataSource, UICollectionViewDele
         
         return cell
     }
-<<<<<<< HEAD
+
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         // Check the kind of supplementary view here, it needs to match the kind in your cell registration. Then call collectionView.dequeueReusableSupplementaryView and the rest should be pretty familiar.
         guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCell", for: indexPath) as? SectionCollectionReusableView else { return UICollectionReusableView() }
@@ -165,16 +162,7 @@ extension YelpCVViewController: UICollectionViewDataSource, UICollectionViewDele
         cell.setupCategoryTitle(categoryTitle: title)
         return cell
     }
-=======
-    
-        func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-            // Check the kind of supplementary view here, it needs to match the kind in your cell registration. Then call collectionView.dequeueReusableSupplementaryView and the rest should be pretty familiar.
-            guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCell", for: indexPath) as? SectionCollectionReusableView else { return UICollectionReusableView() }
-            let title = sectionHeaders[indexPath.section]
-            cell.setupCategoryTitle(categoryTitle: title)
-            return cell
-        }
->>>>>>> feature/diningCardData
+
     /*
      // Would use this if label didn't have its own view. More simple.
      func collectionView(_ collectionView: UICollectionView, titleForHeaderInSection section: Int) -> String? {
