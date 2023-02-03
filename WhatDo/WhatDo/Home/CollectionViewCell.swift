@@ -13,11 +13,14 @@ protocol CollectionViewCellDelegate: AnyObject {
 }
 class CollectionViewCell: UICollectionViewCell {
     
+    // MARK: - Outlets
     @IBOutlet weak var categoryButton: UIButton!
     @IBOutlet weak var categoryImage: UIImageView!
     @IBOutlet weak var categoryLabel: UILabel!
     
+    // MARK: - Properties
     static let identifier = "categoryCell"
+    
     weak var delegate: CollectionViewCellDelegate?
     
     var category: Category?
@@ -28,7 +31,8 @@ class CollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-                              
+                        
+    // MARK: - Methods
     public func configure(with category: Category) {
         let image = UIImage(named: category.imageName)
         categoryImage.image = image

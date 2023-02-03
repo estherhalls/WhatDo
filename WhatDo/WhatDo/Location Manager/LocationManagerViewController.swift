@@ -101,8 +101,8 @@ class LocationManagerViewController: UIViewController {
     func navNextVC() {
         let storyboard = UIStoryboard(name: "CategoryRefinement", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: "categoryRefinement") as? CategoryRefinementViewController {
-            guard let category = self.sentCategory else { return }
-            vc.sentCategory = category
+//            guard let category = self.sentCategory else { return }
+            vc.sentCategory = self.sentCategory
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
