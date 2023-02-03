@@ -71,11 +71,8 @@ extension HomeViewController: CollectionViewCellDelegate {
             vc.sentCategory = category
             self.navigationController?.pushViewController(vc, animated: true)
         }
-<<<<<<< HEAD
-=======
-        
+
         print("Delegate message")
->>>>>>> feature/diningCardData
     }
 }
 
