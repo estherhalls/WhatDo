@@ -16,6 +16,7 @@
 		EB1576802963A60D008BD904 /* RefinementCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB15767F2963A60D008BD904 /* RefinementCard.xib */; };
 		EB20D574298C9E9100025307 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20D573298C9E9100025307 /* Category.swift */; };
 		EB20D579298CA52500025307 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20D578298CA52500025307 /* CategoryViewModel.swift */; };
+		EB20D57B298CE39600025307 /* SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB20D57A298CE39600025307 /* SFSymbols.swift */; };
 		EB580DB3298B79E800DE3953 /* UnitConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB580DB2298B79E800DE3953 /* UnitConversion.swift */; };
 		EB580DB5298B7DFC00DE3953 /* SectionCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB580DB4298B7DFC00DE3953 /* SectionCollectionReusableView.xib */; };
 		EB580DB9298B818A00DE3953 /* SectionCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB580DB8298B818900DE3953 /* SectionCollectionReusableView.swift */; };
@@ -84,6 +85,7 @@
 		EB15767F2963A60D008BD904 /* RefinementCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RefinementCard.xib; sourceTree = "<group>"; };
 		EB20D573298C9E9100025307 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		EB20D578298CA52500025307 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		EB20D57A298CE39600025307 /* SFSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbols.swift; sourceTree = "<group>"; };
 		EB580DB2298B79E800DE3953 /* UnitConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitConversion.swift; sourceTree = "<group>"; };
 		EB580DB4298B7DFC00DE3953 /* SectionCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionCollectionReusableView.xib; sourceTree = "<group>"; };
 		EB580DB8298B818900DE3953 /* SectionCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 			children = (
 				EB20D573298C9E9100025307 /* Category.swift */,
 				EB20D578298CA52500025307 /* CategoryViewModel.swift */,
+				EB20D57A298CE39600025307 /* SFSymbols.swift */,
 			);
 			path = "Category Models";
 			sourceTree = "<group>";
@@ -552,6 +555,7 @@
 				EBA3FB04295CD1E9002AF566 /* CardViewDelegate.swift in Sources */,
 				EBA3FB0A295CDD56002AF566 /* UIView.swift in Sources */,
 				FF09C50F296346C200CEA9DB /* API Service.swift in Sources */,
+				EB20D57B298CE39600025307 /* SFSymbols.swift in Sources */,
 				FF09C51829634D8900CEA9DB /* DetailViewVC.swift in Sources */,
 				EBE8F3FF2953D4E0001BC7B7 /* AppDelegate.swift in Sources */,
 				EBA3FB02295CCB36002AF566 /* SwipeableCardView.swift in Sources */,

@@ -33,10 +33,10 @@
                                 </connections>
                             </button>
                             <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FMc-Mp-5Zp">
-                                <rect key="frame" x="0.0" y="45" width="100" height="25"/>
+                                <rect key="frame" x="0.0" y="68" width="100" height="20"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTJ-ar-lYn">
-                                        <rect key="frame" x="10" y="1.6666666666666643" width="80" height="22"/>
+                                        <rect key="frame" x="10" y="-1" width="80" height="22"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Italic" family="Avenir Next" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -44,7 +44,7 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="1a8-Gd-Ain"/>
+                                    <constraint firstAttribute="height" constant="20" id="1a8-Gd-Ain"/>
                                     <constraint firstItem="bTJ-ar-lYn" firstAttribute="leading" secondItem="FMc-Mp-5Zp" secondAttribute="leading" constant="10" id="YU6-2z-Pxg"/>
                                     <constraint firstItem="bTJ-ar-lYn" firstAttribute="centerY" secondItem="FMc-Mp-5Zp" secondAttribute="centerY" id="gzT-uv-kQi"/>
                                     <constraint firstItem="bTJ-ar-lYn" firstAttribute="centerX" secondItem="FMc-Mp-5Zp" secondAttribute="centerX" id="iGX-aC-Ocn"/>
@@ -58,7 +58,7 @@
                             <constraint firstItem="FMc-Mp-5Zp" firstAttribute="leading" secondItem="ZFI-Lk-sgq" secondAttribute="leading" id="baU-OP-CAE"/>
                             <constraint firstAttribute="height" constant="100" id="fLY-D3-0qe"/>
                             <constraint firstAttribute="width" constant="100" id="hX4-Mr-yda"/>
-                            <constraint firstAttribute="bottom" secondItem="FMc-Mp-5Zp" secondAttribute="bottom" constant="30" id="pIX-tF-r0O"/>
+                            <constraint firstAttribute="bottom" secondItem="FMc-Mp-5Zp" secondAttribute="bottom" constant="12" id="pIX-tF-r0O"/>
                         </constraints>
                     </view>
                 </subviews>
