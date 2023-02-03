@@ -13,21 +13,13 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var homeHeaderView: HeaderLargeView!
     @IBOutlet weak var generateOptionsLabel: UILabel!
     @IBOutlet weak var selectDescriptionLabel: UILabel!
-    
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     
+    // MARK: - Properties
     // Initialize view model class property
     var viewModel = LocationManagerViewModel.shared
-    
-    let categories = [
-        "diningCategory",
-        "drinkCategory",
-        "cinemaCategory",
-        "eventCategory",
-        "activityCategory",
-        "nightOutCategory"
-    ]
-    
+    let categoryData = CategoryViewModel.shared
+ 
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +28,6 @@ class HomeViewController: UIViewController {
             /// Unwrap [weak self]
             guard let strongSelf = self else {return}
             strongSelf.viewModel.setLocationCoordinates(with: location)
-
         }
         
         // Header
@@ -55,17 +46,18 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categories.count
+       
+        return categoryData.categoryArray.count
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // Return the cell by dequeueing it
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifier, for: indexPath) as! CollectionViewCell
-        
-        let category = categories[indexPath.row]
+        let data = categoryData.categoryArray
+        let category = data[indexPath.row]
         
         cell.delegate = self
         cell.configure(with: category)
-        
         return cell
     }
 }
@@ -73,13 +65,17 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 extension HomeViewController: CollectionViewCellDelegate {
     
     func categoryCellTapped(cell: CollectionViewCell) {
-        
         let storyboard = UIStoryboard(name: "LocationManager", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: "locationVC") as? LocationManagerViewController {
             guard let category = cell.category else {return}
             vc.sentCategory = category
             self.navigationController?.pushViewController(vc, animated: true)
         }
+<<<<<<< HEAD
+=======
+        
+        print("Delegate message")
+>>>>>>> feature/diningCardData
     }
 }
 

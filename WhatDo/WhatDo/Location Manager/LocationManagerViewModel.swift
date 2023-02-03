@@ -18,9 +18,9 @@ class LocationManagerViewModel: NSObject, CLLocationManagerDelegate {
     
     // User's current or set location to be used in network calls. CLLocation must be converted to lat/long which are input as individual String parameters in network calls
     /// Optional because these are not set until user allows location services or enters manual location
-    private (set) var userLatitude: Double?
-    private (set) var userLongitude: Double?
-    private (set) var radius: Int?
+    private(set) var userLatitude: Double?
+    private(set) var userLongitude: Double?
+    private(set) var radius: Int?
     
     public var userLocation: CLLocation? {
         let latitude = self.userLatitude ?? 37.77
@@ -66,7 +66,6 @@ class LocationManagerViewModel: NSObject, CLLocationManagerDelegate {
     }
 
     // Reverse Geocode the user's location to return the name of it that we can add to a label, etc.
-    
     public func resolveLocationName(with location: CLLocation, completion: @escaping ((String?) -> Void)) {
         let geocoder = CLGeocoder()
         geocoder.reverseGeocodeLocation(location, preferredLocale: .current) { placemarks, error in
@@ -90,7 +89,6 @@ class LocationManagerViewModel: NSObject, CLLocationManagerDelegate {
         }
     }
 
-    
     // implementing CLLocationManagerDelegate - delegate is assigned in getUserLocation function, and this will automatically trigger when the condition occurs
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else { return }

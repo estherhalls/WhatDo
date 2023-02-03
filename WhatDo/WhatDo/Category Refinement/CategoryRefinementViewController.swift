@@ -8,15 +8,28 @@
 import UIKit
 
 class CategoryRefinementViewController: UIViewController, CardViewDataSource, CardViewContainerDelegate {
- 
+    
     // MARK: - Outlets
     @IBOutlet var backgroundGradient: UIView!
     @IBOutlet weak var headerView: HeaderLargeView!
     @IBOutlet weak var swipeableCardView: CardViewContainer!
     
+    // MARK: - Properties
     // Reciever Property - Selected Category Sent Data
-    var sentCategory: String?
+    var sentCategory: Category? {
+        didSet {
+          updateData()
+        }
+    }
     
+    func updateData() {
+        guard let category = sentCategory else { return }
+        cardData = category.refinementQuestions
+    }
+    
+    var cardData: [RefinementCardViewModel] = []
+
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,49 +56,17 @@ class CategoryRefinementViewController: UIViewController, CardViewDataSource, Ca
         swipeableCardView.navDelegate = self
     }
     
-    // Individual Category Card Data
-    let categoryArray = CategoryRefinementViewModel()
-    var cardData: [RefinementCardViewModel] {
-        // Switch statement instead of if? Cleaner?
-        if sentCategory == "diningCategory" {
-            return categoryArray.diningCategory
-        }
-        
-        if sentCategory == "drinkCategory" {
-            return categoryArray.drinksCategory
-        }
-        
-        if sentCategory == "cinemaCategory" {
-            return categoryArray.cinemaCategory
-        }
-        
-        if sentCategory == "eventCategory" {
-            return categoryArray.eventsCategory
-        }
-        
-        if sentCategory == "activityCategory" {
-            return categoryArray.activitiesCategory
-        }
-        
-        if sentCategory == "nightOutCategory" {
-            return categoryArray.nightOutCategory
-        }
-        return []
-    }
-    
     // MARK: - Navigation
     @IBAction func rouletteButtonTapped(_ sender: Any) {
         // Navigate to Selection Results and bring information about network call without refining (random?)
-        
         /// Display the results view
         let storyboard = UIStoryboard(name: "SelectionResults", bundle: nil)
         let resultsVC = storyboard.instantiateViewController(withIdentifier: "selectionResultsVC")
         self.navigationController?.pushViewController(resultsVC, animated: true)
     }
-    
 }
-// MARK: - Swipeable Card View Data Source
 
+// MARK: - Swipeable Card View Data Source
 // Conform to CardViewDataSource
 extension CategoryRefinementViewController {
     

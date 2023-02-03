@@ -21,7 +21,7 @@ class LocationManagerViewController: UIViewController {
     var viewModel = LocationManagerViewModel.shared
     
     // Reciever Property - Selected Category Sent Data
-    var sentCategory: String?
+    var sentCategory: Category?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -39,8 +39,8 @@ class LocationManagerViewController: UIViewController {
         
         let dismissAction = UIAlertAction(title: "Back To Home", style: .cancel) { _ in
             // Navigate back to Home if declining to enter location
-            let storyboard = UIStoryboard(name: "Home", bundle: nil)
-            let homeVC = storyboard.instantiateViewController(withIdentifier: "homeNav")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let homeVC = storyboard.instantiateViewController(withIdentifier: "tabBar")
             /// This is to get the SceneDelegate object from your view controller
             /// then call the change root view controller function to change to main tab bar
             (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(homeVC)
@@ -101,8 +101,8 @@ class LocationManagerViewController: UIViewController {
     func navNextVC() {
         let storyboard = UIStoryboard(name: "CategoryRefinement", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: "categoryRefinement") as? CategoryRefinementViewController {
-            guard let category = self.sentCategory else { return }
-            vc.sentCategory = category
+//            guard let category = self.sentCategory else { return }
+            vc.sentCategory = self.sentCategory
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
