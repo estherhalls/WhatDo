@@ -18,9 +18,15 @@ class CategoryRefinementViewController: UIViewController, CardViewDataSource, Ca
     // Reciever Property - Selected Category Sent Data
     var sentCategory: Category? {
         didSet {
-            sentCategory?.refinementQuestions = cardData
+          updateData()
         }
     }
+    
+    func updateData() {
+        guard let category = sentCategory else { return }
+        cardData = category.refinementQuestions
+    }
+    
     var cardData: [RefinementCardViewModel] = []
 
     // MARK: - Lifecycle

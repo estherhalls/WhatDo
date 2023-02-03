@@ -60,14 +60,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.configure(with: category)
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
-        let data = categoryData.categoryArray[indexPath.row]
-        let vc = LocationManagerViewController()
-        vc.sentCategory = data
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
 }
 
 extension HomeViewController: CollectionViewCellDelegate {
