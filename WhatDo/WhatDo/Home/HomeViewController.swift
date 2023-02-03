@@ -71,9 +71,6 @@ extension HomeViewController: CollectionViewCellDelegate {
             vc.sentCategory = category
             self.navigationController?.pushViewController(vc, animated: true)
         }
-    
-        print("Delegate message")
-
     }
 }
 
