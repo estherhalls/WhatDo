@@ -19,36 +19,41 @@ class BusinessListVM {
     let radius = "16000"
     
     var businessesArray: [[BusinessSearch]] = [[]]
-    var businesses: [BusinessSearch] = []
+    //    var businesses: [BusinessSearch] = []
     weak var delegate: YelpCollectionViewDelegate?
     init(delegate: YelpCollectionViewDelegate) {
         self.delegate = delegate
     }
-
+    
     func yelpSearch(){
-
+        
         SearchBusinesses().searchYelpRestaurants(userLat: "\(latitude)", userLong: "\(longitude)", userRadius: radius) { result in
             switch result {
             case .success(let businesses):
                 // We need to inform the view controller that the data is ready
-                self.businesses = businesses
+                //                self.businesses = businesses
                 
                 let popularRating = businesses.filter { business in
-                    return business.rating! >= 4.0
+                    return business.rating! >= 5.0
                 }
                 let nearBy = businesses.filter { business in
-                return business.distance! <= 24000
+                    return business.distance! <= 2000
                 }
-                
-                self.businessesArray = [nearBy, popularRating]
+                let nonNilBusinessPrice = businesses.filter { business in
+                    return business.price != nil
+                }
+                let updateMe = nonNilBusinessPrice.filter { business in
+                    return business.price == "$$"
+                }
+                self.businessesArray = [nearBy, popularRating, updateMe]
                 self.delegate?.businessesLoadedSuccessfully()
                 print(self.latitude, self.longitude)
             case .failure(let error):
                 print(error)
             }
         }
-      
-
+        //
+        
     }
 }
 

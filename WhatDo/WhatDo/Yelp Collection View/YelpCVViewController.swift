@@ -32,7 +32,7 @@ class YelpCVViewController: UIViewController, YelpCollectionViewDelegate {
 //    let longitude = LocationManagerViewModel.shared.userLongitude
 //    let latitude = LocationManagerViewModel.shared.userLatitude
     
-    let sectionHeaders = ["This", "That"]
+    let sectionHeaders = ["This", "That", "There"]
     
     var businessListVM: BusinessListVM!
     var businessSearch: BusinessSearch?
@@ -161,7 +161,7 @@ extension YelpCVViewController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "yelpCell", for: indexPath) as! YelpCollectionViewCell
         
-        let business = businessListVM.businesses[indexPath.row]
+        let business = businessListVM.businessesArray[indexPath.section][indexPath.row]
         cell.business = business
         cell.delegate = self
         cell.setupBusinessCell(business: business)
@@ -171,33 +171,13 @@ extension YelpCVViewController: UICollectionViewDataSource, UICollectionViewDele
         func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
             // Check the kind of supplementary view here, it needs to match the kind in your cell registration. Then call collectionView.dequeueReusableSupplementaryView and the rest should be pretty familiar.
             guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCell", for: indexPath) as? SectionCollectionReusableView else { return UICollectionReusableView() }
-    
-            //        let category = categoryHeaderImages[indexPath.section]
-            //
-            //                cell.configure(with: category)
-            //
-            //        return cell
-            //    }
-    
-            //        let category = businessListVM.businessesArray[indexPath.section]
-            //        cell.category
+            let title = sectionHeaders[indexPath.section]
+            cell.setupCategoryTitle(categoryTitle: title)
             return cell
         }
-    //           func collectionView(_ collectionView: UICollectionView, titleForHeaderInSection section: Int) -> String? {
-    //               guard sectionHeaders.indices ~= section else {
-    //                   print("No section title for this section")
-    //                   return nil
-    //               }
-    //
-    //               return sectionHeaders[section]
-    //           }
-    //        func collectionView(_ collectionView: UICollectionView, indexPathForIndexTitle title: String, at index: Int) -> IndexPath {
-    //            guard sectionHeaders.indices ~= index else {
-    //                       print("No section title for this section")
-    //                       return
-    //                   }
-    //            return sectionHeaders[index]
-    //        }
+//               func collectionView(_ collectionView: UICollectionView, titleForHeaderInSection section: Int) -> String? {
+//                   return sectionHeaders[section]
+//               }
 }
 extension YelpCVViewController: YelpCollectionViewCellDelegate {
     func cellTapped(cell: YelpCollectionViewCell) {
