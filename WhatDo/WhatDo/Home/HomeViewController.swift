@@ -20,7 +20,7 @@ class HomeViewController: UIViewController {
     var viewModel = LocationManagerViewModel.shared
     
     let categoryData = CategoryViewModel()
-    
+ 
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,13 +47,14 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let category = CategoryViewModel().categories
+        let category = categoryData.categoryArray
         return category.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // Return the cell by dequeueing it
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifier, for: indexPath) as! CollectionViewCell
-        let category = CategoryViewModel().categories[indexPath.row]
+        let data = categoryData.categoryArray
+        let category = data[indexPath.row]
         
         cell.delegate = self
         cell.configure(with: category)

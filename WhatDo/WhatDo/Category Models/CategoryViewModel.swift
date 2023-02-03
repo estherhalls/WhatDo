@@ -7,15 +7,16 @@
 
 import UIKit
 
-class CategoryViewModel {
+struct CategoryViewModel {
+//    static let shared = CategoryViewModel()
     
-    static let shared = CategoryViewModel()
-
-    public var categories: [Category] {
+    var categoryArray: [Category] {
         
         let dining = Category(name: "dining", imageName: "diningCategory", headerImage: "headerDining", sfSymbol: SFSymbols().utensils, refinementQuestions: CategoryRefinementViewModel().diningCategory)
+//        self.categoryArray.append(dining)
         
         let drinks = Category(name: "drinks", imageName: "drinkCategory", sfSymbol: SFSymbols().drink, refinementQuestions: CategoryRefinementViewModel().drinksCategory)
+//        selfcategoryArray.append(drinks)
         
         let cinema = Category(name: "cinema", imageName: "cinemaCategory", headerImage: "headerCinema", sfSymbol: SFSymbols().popcorn, refinementQuestions: CategoryRefinementViewModel().cinemaCategory)
         
