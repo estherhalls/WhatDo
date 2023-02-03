@@ -61,19 +61,30 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.configure(with: category)
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // Return the cell by dequeueing it
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifier, for: indexPath) as! CollectionViewCell
+        let storyboard = UIStoryboard(name: "LocationManager", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "locationVC") as! LocationManagerViewController
+        // Send cell data to the next view controller
+        let category = categoryData.categories[indexPath.row]
+        cell.delegate = self
+        vc.sentCategory = category
+        self.navigationController?.pushViewController(vc, animated: true)
+        print("Take me there! \(category)")
+    }
 }
 
 extension HomeViewController: CollectionViewCellDelegate {
     
     func categoryCellTapped(cell: CollectionViewCell) {
-        let storyboard = UIStoryboard(name: "LocationManager", bundle: nil)
-        if let vc = storyboard.instantiateViewController(withIdentifier: "locationVC") as? LocationManagerViewController {
-            guard let category = cell.category else {return}
-            vc.sentCategory = category
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-        
-        print("Take me there!, \(cell.category)")
+//        let storyboard = UIStoryboard(name: "LocationManager", bundle: nil)
+//        if let vc = storyboard.instantiateViewController(withIdentifier: "locationVC") as? LocationManagerViewController {
+//            guard let category = cell.category else {return}
+//            vc.sentCategory = category
+//            self.navigationController?.pushViewController(vc, animated: true)
+//        }
+//        print("Take me there!")
     }
 }
 
