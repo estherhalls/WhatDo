@@ -28,8 +28,8 @@
                                 <rect key="frame" x="15" y="140" width="362" height="232"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(BusinessName)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLC-y7-Vka">
-                                <rect key="frame" x="22" y="291" width="241" height="50"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="(BusinessName)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLC-y7-Vka">
+                                <rect key="frame" x="22" y="291" width="349" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="IFz-uI-Zf5"/>
                                 </constraints>
@@ -251,7 +251,7 @@
                             <constraint firstItem="Lbj-gJ-Vgl" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" constant="-16" id="CnD-E2-xKu"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="T8V-ZG-Yh2" secondAttribute="bottom" constant="4" id="GcD-9k-hiO"/>
                             <constraint firstItem="BWQ-zV-4Yb" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="JdM-f8-QcZ"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="aLC-y7-Vka" secondAttribute="trailing" constant="130" id="Olt-aN-GFr"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="aLC-y7-Vka" secondAttribute="trailing" constant="12" id="Olt-aN-GFr"/>
                             <constraint firstItem="lBS-Hi-01a" firstAttribute="top" secondItem="Lbj-gJ-Vgl" secondAttribute="bottom" constant="12" id="PR7-if-D3q"/>
                             <constraint firstItem="9bZ-xm-ndJ" firstAttribute="top" secondItem="odP-Je-ShH" secondAttribute="bottom" constant="12" id="Tea-oV-lli"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="T8V-ZG-Yh2" secondAttribute="trailing" constant="22" id="aRL-xW-Te7"/>

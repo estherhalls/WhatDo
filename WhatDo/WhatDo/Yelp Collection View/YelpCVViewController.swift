@@ -35,7 +35,6 @@ class YelpCVViewController: UIViewController, YelpCollectionViewDelegate {
     var businessListVM: BusinessListVM!
     var businessSearch: BusinessSearch?
 
-    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()

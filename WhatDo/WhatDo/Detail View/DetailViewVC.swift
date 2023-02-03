@@ -99,6 +99,7 @@ class DetailViewVC: UIViewController {
             guard let imageUrl = business.imageUrl else { return }
             self.fetchImage(imageString: imageUrl)
             self.businessName.text = business.name
+            self.businessName.sizeToFit()
             self.phoneNumber.text = business.displayPhone
             self.ratingLabel.text = "Rating: \(self.sentData?.rating ?? 0.0)"
             self.start0.text =  hoursData.hours?[0].open?[0].start?.timeConverter()
