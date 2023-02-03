@@ -29,14 +29,12 @@ class YelpCVViewController: UIViewController, YelpCollectionViewDelegate {
     
     // Location Properties
     private let viewModel = LocationManagerViewModel.shared
-//    let longitude = LocationManagerViewModel.shared.userLongitude
-//    let latitude = LocationManagerViewModel.shared.userLatitude
     
-    let sectionHeaders = ["This", "That", "There"]
+    let sectionHeaders = ["Near By", "Highly Rated", "Affordable"]
     
     var businessListVM: BusinessListVM!
     var businessSearch: BusinessSearch?
-    //    var categories: [CDYelpCategory]?
+
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -150,11 +148,9 @@ extension YelpCVViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return businessListVM.businessesArray[section].count
-        //        return businessListVM.businesses.count
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        //        categoryHeaderLabel.text = section.sections
         return businessListVM.businessesArray.count
     }
     
@@ -168,6 +164,7 @@ extension YelpCVViewController: UICollectionViewDataSource, UICollectionViewDele
         
         return cell
     }
+    
         func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
             // Check the kind of supplementary view here, it needs to match the kind in your cell registration. Then call collectionView.dequeueReusableSupplementaryView and the rest should be pretty familiar.
             guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCell", for: indexPath) as? SectionCollectionReusableView else { return UICollectionReusableView() }
@@ -175,19 +172,21 @@ extension YelpCVViewController: UICollectionViewDataSource, UICollectionViewDele
             cell.setupCategoryTitle(categoryTitle: title)
             return cell
         }
-//               func collectionView(_ collectionView: UICollectionView, titleForHeaderInSection section: Int) -> String? {
-//                   return sectionHeaders[section]
-//               }
+    /*
+     // Would use this if label didn't have its own view. More simple.
+     func collectionView(_ collectionView: UICollectionView, titleForHeaderInSection section: Int) -> String? {
+     return sectionHeaders[section]
+     }
+     */
 }
+
 extension YelpCVViewController: YelpCollectionViewCellDelegate {
     func cellTapped(cell: YelpCollectionViewCell) {
-        //        print("Take me there!")
         let storyboard = UIStoryboard(name: "DetailView", bundle: nil)
         if let vc = storyboard.instantiateViewController(withIdentifier: "detailViewVC") as? DetailViewVC {
             guard let data = cell.business else {return}
             vc.sentData = data
             // Initialize the view model of the detail screen
-            //            DetailViewVM().businessHours
             // Make network call
             // fetch data to be populated before screen loads
             SearchByIdOrAlias().searchYelpBusinessHours(businessId: data.id!) { result in
