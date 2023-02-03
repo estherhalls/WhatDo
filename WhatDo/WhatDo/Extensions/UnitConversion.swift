@@ -8,13 +8,13 @@
 import Foundation
 
 struct UnitConversion {
-    func metersToMiles(meters: Double) -> Int {
+    func metersToMiles(meters: Double) -> Double {
         
         let distanceValue = Double(round(meters))
         let meters = distanceValue
         let metersToMiles = meters.convert(from: .meters, to: .miles)
-        let roundedMiles = Int(metersToMiles)
-        return roundedMiles
+        let roundedMiles = metersToMiles
+        return round(roundedMiles * 100) / 100.0
     }
 }
 

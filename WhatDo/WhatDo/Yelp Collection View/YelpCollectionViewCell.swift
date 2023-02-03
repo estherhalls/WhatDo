@@ -26,14 +26,9 @@ class YelpCollectionViewCell: UICollectionViewCell {
     
     weak var delegate: YelpCollectionViewCellDelegate?
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
     func setupBusinessCell(business: BusinessSearch) {
         titleLabel.text = business.name
         let distance = unitConversion.metersToMiles(meters: business.distance!)
-        print(distance)
         subtitleLabel.text =  "Miles: \(distance)"
         guard let imageUrl = business.imageUrl else { return }
         fetchImage(imageString: imageUrl)
@@ -54,9 +49,7 @@ class YelpCollectionViewCell: UICollectionViewCell {
             }
         }
     }
-    
     @IBAction func cellTapped(_ sender: AnyObject) {
         delegate?.cellTapped(cell:self)
     }
-    
 }

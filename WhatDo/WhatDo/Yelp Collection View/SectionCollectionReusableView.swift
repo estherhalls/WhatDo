@@ -11,23 +11,15 @@ class SectionCollectionReusableView: UICollectionReusableView {
     
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var labelBackground: UIView!
-    
 
-    
-   
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
     func setupCategoryTitle(categoryTitle: String) {
         headerLabel.text = categoryTitle
-//        
-//        guard let categoryUrl = category?.self else { return }
-//        fetchSectionTitle(categorySection: category)
     }
     func fetchSectionTitle(categorySection: String) {
-        guard let categoryUrl = URL(string: categorySection) else { return }
+        
+        guard let categoryUrl = URL(string: categorySection) else {
+            return
+        }
         let request = URLRequest(url: categoryUrl)
         APIService().perform(request) { result in
             switch result {
@@ -40,6 +32,5 @@ class SectionCollectionReusableView: UICollectionReusableView {
                 print(error)
             }
         }
-        
     }
 }

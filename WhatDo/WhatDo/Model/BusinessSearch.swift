@@ -11,7 +11,6 @@ import Foundation
 struct TopLevelDictionary: Decodable {
     let businesses: [BusinessSearch]
 }
-
 // Yelp Business Search Model
 struct BusinessSearch: Decodable {
     enum CodingKeys: String, CodingKey {
@@ -47,7 +46,6 @@ struct BusinessSearch: Decodable {
     let url: String?
     let transactions: [String]?
 }
-
 struct CDYelpCategory: Decodable {
     enum CodingKeys: String, CodingKey {
         case alias

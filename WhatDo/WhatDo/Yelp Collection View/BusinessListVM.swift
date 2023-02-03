@@ -19,7 +19,7 @@ class BusinessListVM {
     let radius = "16000"
     
     var businessesArray: [[BusinessSearch]] = [[]]
-    //    var businesses: [BusinessSearch] = []
+   
     weak var delegate: YelpCollectionViewDelegate?
     init(delegate: YelpCollectionViewDelegate) {
         self.delegate = delegate
@@ -31,13 +31,12 @@ class BusinessListVM {
             switch result {
             case .success(let businesses):
                 // We need to inform the view controller that the data is ready
-                //                self.businesses = businesses
                 
                 let popularRating = businesses.filter { business in
-                    return business.rating! >= 5.0
+                    return business.rating! >= 4.5
                 }
                 let nearBy = businesses.filter { business in
-                    return business.distance! <= 2000
+                    return business.distance! <= 7000
                 }
                 let nonNilBusinessPrice = businesses.filter { business in
                     return business.price != nil
@@ -52,8 +51,6 @@ class BusinessListVM {
                 print(error)
             }
         }
-        //
-        
     }
 }
 

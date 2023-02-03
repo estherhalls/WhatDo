@@ -8,6 +8,7 @@
 import Foundation
 
 extension String {
+    // Converting 2400 time, no :, to 12:00 time
     func timeConverter() -> String {
         var foo = self
         foo.insert(":", at: foo.index(foo.startIndex, offsetBy: 2))

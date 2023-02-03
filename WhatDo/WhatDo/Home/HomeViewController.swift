@@ -50,7 +50,6 @@ class HomeViewController: UIViewController {
             categoryCollectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "categoryCell")
         }
     }
-    
 } // End of Class
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -81,12 +80,7 @@ extension HomeViewController: CollectionViewCellDelegate {
             vc.sentCategory = category
             self.navigationController?.pushViewController(vc, animated: true)
         }
-        
-        print("Take me there!")
     }
-    
-    
-    
 }
 
 
