@@ -16,6 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a0o-vS-FG4">
+                                <rect key="frame" x="0.0" y="125" width="393" height="727"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NjB-hD-nnG" customClass="HeaderLargeView" customModule="WhatDo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="125"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -24,30 +27,30 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="trk-6v-j2a">
-                                <rect key="frame" x="76.333333333333329" y="165" width="240.33333333333337" height="89"/>
+                                <rect key="frame" x="75.666666666666686" y="165" width="242" height="90.333333333333314"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REFINE YOUR SEARCH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dh8-2Z-JLo">
-                                        <rect key="frame" x="5" y="0.0" width="230.66666666666666" height="30.333333333333332"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
+                                        <rect key="frame" x="3" y="0.0" width="235.66666666666666" height="30.333333333333332"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SWIPE TO ANSWER A FEW QUESTIONS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zuw-ta-mpE">
-                                        <rect key="frame" x="10.666666666666671" y="32.333333333333343" width="219" height="16.666666666666671"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
-                                        <nil key="textColor"/>
+                                        <rect key="frame" x="1" y="32.333333333333343" width="240" height="18"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8s-K5-LHB">
-                                        <rect key="frame" x="110.00000000000001" y="51" width="20.333333333333329" height="19.333333333333329"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
-                                        <nil key="textColor"/>
+                                        <rect key="frame" x="110.66666666666667" y="52.333333333333343" width="20.666666666666671" height="19.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEAVE IT TO US BY SELECTING 'ROULETTE'" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1EK-SQ-K4P">
-                                        <rect key="frame" x="0.0" y="72.333333333333343" width="240.33333333333334" height="16.666666666666671"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
-                                        <nil key="textColor"/>
+                                        <rect key="frame" x="0.0" y="73.666666666666657" width="242" height="16.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -79,6 +82,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Zlv-PX-A7N" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="0Mu-NN-Wyv"/>
+                            <constraint firstItem="a0o-vS-FG4" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="253-kM-sPm"/>
                             <constraint firstItem="q6Q-0Z-9iA" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="3Wa-ec-8kg"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Zlv-PX-A7N" secondAttribute="trailing" constant="10" id="MHU-98-r4b"/>
                             <constraint firstItem="q6Q-0Z-9iA" firstAttribute="top" secondItem="Zlv-PX-A7N" secondAttribute="bottom" constant="60" id="V53-xf-f6e"/>
@@ -86,15 +90,18 @@
                             <constraint firstItem="trk-6v-j2a" firstAttribute="top" secondItem="NjB-hD-nnG" secondAttribute="bottom" constant="40" id="gBA-bp-yeM"/>
                             <constraint firstItem="Zlv-PX-A7N" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="gK7-h3-PMV"/>
                             <constraint firstItem="trk-6v-j2a" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="jzc-vP-S8l"/>
+                            <constraint firstItem="a0o-vS-FG4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="uET-ZE-hij"/>
+                            <constraint firstAttribute="bottom" secondItem="a0o-vS-FG4" secondAttribute="bottom" id="w7F-4X-xgL"/>
                             <constraint firstItem="Zlv-PX-A7N" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="wMm-ay-Bfo"/>
                             <constraint firstItem="NjB-hD-nnG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="wy4-vT-o98"/>
                             <constraint firstItem="NjB-hD-nnG" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="xOM-MH-Uia"/>
                             <constraint firstItem="NjB-hD-nnG" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="zip-kM-ulA"/>
+                            <constraint firstItem="a0o-vS-FG4" firstAttribute="top" secondItem="NjB-hD-nnG" secondAttribute="bottom" id="zzE-Q4-lqz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cNv-ik-SN3"/>
                     <connections>
-                        <outlet property="backgroundGradient" destination="5EZ-qb-Rvc" id="fwk-S6-3dZ"/>
+                        <outlet property="backgroundGradient" destination="a0o-vS-FG4" id="YYn-JD-rdM"/>
                         <outlet property="headerView" destination="NjB-hD-nnG" id="SDx-9W-ABw"/>
                         <outlet property="swipeableCardView" destination="Zlv-PX-A7N" id="2c1-lM-rQp"/>
                     </connections>
