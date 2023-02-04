@@ -13,10 +13,10 @@ struct CategoryRefinementViewModel {
     var diningCategory: [RefinementCardViewModel] {
         let sfSymbol = SFSymbols().utensils
         
-        let questionOne = RefinementCardViewModel(leftLabel: "Fine Dining But with more text this time", rightLabel: "Casual Dining", sfSymbol: sfSymbol)
-        let questionTwo = RefinementCardViewModel(leftLabel: "Card2: A", rightLabel: "Card2: B", sfSymbol: sfSymbol)
-        let questionThree = RefinementCardViewModel(leftLabel: "Card3: A", rightLabel: "Card3: B", sfSymbol: sfSymbol)
-        let questionFour = RefinementCardViewModel(leftLabel: "Card4: A", rightLabel: "Card2: B", sfSymbol: sfSymbol)
+        let questionOne = RefinementCardViewModel(leftLabel: "Fine Dining", rightLabel: "Casual Bites", sfSymbol: sfSymbol)
+        let questionTwo = RefinementCardViewModel(leftLabel: "I need it fast!", rightLabel: "I'll wait for the best!", sfSymbol: sfSymbol)
+        let questionThree = RefinementCardViewModel(leftLabel: "Local Cuisine", rightLabel: "Cuisines of the world", sfSymbol: sfSymbol)
+        let questionFour = RefinementCardViewModel(leftLabel: "Dining In", rightLabel: "I'd like my meal to go!", sfSymbol: sfSymbol)
         
         return [questionOne, questionTwo, questionThree, questionFour]
     }
@@ -25,9 +25,9 @@ struct CategoryRefinementViewModel {
         let sfSymbol = SFSymbols().drink
         
         let questionOne = RefinementCardViewModel(leftLabel: "Coffee/Tea", rightLabel: "Boozy Bevs", sfSymbol: sfSymbol)
-        let questionTwo = RefinementCardViewModel(leftLabel: "Card2: A", rightLabel: "Card2: B", sfSymbol: sfSymbol)
-        let questionThree = RefinementCardViewModel(leftLabel: "Card3: A", rightLabel: "Card3: B", sfSymbol: sfSymbol)
-        let questionFour = RefinementCardViewModel(leftLabel: "Card4: A", rightLabel: "Card2: B", sfSymbol: sfSymbol)
+        let questionTwo = RefinementCardViewModel(leftLabel: "Party Scene", rightLabel: "Sophistication", sfSymbol: sfSymbol)
+        let questionThree = RefinementCardViewModel(leftLabel: "Only Drinks", rightLabel: "Food & Drinks", sfSymbol: sfSymbol)
+        let questionFour = RefinementCardViewModel(leftLabel: "Looking to Save", rightLabel: "Money is no Object", sfSymbol: sfSymbol)
         
         return [questionOne, questionTwo, questionThree, questionFour]
     }
@@ -58,7 +58,7 @@ struct CategoryRefinementViewModel {
         let sfSymbol = SFSymbols().mountain
         
         let questionOne = RefinementCardViewModel(leftLabel: "High Energy", rightLabel: "Low Energy", sfSymbol: sfSymbol)
-        let questionTwo = RefinementCardViewModel(leftLabel: "Card2: A", rightLabel: "Card2: B", sfSymbol: sfSymbol)
+        let questionTwo = RefinementCardViewModel(leftLabel: "Nature", rightLabel: "City", sfSymbol: sfSymbol)
         let questionThree = RefinementCardViewModel(leftLabel: "Card3: A", rightLabel: "Card3: B", sfSymbol: sfSymbol)
         let questionFour = RefinementCardViewModel(leftLabel: "Card4: A", rightLabel: "Card2: B", sfSymbol: sfSymbol)
         
