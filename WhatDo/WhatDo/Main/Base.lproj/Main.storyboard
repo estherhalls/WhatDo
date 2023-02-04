@@ -23,12 +23,17 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="selectedIndex">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
-                        <segue destination="Tpq-Dr-lBC" kind="relationship" relationship="viewControllers" id="DsH-Ts-O9Q"/>
                         <segue destination="Em0-Rq-b8a" kind="relationship" relationship="viewControllers" id="F2C-gk-5NM"/>
                         <segue destination="rhv-O5-kMo" kind="relationship" relationship="viewControllers" id="Vwv-n6-a6V"/>
-                        <segue destination="68M-ry-vwe" kind="relationship" relationship="viewControllers" id="cOx-Gd-Rxx"/>
-                        <segue destination="otX-Kr-Ym3" kind="relationship" relationship="viewControllers" id="lF5-3y-Cpg"/>
+                        <segue destination="Tpq-Dr-lBC" kind="relationship" relationship="viewControllers" id="11G-0k-nlX"/>
+                        <segue destination="otX-Kr-Ym3" kind="relationship" relationship="viewControllers" id="UqP-Vs-mpy"/>
+                        <segue destination="68M-ry-vwe" kind="relationship" relationship="viewControllers" id="gZ3-uF-DsR"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gyi-1j-CME" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -43,7 +48,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M71-0C-4hU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-16.030534351145036" y="-773.23943661971839"/>
+            <point key="canvasLocation" x="1383" y="-835"/>
         </scene>
         <!--Activity-->
         <scene sceneID="OEL-sb-UGP">
@@ -53,7 +58,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gyJ-cM-d8X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="859" y="-773"/>
+            <point key="canvasLocation" x="437" y="-835"/>
         </scene>
         <!--YelpCVStoryboard-->
         <scene sceneID="yXX-4S-yHX">
@@ -63,7 +68,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FCJ-Mf-5xL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1553" y="-834"/>
+            <point key="canvasLocation" x="885" y="-835"/>
         </scene>
         <!--Events-->
         <scene sceneID="w8S-Nw-rvf">
@@ -73,7 +78,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pex-wn-I5k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3507.6335877862593" y="-773.23943661971839"/>
+            <point key="canvasLocation" x="1830" y="-835"/>
         </scene>
         <!--Cinema-->
         <scene sceneID="lcA-hO-t49">
@@ -83,7 +88,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uXH-6r-DGf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4403.0534351145034" y="-773.23943661971839"/>
+            <point key="canvasLocation" x="2198" y="-835"/>
         </scene>
     </scenes>
 </document>
