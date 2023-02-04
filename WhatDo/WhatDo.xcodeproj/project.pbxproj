@@ -61,6 +61,7 @@
 		FF29F9DC295B8DE0000D3183 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF29F9DA295B8DE0000D3183 /* CollectionViewCell.xib */; };
 		FF3FBFF429674AA800287660 /* YelpCollectionViewCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FBFF329674AA800287660 /* YelpCollectionViewCellVM.swift */; };
 		FF9E5ACA2981B2E40004D9F9 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E5AC92981B2E40004D9F9 /* DateHelper.swift */; };
+		FFB8290F298E4559001E0239 /* CategoriesSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB8290E298E4559001E0239 /* CategoriesSearch.swift */; };
 		FFECBEED2979DCFC0063CC2D /* SearchByIdOrAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFECBEEC2979DCFC0063CC2D /* SearchByIdOrAlias.swift */; };
 		FFECE29A295E367C00BC7C6F /* YelpCVStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFECE299295E367C00BC7C6F /* YelpCVStoryboard.storyboard */; };
 		FFECE29C295E371100BC7C6F /* YelpCVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFECE29B295E371100BC7C6F /* YelpCVViewController.swift */; };
@@ -131,6 +132,7 @@
 		FF29F9DA295B8DE0000D3183 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		FF3FBFF329674AA800287660 /* YelpCollectionViewCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpCollectionViewCellVM.swift; sourceTree = "<group>"; };
 		FF9E5AC92981B2E40004D9F9 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		FFB8290E298E4559001E0239 /* CategoriesSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesSearch.swift; sourceTree = "<group>"; };
 		FFECBEEC2979DCFC0063CC2D /* SearchByIdOrAlias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByIdOrAlias.swift; sourceTree = "<group>"; };
 		FFECE299295E367C00BC7C6F /* YelpCVStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YelpCVStoryboard.storyboard; sourceTree = "<group>"; };
 		FFECE29B295E371100BC7C6F /* YelpCVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpCVViewController.swift; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 			children = (
 				FF09C50C2963468900CEA9DB /* BusinessSearch.swift */,
 				FF09C51C29638B0F00CEA9DB /* BusinessByIdForHours.swift */,
+				FFB8290E298E4559001E0239 /* CategoriesSearch.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -575,6 +578,7 @@
 				EB20D579298CA52500025307 /* CategoryViewModel.swift in Sources */,
 				FF09C5122963472100CEA9DB /* NetworkError.swift in Sources */,
 				EBE8F4012953D4E0001BC7B7 /* SceneDelegate.swift in Sources */,
+				FFB8290F298E4559001E0239 /* CategoriesSearch.swift in Sources */,
 				EBD57273296C965F000EF4A9 /* LocationManagerViewController.swift in Sources */,
 				FFECBEED2979DCFC0063CC2D /* SearchByIdOrAlias.swift in Sources */,
 				EB580DB9298B818A00DE3953 /* SectionCollectionReusableView.swift in Sources */,
