@@ -45,43 +45,35 @@ struct GetRandomYelpBusiness {
                                   "rating": 4.5] as [String : Any]
                 
                 APIService().perform(yelpRequest) { result in
+                    
                     switch result {
-                    case .failure(let error):
-                        print(error)
                     case .success(let response):
-                        do {
-                                       let topLevelDictionary = try response.decode(type: [Business].self)
-                                       completion(.success(topLevelDictionary))
-                                   } catch {
-                                       completion(.failure(.requestError(error)))
-                                   }
-                               
+                        if let businesses = response.businesses, businesses.count >= 3 {
+                            var selectedBusinesses = [Business]()
+                            for business in 0..<3 {
+                                let randomIndex = Int.random(in: 0...businesses.count-1)
+                                selectedBusinesses.append(businesses[randomIndex])
+                            }
+                        }
+                        completion([])
+                    case .failure(let error):
+                        print("Error fetching businesses: \(error)")
+                        completion([])
+                    }
+                    
+//                    switch result {
+//                    case .failure(let error):
+//                        print(error)
+//                    case .success(let response):
+//                        do {
+//                            let topLevelDictionary = try response.decode(type: [Business].self)
+//                            completion(.success(topLevelDictionary))
+//                        } catch {
+//                            completion(.failure(.requestError(error)))
+//                        }
                     }
                 }
             }
         }
     }
-}
-
-//{ result in
-//   switch result {
-//   case .success(let response):
-//       if let businesses = response.businesses, businesses.count >= 3 {
-//           var selectedBusinesses = [Business]()
-//           for business in 0..<3 {
-//               let randomIndex = Int.random(in: 0...businesses.count-1)
-//               selectedBusinesses.append(businesses[randomIndex])
-//           }
-//           do {
-//               let topLevelDictionary = try response.decode(type: Business.self)
-//               completion(.success(topLevelDictionary))
-//           } catch {
-//               completion(.failure(.requestError(error)))
-//           }
-//       }
-//       completion([])
-//   case .failure(let error):
-//       print("Error fetching businesses: \(error)")
-//       completion([])
-//   }
-//}
+    
