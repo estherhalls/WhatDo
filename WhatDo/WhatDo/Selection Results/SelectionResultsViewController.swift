@@ -21,7 +21,7 @@ class SelectionResultsViewController: UIViewController {
     
     // Location Properties
     var viewModel = LocationManagerViewModel.shared
-    
+    var businesses: [Business] = []
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()

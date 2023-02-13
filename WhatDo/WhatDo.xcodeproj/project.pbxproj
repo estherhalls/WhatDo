@@ -59,6 +59,8 @@
 		FF29F9D8295B5DDC000D3183 /* HeaderLargeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF29F9D7295B5DDC000D3183 /* HeaderLargeView.xib */; };
 		FF29F9DB295B8DE0000D3183 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF29F9D9295B8DE0000D3183 /* CollectionViewCell.swift */; };
 		FF29F9DC295B8DE0000D3183 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF29F9DA295B8DE0000D3183 /* CollectionViewCell.xib */; };
+		FF3E4406299A298200F290FE /* GetRandomYelpBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3E4405299A298200F290FE /* GetRandomYelpBusiness.swift */; };
+		FF3E4408299A834000F290FE /* YelpBusinessesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3E4407299A834000F290FE /* YelpBusinessesResponse.swift */; };
 		FF3FBFF429674AA800287660 /* YelpCollectionViewCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3FBFF329674AA800287660 /* YelpCollectionViewCellVM.swift */; };
 		FF9E5ACA2981B2E40004D9F9 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E5AC92981B2E40004D9F9 /* DateHelper.swift */; };
 		FFECBEED2979DCFC0063CC2D /* SearchByIdOrAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFECBEEC2979DCFC0063CC2D /* SearchByIdOrAlias.swift */; };
@@ -129,6 +131,8 @@
 		FF29F9D7295B5DDC000D3183 /* HeaderLargeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderLargeView.xib; sourceTree = "<group>"; };
 		FF29F9D9295B8DE0000D3183 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		FF29F9DA295B8DE0000D3183 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		FF3E4405299A298200F290FE /* GetRandomYelpBusiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRandomYelpBusiness.swift; sourceTree = "<group>"; };
+		FF3E4407299A834000F290FE /* YelpBusinessesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpBusinessesResponse.swift; sourceTree = "<group>"; };
 		FF3FBFF329674AA800287660 /* YelpCollectionViewCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpCollectionViewCellVM.swift; sourceTree = "<group>"; };
 		FF9E5AC92981B2E40004D9F9 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		FFECBEEC2979DCFC0063CC2D /* SearchByIdOrAlias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByIdOrAlias.swift; sourceTree = "<group>"; };
@@ -295,6 +299,7 @@
 			children = (
 				FF09C50C2963468900CEA9DB /* BusinessSearch.swift */,
 				FF09C51C29638B0F00CEA9DB /* BusinessByIdForHours.swift */,
+				FF3E4407299A834000F290FE /* YelpBusinessesResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -306,6 +311,7 @@
 				FF09C5112963472100CEA9DB /* NetworkError.swift */,
 				FF09C5152963478D00CEA9DB /* SearchBusinesses.swift */,
 				FFECBEEC2979DCFC0063CC2D /* SearchByIdOrAlias.swift */,
+				FF3E4405299A298200F290FE /* GetRandomYelpBusiness.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -555,6 +561,7 @@
 				EBA3FB04295CD1E9002AF566 /* CardViewDelegate.swift in Sources */,
 				EBA3FB0A295CDD56002AF566 /* UIView.swift in Sources */,
 				FF09C50F296346C200CEA9DB /* API Service.swift in Sources */,
+				FF3E4406299A298200F290FE /* GetRandomYelpBusiness.swift in Sources */,
 				EB20D57B298CE39600025307 /* SFSymbols.swift in Sources */,
 				FF09C51829634D8900CEA9DB /* DetailViewVC.swift in Sources */,
 				EBE8F3FF2953D4E0001BC7B7 /* AppDelegate.swift in Sources */,
@@ -563,6 +570,7 @@
 				FF3FBFF429674AA800287660 /* YelpCollectionViewCellVM.swift in Sources */,
 				FF09C5142963475A00CEA9DB /* ExtensionData.swift in Sources */,
 				FF29F9DB295B8DE0000D3183 /* CollectionViewCell.swift in Sources */,
+				FF3E4408299A834000F290FE /* YelpBusinessesResponse.swift in Sources */,
 				EBF827DA295AF1350042DA9B /* TabSearchViewController.swift in Sources */,
 				EBD5726A29679341000EF4A9 /* TabBarViewController.swift in Sources */,
 				FF09C50B2963464F00CEA9DB /* DetailViewVM.swift in Sources */,

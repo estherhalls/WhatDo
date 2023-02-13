@@ -18,7 +18,7 @@ class CategoryRefinementViewController: UIViewController, CardViewDataSource, Ca
     // Reciever Property - Selected Category Sent Data
     var sentCategory: Category? {
         didSet {
-          updateData()
+            updateData()
         }
     }
     
@@ -28,7 +28,7 @@ class CategoryRefinementViewController: UIViewController, CardViewDataSource, Ca
     }
     
     var cardData: [RefinementCardViewModel] = []
-
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,11 +58,18 @@ class CategoryRefinementViewController: UIViewController, CardViewDataSource, Ca
     
     // MARK: - Navigation
     @IBAction func rouletteButtonTapped(_ sender: Any) {
-        // Navigate to Selection Results and bring information about network call without refining (random?)
-        /// Display the results view
-        let storyboard = UIStoryboard(name: "SelectionResults", bundle: nil)
-        let resultsVC = storyboard.instantiateViewController(withIdentifier: "selectionResultsVC")
-        self.navigationController?.pushViewController(resultsVC, animated: true)
+        GetRandomYelpBusiness().getRandomYelpBusinesses(limit: 0, offset: 0) { result in
+            switch result {
+            case .success(let businesses):
+                let storyboard = UIStoryboard(name: "SelectionResults", bundle: nil)
+                let resultsVC = storyboard.instantiateViewController(withIdentifier: "selectionResultsVC") as! SelectionResultsViewController
+                resultsVC.businesses = businesses
+                resultsVC.userLocation = LocationManagerViewController.locationManager.location?.coordinate
+                self.navigationController?.pushViewController(resultsVC, animated: true)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }
 
